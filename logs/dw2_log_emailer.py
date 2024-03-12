@@ -5,8 +5,7 @@ from email.mime.multipart import MIMEMultipart
 import datetime
 
 # Function to scan logs for WARNING messages
-def scan_logs_for_warnings(log_folder):
-    today = datetime.date.today().strftime('%Y-%m-%d')
+def scan_logs_for_warnings(log_folder,today):
     warning_messages = []
     for filename in os.listdir(log_folder):
         if filename.endswith('.log'):
@@ -39,19 +38,22 @@ def send_email(sender_email, sender_password, recipient_email, subject, body):
 
 # Main function
 def main():
+    today = datetime.date.today().strftime('%Y-%m-%d')
     os.chdir("./etl2code/logs")
     log_folder  = os.getcwd()
-    warnings = scan_logs_for_warnings(log_folder)
+    warnings = scan_logs_for_warnings(log_folder,today)
+    sender_email = 'kinetixopensprocessing@gmail.com'  # Enter your email here
+    sender_password = 'ttljtrsnsqlhmnrz'      # Enter your email password here
+    recipient_email = 'DART@kinetixhr.com'  # Enter recipient email here
     
     if warnings:
-        subject = 'WARNING messages in logs found today'
+        subject = f'WARNING messages in logs found {today}'
         body = '\n'.join(warnings)
-        sender_email = 'kinetixopensprocessing@gmail.com'  # Enter your email here
-        sender_password = 'ttljtrsnsqlhmnrz'      # Enter your email password here
-        recipient_email = 'DART@kinetixhr.com'  # Enter recipient email here
         send_email(sender_email, sender_password, recipient_email, subject, body)
     else:
-        print("No WARNING messages found in logs today!")
+        subject = f'Normal performance for dw2 scripts {today}'
+        body = f"No warning messages found in dw2 logs for today."
+        send_email(sender_email, sender_password, recipient_email, subject, body)
 
 if __name__ == "__main__":
     main()
