@@ -2,3 +2,5 @@
 *.log
 # ignore ALL files in ANY directory named logs
 ./logs
+
+# for other stuff:
