@@ -57,13 +57,6 @@ def aggregateData(df):
 
 opens_success_flag = True
 
-try:
-    connect_str = "DefaultEndpointsProtocol=https;AccountName=sftpkinetix;AccountKey=9dHu7wYUIc1fT+Wk7WUUPGVxvJuXj+pVets2eDiGUiUN4XJKO2zpBSp5CurJGzofVHSrZNs+Y1d7+ASt/oAIhA==;EndpointSuffix=core.windows.net"
-    blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-except Exception as ex:
-    logging.warning("Exception:")
-    logging.warning(ex)
-
 server = "kinetixsql.database.windows.net" 
 database = "KinetixSQL" 
 username = "awhelan" 
