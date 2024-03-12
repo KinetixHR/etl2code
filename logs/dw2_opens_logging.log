@@ -1,0 +1,458 @@
+INFO 2024-02-21 09:30:01,683 Starting Script.
+DEBUG 2024-02-21 09:30:02,263 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-21 09:30:02,775 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 814
+DEBUG 2024-02-21 09:30:02,779 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-21 09:30:02,994 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-21 09:30:03,542 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002MkKrIAK/batch HTTP/1.1" 201 None
+DEBUG 2024-02-21 09:30:03,669 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002MkKrIAK HTTP/1.1" 200 None
+DEBUG 2024-02-21 09:30:03,793 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002MkKrIAK/batch/751Ut000002QgZ0IAK HTTP/1.1" 200 None
+DEBUG 2024-02-21 09:30:08,896 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002MkKrIAK/batch/751Ut000002QgZ0IAK HTTP/1.1" 200 None
+DEBUG 2024-02-21 09:30:08,992 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002MkKrIAK/batch/751Ut000002QgZ0IAK/result HTTP/1.1" 200 None
+DEBUG 2024-02-21 09:30:09,142 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002MkKrIAK/batch/751Ut000002QgZ0IAK/result/752Ut000002GohI HTTP/1.1" 200 None
+INFO 2024-02-21 09:30:09,150 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-21 09:30:09,150                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-15
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-06
+
+[2 rows x 4 columns]
+INFO 2024-02-21 09:30:09,158 Successfully loaded jobs from API: (1070, 4)
+INFO 2024-02-21 09:30:09,164 Loaded in opens file & transformed data from API...:(1070, 4)
+INFO 2024-02-21 09:30:09,247 Done loading opens
+INFO 2024-02-21 09:30:09,247 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-22 09:30:02,027 Starting Script.
+DEBUG 2024-02-22 09:30:02,602 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-22 09:30:03,133 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 817
+DEBUG 2024-02-22 09:30:03,137 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-22 09:30:03,459 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-22 09:30:04,049 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002OFHhIAO/batch HTTP/1.1" 201 None
+DEBUG 2024-02-22 09:30:04,431 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002OFHhIAO HTTP/1.1" 200 None
+DEBUG 2024-02-22 09:30:04,610 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002OFHhIAO/batch/751Ut000002SJo9IAG HTTP/1.1" 200 None
+DEBUG 2024-02-22 09:30:09,741 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002OFHhIAO/batch/751Ut000002SJo9IAG HTTP/1.1" 200 None
+DEBUG 2024-02-22 09:30:09,903 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002OFHhIAO/batch/751Ut000002SJo9IAG/result HTTP/1.1" 200 None
+DEBUG 2024-02-22 09:30:10,155 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002OFHhIAO/batch/751Ut000002SJo9IAG/result/752Ut000002ID7J HTTP/1.1" 200 None
+INFO 2024-02-22 09:30:10,164 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-22 09:30:10,164                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-15
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-06
+
+[2 rows x 4 columns]
+INFO 2024-02-22 09:30:10,173 Successfully loaded jobs from API: (1116, 4)
+INFO 2024-02-22 09:30:10,179 Loaded in opens file & transformed data from API...:(1116, 4)
+INFO 2024-02-22 09:30:10,226 Done loading opens
+INFO 2024-02-22 09:30:10,227 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-23 09:30:01,116 Starting Script.
+DEBUG 2024-02-23 09:30:01,688 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-23 09:30:02,175 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 817
+DEBUG 2024-02-23 09:30:02,178 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-23 09:30:02,381 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-23 09:30:02,732 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002PufNIAS/batch HTTP/1.1" 201 None
+DEBUG 2024-02-23 09:30:02,849 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002PufNIAS HTTP/1.1" 200 None
+DEBUG 2024-02-23 09:30:02,949 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002PufNIAS/batch/751Ut000002U2o1IAC HTTP/1.1" 200 None
+DEBUG 2024-02-23 09:30:08,048 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002PufNIAS/batch/751Ut000002U2o1IAC HTTP/1.1" 200 None
+WARNING 2024-02-23 09:30:08,049 Issue with loading open Jobs from API
+WARNING 2024-02-23 09:30:08,049 Error Code Failed. Response content: InvalidBatch : Failed to process query: INVALID_FIELD:  Record_Type_Name__c = 'Retained' OR Record_Type_Name = 'Internal Recruitment')                                     ^ ERROR at Row:12:Column:180 No such column 'Record_Type_Name' on entity 'TR1__Job__c'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
+WARNING 2024-02-23 09:30:08,051 Something went wrong with loading opens, script exiting.
+INFO 2024-02-23 17:20:40,364 Starting Script.
+DEBUG 2024-02-23 17:20:40,902 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-23 17:20:41,376 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 818
+DEBUG 2024-02-23 17:20:41,380 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-23 17:20:41,587 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-23 17:20:42,007 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002QLJ3IAO/batch HTTP/1.1" 201 None
+DEBUG 2024-02-23 17:20:42,108 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002QLJ3IAO HTTP/1.1" 200 None
+DEBUG 2024-02-23 17:20:42,216 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002QLJ3IAO/batch/751Ut000002UXoeIAG HTTP/1.1" 200 None
+DEBUG 2024-02-23 17:20:47,324 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002QLJ3IAO/batch/751Ut000002UXoeIAG HTTP/1.1" 200 None
+DEBUG 2024-02-23 17:20:47,418 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002QLJ3IAO/batch/751Ut000002UXoeIAG/result HTTP/1.1" 200 None
+DEBUG 2024-02-23 17:20:47,568 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002QLJ3IAO/batch/751Ut000002UXoeIAG/result/752Ut000002KBKl HTTP/1.1" 200 None
+INFO 2024-02-23 17:20:47,577 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-23 17:20:47,577                                           attributes                  Id    CreatedDate TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  a0WUt000000RwkgMAC  1707948023000        2024-02-15
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  a0WUt000000NjE9MAK  1706911225000        2024-02-06
+INFO 2024-02-23 17:20:47,583 Successfully loaded jobs from API: (1162, 4)
+INFO 2024-02-23 17:20:47,586 Loaded in opens file & transformed data from API...:(1162, 4)
+INFO 2024-02-23 17:20:47,607 Done loading opens
+INFO 2024-02-23 17:20:47,607 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-24 09:30:01,767 Starting Script.
+DEBUG 2024-02-24 09:30:02,328 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-24 09:30:02,828 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-02-24 09:30:02,833 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-24 09:30:03,037 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-24 09:30:03,406 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002RMrTIAW/batch HTTP/1.1" 201 None
+DEBUG 2024-02-24 09:30:03,524 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002RMrTIAW HTTP/1.1" 200 None
+DEBUG 2024-02-24 09:30:03,615 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002RMrTIAW/batch/751Ut000002VYluIAG HTTP/1.1" 200 None
+DEBUG 2024-02-24 09:30:08,736 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002RMrTIAW/batch/751Ut000002VYluIAG HTTP/1.1" 200 None
+DEBUG 2024-02-24 09:30:08,837 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002RMrTIAW/batch/751Ut000002VYluIAG/result HTTP/1.1" 200 None
+DEBUG 2024-02-24 09:30:09,193 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002RMrTIAW/batch/751Ut000002VYluIAG/result/752Ut000002LACv HTTP/1.1" 200 None
+INFO 2024-02-24 09:30:09,202 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-24 09:30:09,202                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+
+[2 rows x 4 columns]
+INFO 2024-02-24 09:30:09,211 Successfully loaded jobs from API: (1167, 4)
+INFO 2024-02-24 09:30:09,213 Loaded in opens file & transformed data from API...:(1167, 4)
+INFO 2024-02-24 09:30:09,260 Done loading opens
+INFO 2024-02-24 09:30:09,260 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-25 09:30:02,013 Starting Script.
+DEBUG 2024-02-25 09:30:02,610 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-25 09:30:03,079 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-02-25 09:30:03,084 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-25 09:30:03,233 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-25 09:30:03,643 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002SUICIA4/batch HTTP/1.1" 201 None
+DEBUG 2024-02-25 09:30:03,749 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002SUICIA4 HTTP/1.1" 200 None
+DEBUG 2024-02-25 09:30:03,834 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002SUICIA4/batch/751Ut000002WhVJIA0 HTTP/1.1" 200 None
+DEBUG 2024-02-25 09:30:08,926 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002SUICIA4/batch/751Ut000002WhVJIA0 HTTP/1.1" 200 None
+DEBUG 2024-02-25 09:30:09,015 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002SUICIA4/batch/751Ut000002WhVJIA0/result HTTP/1.1" 200 None
+DEBUG 2024-02-25 09:30:09,154 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002SUICIA4/batch/751Ut000002WhVJIA0/result/752Ut000002MGHu HTTP/1.1" 200 None
+INFO 2024-02-25 09:30:09,162 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-25 09:30:09,163                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+
+[2 rows x 4 columns]
+INFO 2024-02-25 09:30:09,172 Successfully loaded jobs from API: (1165, 4)
+INFO 2024-02-25 09:30:09,174 Loaded in opens file & transformed data from API...:(1165, 4)
+INFO 2024-02-25 09:30:09,232 Done loading opens
+INFO 2024-02-25 09:30:09,233 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-26 09:30:01,342 Starting Script.
+DEBUG 2024-02-26 09:30:01,884 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-26 09:30:02,374 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-02-26 09:30:02,378 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-26 09:30:02,656 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-26 09:30:03,023 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002Tdo5IAC/batch HTTP/1.1" 201 None
+DEBUG 2024-02-26 09:30:03,151 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002Tdo5IAC HTTP/1.1" 200 None
+DEBUG 2024-02-26 09:30:03,240 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Tdo5IAC/batch/751Ut000002XpgvIAC HTTP/1.1" 200 None
+DEBUG 2024-02-26 09:30:08,341 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Tdo5IAC/batch/751Ut000002XpgvIAC HTTP/1.1" 200 None
+DEBUG 2024-02-26 09:30:08,443 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Tdo5IAC/batch/751Ut000002XpgvIAC/result HTTP/1.1" 200 None
+DEBUG 2024-02-26 09:30:08,575 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Tdo5IAC/batch/751Ut000002XpgvIAC/result/752Ut000002NLU1 HTTP/1.1" 200 None
+INFO 2024-02-26 09:30:08,584 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-26 09:30:08,584                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+
+[2 rows x 4 columns]
+INFO 2024-02-26 09:30:08,593 Successfully loaded jobs from API: (1156, 4)
+INFO 2024-02-26 09:30:08,595 Loaded in opens file & transformed data from API...:(1156, 4)
+INFO 2024-02-26 09:30:08,639 Done loading opens
+INFO 2024-02-26 09:30:08,639 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-27 09:30:01,878 Starting Script.
+DEBUG 2024-02-27 09:30:02,475 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-27 09:30:02,970 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-02-27 09:30:02,975 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-27 09:30:03,188 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-27 09:30:03,507 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002VCAJIA4/batch HTTP/1.1" 201 None
+DEBUG 2024-02-27 09:30:03,623 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002VCAJIA4 HTTP/1.1" 200 None
+DEBUG 2024-02-27 09:30:03,744 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002VCAJIA4/batch/751Ut000002ZPXEIA4 HTTP/1.1" 200 None
+DEBUG 2024-02-27 09:30:08,845 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002VCAJIA4/batch/751Ut000002ZPXEIA4 HTTP/1.1" 200 None
+DEBUG 2024-02-27 09:30:09,145 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002VCAJIA4/batch/751Ut000002ZPXEIA4/result HTTP/1.1" 200 None
+DEBUG 2024-02-27 09:30:09,305 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002VCAJIA4/batch/751Ut000002ZPXEIA4/result/752Ut000002Omgn HTTP/1.1" 200 None
+INFO 2024-02-27 09:30:09,313 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-27 09:30:09,313                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-26
+
+[2 rows x 4 columns]
+INFO 2024-02-27 09:30:09,322 Successfully loaded jobs from API: (1142, 4)
+INFO 2024-02-27 09:30:09,324 Loaded in opens file & transformed data from API...:(1142, 4)
+INFO 2024-02-27 09:30:09,368 Done loading opens
+INFO 2024-02-27 09:30:09,368 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-28 09:30:01,861 Starting Script.
+DEBUG 2024-02-28 09:30:02,444 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-28 09:30:02,936 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-02-28 09:30:02,940 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-28 09:30:03,175 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-28 09:30:03,514 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002Wq2NIAS/batch HTTP/1.1" 201 None
+DEBUG 2024-02-28 09:30:03,835 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002Wq2NIAS HTTP/1.1" 200 None
+DEBUG 2024-02-28 09:30:04,144 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Wq2NIAS/batch/751Ut000002b7j6IAA HTTP/1.1" 200 None
+DEBUG 2024-02-28 09:30:09,247 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Wq2NIAS/batch/751Ut000002b7j6IAA HTTP/1.1" 200 None
+DEBUG 2024-02-28 09:30:09,419 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Wq2NIAS/batch/751Ut000002b7j6IAA/result HTTP/1.1" 200 None
+DEBUG 2024-02-28 09:30:09,589 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Wq2NIAS/batch/751Ut000002b7j6IAA/result/752Ut000002QPHl HTTP/1.1" 200 None
+INFO 2024-02-28 09:30:09,598 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-28 09:30:09,599                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-26
+
+[2 rows x 4 columns]
+INFO 2024-02-28 09:30:09,608 Successfully loaded jobs from API: (1161, 4)
+INFO 2024-02-28 09:30:09,610 Loaded in opens file & transformed data from API...:(1161, 4)
+INFO 2024-02-28 09:30:09,660 Done loading opens
+INFO 2024-02-28 09:30:09,660 Done loading all data into opens table successfully, exiting script.
+INFO 2024-02-29 09:30:01,510 Starting Script.
+DEBUG 2024-02-29 09:30:02,146 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-02-29 09:30:02,721 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-02-29 09:30:02,725 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-02-29 09:30:03,125 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-02-29 09:30:03,538 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002Ya01IAC/batch HTTP/1.1" 201 None
+DEBUG 2024-02-29 09:30:03,666 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002Ya01IAC HTTP/1.1" 200 None
+DEBUG 2024-02-29 09:30:03,773 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Ya01IAC/batch/751Ut000002cwwWIAQ HTTP/1.1" 200 None
+DEBUG 2024-02-29 09:30:08,885 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Ya01IAC/batch/751Ut000002cwwWIAQ HTTP/1.1" 200 None
+DEBUG 2024-02-29 09:30:08,984 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Ya01IAC/batch/751Ut000002cwwWIAQ/result HTTP/1.1" 200 None
+DEBUG 2024-02-29 09:30:09,152 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002Ya01IAC/batch/751Ut000002cwwWIAQ/result/752Ut000002S3cv HTTP/1.1" 200 None
+INFO 2024-02-29 09:30:09,160 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-02-29 09:30:09,161                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+
+[2 rows x 4 columns]
+INFO 2024-02-29 09:30:09,169 Successfully loaded jobs from API: (1150, 4)
+INFO 2024-02-29 09:30:09,172 Loaded in opens file & transformed data from API...:(1150, 4)
+INFO 2024-02-29 09:30:09,185 Done loading opens
+INFO 2024-02-29 09:30:09,185 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-01 09:30:01,616 Starting Script.
+DEBUG 2024-03-01 09:30:02,186 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-01 09:30:02,655 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-03-01 09:30:02,659 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-01 09:30:03,027 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-01 09:30:03,628 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002aFAkIAM/batch HTTP/1.1" 201 None
+DEBUG 2024-03-01 09:30:03,938 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002aFAkIAM HTTP/1.1" 200 None
+DEBUG 2024-03-01 09:30:04,316 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002aFAkIAM/batch/751Ut000002ed1gIAA HTTP/1.1" 200 None
+DEBUG 2024-03-01 09:30:09,425 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002aFAkIAM/batch/751Ut000002ed1gIAA HTTP/1.1" 200 None
+DEBUG 2024-03-01 09:30:09,722 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002aFAkIAM/batch/751Ut000002ed1gIAA/result HTTP/1.1" 200 None
+DEBUG 2024-03-01 09:30:10,052 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002aFAkIAM/batch/751Ut000002ed1gIAA/result/752Ut000002Tajh HTTP/1.1" 200 None
+INFO 2024-03-01 09:30:10,061 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-01 09:30:10,062                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...              None
+
+[2 rows x 4 columns]
+INFO 2024-03-01 09:30:10,070 Successfully loaded jobs from API: (1169, 4)
+INFO 2024-03-01 09:30:10,073 Loaded in opens file & transformed data from API...:(1169, 4)
+INFO 2024-03-01 09:30:10,117 Done loading opens
+INFO 2024-03-01 09:30:10,117 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-02 09:30:01,767 Starting Script.
+DEBUG 2024-03-02 09:30:02,324 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-02 09:30:02,825 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-03-02 09:30:02,830 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-02 09:30:03,246 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-02 09:30:03,781 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002bmfhIAA/batch HTTP/1.1" 201 None
+DEBUG 2024-03-02 09:30:04,130 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002bmfhIAA HTTP/1.1" 200 None
+DEBUG 2024-03-02 09:30:04,438 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002bmfhIAA/batch/751Ut000002gENEIA2 HTTP/1.1" 200 None
+DEBUG 2024-03-02 09:30:09,746 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002bmfhIAA/batch/751Ut000002gENEIA2 HTTP/1.1" 200 None
+DEBUG 2024-03-02 09:30:10,072 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002bmfhIAA/batch/751Ut000002gENEIA2/result HTTP/1.1" 200 None
+DEBUG 2024-03-02 09:30:10,231 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002bmfhIAA/batch/751Ut000002gENEIA2/result/752Ut000002V4Sn HTTP/1.1" 200 None
+INFO 2024-03-02 09:30:10,239 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-02 09:30:10,240                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-01-24
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+
+[2 rows x 4 columns]
+INFO 2024-03-02 09:30:10,248 Successfully loaded jobs from API: (1159, 4)
+INFO 2024-03-02 09:30:10,251 Loaded in opens file & transformed data from API...:(1159, 4)
+INFO 2024-03-02 09:30:10,394 Done loading opens
+INFO 2024-03-02 09:30:10,394 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-03 09:30:01,749 Starting Script.
+DEBUG 2024-03-03 09:30:02,309 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-03 09:30:02,813 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-03-03 09:30:02,818 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-03 09:30:03,227 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-03 09:30:03,763 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002cw9wIAA/batch HTTP/1.1" 201 None
+DEBUG 2024-03-03 09:30:04,086 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002cw9wIAA HTTP/1.1" 200 None
+DEBUG 2024-03-03 09:30:04,379 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002cw9wIAA/batch/751Ut000002hN1qIAE HTTP/1.1" 200 None
+DEBUG 2024-03-03 09:30:09,698 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002cw9wIAA/batch/751Ut000002hN1qIAE HTTP/1.1" 200 None
+DEBUG 2024-03-03 09:30:09,982 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002cw9wIAA/batch/751Ut000002hN1qIAE/result HTTP/1.1" 200 None
+DEBUG 2024-03-03 09:30:10,347 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002cw9wIAA/batch/751Ut000002hN1qIAE/result/752Ut000002W8PY HTTP/1.1" 200 None
+INFO 2024-03-03 09:30:10,357 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-03 09:30:10,357                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-01-24
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+
+[2 rows x 4 columns]
+INFO 2024-03-03 09:30:10,366 Successfully loaded jobs from API: (1159, 4)
+INFO 2024-03-03 09:30:10,368 Loaded in opens file & transformed data from API...:(1159, 4)
+INFO 2024-03-03 09:30:10,450 Done loading opens
+INFO 2024-03-03 09:30:10,450 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-04 09:30:01,453 Starting Script.
+DEBUG 2024-03-04 09:30:02,002 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-04 09:30:02,937 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 814
+DEBUG 2024-03-04 09:30:02,941 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-04 09:30:03,347 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-04 09:30:03,949 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002dznMIAQ/batch HTTP/1.1" 201 None
+DEBUG 2024-03-04 09:30:04,262 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002dznMIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-04 09:30:04,549 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002dznMIAQ/batch/751Ut000002iYo3IAE HTTP/1.1" 200 None
+DEBUG 2024-03-04 09:30:09,839 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002dznMIAQ/batch/751Ut000002iYo3IAE HTTP/1.1" 200 None
+DEBUG 2024-03-04 09:30:10,123 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002dznMIAQ/batch/751Ut000002iYo3IAE/result HTTP/1.1" 200 None
+DEBUG 2024-03-04 09:30:10,444 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002dznMIAQ/batch/751Ut000002iYo3IAE/result/752Ut000002XJE1 HTTP/1.1" 200 None
+INFO 2024-03-04 09:30:10,452 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-04 09:30:10,453                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-01-24
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+
+[2 rows x 4 columns]
+INFO 2024-03-04 09:30:10,461 Successfully loaded jobs from API: (1156, 4)
+INFO 2024-03-04 09:30:10,464 Loaded in opens file & transformed data from API...:(1156, 4)
+INFO 2024-03-04 09:30:10,505 Done loading opens
+INFO 2024-03-04 09:30:10,505 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-05 09:30:01,476 Starting Script.
+DEBUG 2024-03-05 09:30:02,025 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-05 09:30:02,526 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-03-05 09:30:02,531 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-05 09:30:02,891 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-05 09:30:03,489 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002fnExIAI/batch HTTP/1.1" 201 None
+DEBUG 2024-03-05 09:30:03,790 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002fnExIAI HTTP/1.1" 200 None
+DEBUG 2024-03-05 09:30:03,896 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002fnExIAI/batch/751Ut000002k89YIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-05 09:30:09,192 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002fnExIAI/batch/751Ut000002k89YIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-05 09:30:09,516 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002fnExIAI/batch/751Ut000002k89YIAQ/result HTTP/1.1" 200 None
+DEBUG 2024-03-05 09:30:09,852 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002fnExIAI/batch/751Ut000002k89YIAQ/result/752Ut000002YkYr HTTP/1.1" 200 None
+INFO 2024-03-05 09:30:09,861 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-05 09:30:09,862                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-14
+
+[2 rows x 4 columns]
+INFO 2024-03-05 09:30:09,870 Successfully loaded jobs from API: (1126, 4)
+INFO 2024-03-05 09:30:09,873 Loaded in opens file & transformed data from API...:(1126, 4)
+INFO 2024-03-05 09:30:09,911 Done loading opens
+INFO 2024-03-05 09:30:09,911 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-06 09:30:01,721 Starting Script.
+DEBUG 2024-03-06 09:30:02,288 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-06 09:30:02,824 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-03-06 09:30:02,828 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-06 09:30:03,330 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-06 09:30:03,888 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002hT45IAE/batch HTTP/1.1" 201 None
+DEBUG 2024-03-06 09:30:04,215 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002hT45IAE HTTP/1.1" 200 None
+DEBUG 2024-03-06 09:30:04,509 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002hT45IAE/batch/751Ut000002lxwMIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-06 09:30:09,834 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002hT45IAE/batch/751Ut000002lxwMIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-06 09:30:10,126 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002hT45IAE/batch/751Ut000002lxwMIAQ/result HTTP/1.1" 200 None
+DEBUG 2024-03-06 09:30:10,492 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002hT45IAE/batch/751Ut000002lxwMIAQ/result/752Ut000002aSXk HTTP/1.1" 200 None
+INFO 2024-03-06 09:30:10,500 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-06 09:30:10,501                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-06 09:30:10,510 Successfully loaded jobs from API: (1123, 4)
+INFO 2024-03-06 09:30:10,512 Loaded in opens file & transformed data from API...:(1123, 4)
+INFO 2024-03-06 09:30:10,558 Done loading opens
+INFO 2024-03-06 09:30:10,558 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-07 09:30:02,032 Starting Script.
+DEBUG 2024-03-07 09:30:02,605 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-07 09:30:03,093 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-03-07 09:30:03,097 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-07 09:30:03,473 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-07 09:30:03,991 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002jAi2IAE/batch HTTP/1.1" 201 None
+DEBUG 2024-03-07 09:30:04,106 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002jAi2IAE HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:04,375 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:09,702 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:15,065 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:20,360 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:25,668 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:30,944 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:36,266 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:36,559 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI/result HTTP/1.1" 200 None
+DEBUG 2024-03-07 09:30:36,951 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002jAi2IAE/batch/751Ut000002niBeIAI/result/752Ut000002c2fb HTTP/1.1" 200 None
+INFO 2024-03-07 09:30:36,959 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-07 09:30:36,960                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-07 09:30:36,968 Successfully loaded jobs from API: (1124, 4)
+INFO 2024-03-07 09:30:36,971 Loaded in opens file & transformed data from API...:(1124, 4)
+WARNING 2024-03-07 09:30:36,973 Issue loading in opens to SQL Server
+WARNING 2024-03-07 09:30:36,973 ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: Error code 0x68 (104) (SQLExecDirectW)')
+WARNING 2024-03-07 09:30:36,973 Something went wrong with loading opens, script exiting.
+INFO 2024-03-08 09:30:01,603 Starting Script.
+DEBUG 2024-03-08 09:30:02,169 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-08 09:30:02,655 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 817
+DEBUG 2024-03-08 09:30:02,659 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-08 09:30:03,061 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-08 09:30:03,656 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002kIdZIAU/batch HTTP/1.1" 201 None
+DEBUG 2024-03-08 09:30:03,981 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002kIdZIAU HTTP/1.1" 200 None
+DEBUG 2024-03-08 09:30:04,265 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002kIdZIAU/batch/751Ut000002pG1kIAE HTTP/1.1" 200 None
+DEBUG 2024-03-08 09:30:09,573 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002kIdZIAU/batch/751Ut000002pG1kIAE HTTP/1.1" 200 None
+DEBUG 2024-03-08 09:30:09,882 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002kIdZIAU/batch/751Ut000002pG1kIAE/result HTTP/1.1" 200 None
+DEBUG 2024-03-08 09:30:10,248 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002kIdZIAU/batch/751Ut000002pG1kIAE/result/752Ut000002dYf1 HTTP/1.1" 200 None
+INFO 2024-03-08 09:30:10,256 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-08 09:30:10,257                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-08 09:30:10,265 Successfully loaded jobs from API: (1091, 4)
+INFO 2024-03-08 09:30:10,267 Loaded in opens file & transformed data from API...:(1091, 4)
+INFO 2024-03-08 09:30:10,345 Done loading opens
+INFO 2024-03-08 09:30:10,346 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-09 09:30:01,095 Starting Script.
+DEBUG 2024-03-09 09:30:01,705 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-09 09:30:02,169 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 818
+DEBUG 2024-03-09 09:30:02,173 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-09 09:30:02,649 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-09 09:30:02,977 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002mC93IAE/batch HTTP/1.1" 201 None
+DEBUG 2024-03-09 09:30:03,290 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002mC93IAE HTTP/1.1" 200 None
+DEBUG 2024-03-09 09:30:03,376 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002mC93IAE/batch/751Ut000002qiosIAA HTTP/1.1" 200 None
+DEBUG 2024-03-09 09:30:08,718 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002mC93IAE/batch/751Ut000002qiosIAA HTTP/1.1" 200 None
+DEBUG 2024-03-09 09:30:09,004 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002mC93IAE/batch/751Ut000002qiosIAA/result HTTP/1.1" 200 None
+DEBUG 2024-03-09 09:30:09,327 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002mC93IAE/batch/751Ut000002qiosIAA/result/752Ut000002f0sY HTTP/1.1" 200 None
+INFO 2024-03-09 09:30:09,336 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-09 09:30:09,336                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-09 09:30:09,344 Successfully loaded jobs from API: (1082, 4)
+INFO 2024-03-09 09:30:09,346 Loaded in opens file & transformed data from API...:(1082, 4)
+INFO 2024-03-09 09:30:09,423 Done loading opens
+INFO 2024-03-09 09:30:09,423 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-10 09:30:01,299 Starting Script.
+DEBUG 2024-03-10 09:30:01,868 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-10 09:30:02,401 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 813
+DEBUG 2024-03-10 09:30:02,405 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-10 09:30:02,810 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-10 09:30:03,361 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002nLlKIAU/batch HTTP/1.1" 201 None
+DEBUG 2024-03-10 09:30:03,676 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002nLlKIAU HTTP/1.1" 200 None
+DEBUG 2024-03-10 09:30:03,957 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002nLlKIAU/batch/751Ut000002rwkjIAA HTTP/1.1" 200 None
+DEBUG 2024-03-10 09:30:09,255 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002nLlKIAU/batch/751Ut000002rwkjIAA HTTP/1.1" 200 None
+DEBUG 2024-03-10 09:30:09,546 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002nLlKIAU/batch/751Ut000002rwkjIAA/result HTTP/1.1" 200 None
+DEBUG 2024-03-10 09:30:09,886 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002nLlKIAU/batch/751Ut000002rwkjIAA/result/752Ut000002g78p HTTP/1.1" 200 None
+INFO 2024-03-10 09:30:09,893 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-10 09:30:09,894                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-10 09:30:09,901 Successfully loaded jobs from API: (1081, 4)
+INFO 2024-03-10 09:30:09,904 Loaded in opens file & transformed data from API...:(1081, 4)
+INFO 2024-03-10 09:30:09,984 Done loading opens
+INFO 2024-03-10 09:30:09,984 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-11 09:30:01,193 Starting Script.
+DEBUG 2024-03-11 09:30:01,748 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-11 09:30:02,278 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-03-11 09:30:02,282 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-11 09:30:02,688 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-11 09:30:03,245 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002oQPgIAM/batch HTTP/1.1" 201 None
+DEBUG 2024-03-11 09:30:03,552 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002oQPgIAM HTTP/1.1" 200 None
+DEBUG 2024-03-11 09:30:03,845 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002oQPgIAM/batch/751Ut000002t8yOIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-11 09:30:09,157 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002oQPgIAM/batch/751Ut000002t8yOIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-11 09:30:14,463 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002oQPgIAM/batch/751Ut000002t8yOIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-11 09:30:19,760 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002oQPgIAM/batch/751Ut000002t8yOIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-11 09:30:20,070 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002oQPgIAM/batch/751Ut000002t8yOIAQ/result HTTP/1.1" 200 None
+DEBUG 2024-03-11 09:30:20,400 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002oQPgIAM/batch/751Ut000002t8yOIAQ/result/752Ut000002hGzd HTTP/1.1" 200 None
+INFO 2024-03-11 09:30:20,408 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-11 09:30:20,408                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-11 09:30:20,416 Successfully loaded jobs from API: (1080, 4)
+INFO 2024-03-11 09:30:20,418 Loaded in opens file & transformed data from API...:(1080, 4)
+INFO 2024-03-11 09:30:20,465 Done loading opens
+INFO 2024-03-11 09:30:20,465 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-12 09:30:01,629 Starting Script.
+DEBUG 2024-03-12 09:30:02,210 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-12 09:30:02,706 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 815
+DEBUG 2024-03-12 09:30:02,710 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-12 09:30:03,109 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-12 09:30:03,782 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002q8OZIAY/batch HTTP/1.1" 201 None
+DEBUG 2024-03-12 09:30:03,932 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002q8OZIAY HTTP/1.1" 200 None
+DEBUG 2024-03-12 09:30:04,780 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002q8OZIAY/batch/751Ut000002upZlIAI HTTP/1.1" 200 None
+DEBUG 2024-03-12 09:30:04,881 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002q8OZIAY/batch/751Ut000002upZlIAI/result HTTP/1.1" 200 None
+DEBUG 2024-03-12 09:30:05,020 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002q8OZIAY/batch/751Ut000002upZlIAI/result/752Ut000002ip7J HTTP/1.1" 200 None
+INFO 2024-03-12 09:30:05,028 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-12 09:30:05,029                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-12 09:30:05,037 Successfully loaded jobs from API: (1065, 4)
+INFO 2024-03-12 09:30:05,039 Loaded in opens file & transformed data from API...:(1065, 4)
+INFO 2024-03-12 09:30:05,080 Done loading opens
+INFO 2024-03-12 09:30:05,081 Done loading all data into opens table successfully, exiting script.

@@ -1,0 +1,997 @@
+INFO 2024-02-21 08:02:02,367 Starting Script.
+INFO 2024-02-21 08:02:02,367 Dates for SOQL update statement ('02/21/2024', '02/20/2024'),('2024-02-21', '2024-02-20')
+INFO 2024-02-21 08:02:09,104       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                    None
+1   0013700000cBblU  ...                    None
+2   0013700000cBblU  ...                    None
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+..              ...  ...                     ...
+66  0013700000cBblU  ...                    None
+67  0013700000cBblU  ...                    None
+68  0013700000cBblU  ...                    None
+69  0013700000cBblU  ...                    None
+70  0013700000cBblU  ...                    None
+
+[71 rows x 65 columns]
+INFO 2024-02-21 08:02:09,168 Starting changing column names...
+INFO 2024-02-21 08:02:09,168 Done with changing column names...
+INFO 2024-02-21 08:02:09,168 Starting date transformations...
+INFO 2024-02-21 08:02:09,188 Starting Effective Date and End Date transformations
+INFO 2024-02-21 08:02:09,189 Done with Eff and End Date transformations
+INFO 2024-02-21 08:02:09,189 Done with date transformations...
+INFO 2024-02-21 08:02:09,189 Starting other transformations...
+INFO 2024-02-21 08:02:09,192 done with other transformations...
+INFO 2024-02-21 08:02:09,192 (71, 68)
+INFO 2024-02-21 08:02:09,205 Starting to grab placements from SQL Server...
+INFO 2024-02-21 08:02:21,274 (21549, 68)
+INFO 2024-02-21 08:02:21,274 Starting Comparison
+INFO 2024-02-21 08:02:21,274 ['a09Ut000000pmdiIAA', 'a09Ut000000oorGIAQ', 'a09Ut000000qwsjIAA', 'a09Ut000000qDu1IAE', 'a09Ut000000phz0IAA', 'a09Ut000000qEA9IAM', 'a091G000009kdpDQAQ', 'a09Ut000000sAK9IAM', 'a09Ut000000rNRVIA2', 'a09Ut000000qWS1IAM', 'a09Ut000000oGnzIAE', 'a096R00002l8qa9QAA', 'a09Ut000000s8BtIAI', 'a09Ut000000rPZlIAM', 'a09Ut000000qKPFIA2', 'a09Ut000000qxAUIAY', 'a09Ut000000qevpIAA', 'a09Ut000000rAHPIA2', 'a09Ut000000rfg9IAA', 'a09Ut000000qJY4IAM', 'a091G00000BMoLTQA1', 'a09Ut000000rMP0IAM', 'a09Ut000000qvWsIAI', 'a09Ut000000s48HIAQ', 'a09Ut000000qHmNIAU', 'a096R00002hLvNZQA0', 'a09Ut000000s7hFIAQ', 'a09Ut000000rA1GIAU', 'a09Ut000000opvOIAQ', 'a09Ut000000qK97IAE', 'a09Ut000000rHkMIAU', 'a09Ut000000s0mEIAQ', 'a09Ut000000ouF8IAI', 'a09Ut000000osejIAA', 'a09Ut000000qf2HIAQ', 'a09Ut000000rBRyIAM', 'a09Ut000000qRs9IAE', 'a09Ut000000s7FqIAI', 'a09Ut000000r9mjIAA', 'a09Ut000000qJ3NIAU', 'a09Ut000000plmTIAQ', 'a09Ut000000qFuEIAU', 'a09Ut000000sDWXIA2', 'a09Ut000000gRocIAE', 'a09Ut000000s9xZIAQ', 'a09Ut000000oS7bIAE', 'a09Ut000000rkkgIAA', 'a091G00000BN3rQQAT', 'a09Ut000000qQWHIA2', 'a09Ut000000pVbFIAU', 'a091G000009kiHeQAI', 'a09Ut000000rNmUIAU', 'a09Ut000000s7R8IAI', 'a09Ut000000rDf3IAE', 'a09Ut000000ou5RIAQ', 'a0937000009g6S1AAI', 'a09Ut000000rIDJIA2', 'a09Ut000000rnCIIAY', 'a09Ut000000qEEzIAM', 'a09Ut000000s40EIAQ', 'a09Ut000000rEw6IAE', 'a09Ut000000qQRRIA2', 'a09Ut000000rDrxIAE', 'a09Ut000000rJ4ZIAU', 'a09Ut000000sDTJIA2', 'a09Ut000000qwcbIAA', 'a09Ut000000offtIAA', 'a09Ut000000s1ryIAA', 'a09Ut000000qEDNIA2', 'a0937000009gIBMAA2', 'a09Ut000000qJ8EIAU']
+INFO 2024-02-21 08:02:21,274 Is there a difference between two column sets?set()
+INFO 2024-02-21 08:02:23,330 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-21 08:02:23,330 AMOUNT OF IDS TO UPDATE: 71
+INFO 2024-02-21 08:02:23,331 (71, 68)
+INFO 2024-02-21 08:02:27,252 Updated 58 rows.
+INFO 2024-02-21 08:02:27,252 Done updating existing placements in database
+INFO 2024-02-21 08:02:27,252 Adding new and updated records to DB
+INFO 2024-02-21 08:02:27,252 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-21 08:02:27,939 Done adding new and updated records to database.
+INFO 2024-02-22 08:02:01,758 Starting Script.
+INFO 2024-02-22 08:02:01,759 Dates for SOQL update statement ('02/22/2024', '02/21/2024'),('2024-02-22', '2024-02-21')
+INFO 2024-02-22 08:02:08,962       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                    None
+1   0013700000cBblU  ...                    None
+2   0013700000cBblU  ...                    None
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+..              ...  ...                     ...
+64  0013700000cBblU  ...                    None
+65  0013700000cBblU  ...                    None
+66  0011G00000uy4Hh  ...                    None
+67  0013700000cBblU  ...                    None
+68  0013700000cBblU  ...                    None
+
+[69 rows x 65 columns]
+INFO 2024-02-22 08:02:09,027 Starting changing column names...
+INFO 2024-02-22 08:02:09,028 Done with changing column names...
+INFO 2024-02-22 08:02:09,028 Starting date transformations...
+INFO 2024-02-22 08:02:09,048 Starting Effective Date and End Date transformations
+INFO 2024-02-22 08:02:09,048 Done with Eff and End Date transformations
+INFO 2024-02-22 08:02:09,049 Done with date transformations...
+INFO 2024-02-22 08:02:09,049 Starting other transformations...
+INFO 2024-02-22 08:02:09,052 done with other transformations...
+INFO 2024-02-22 08:02:09,052 (69, 68)
+INFO 2024-02-22 08:02:09,066 Starting to grab placements from SQL Server...
+INFO 2024-02-22 08:02:12,681 (21620, 68)
+INFO 2024-02-22 08:02:12,681 Starting Comparison
+INFO 2024-02-22 08:02:12,681 ['a09Ut000000sTzVIAU', 'a09Ut000000ijPdIAI', 'a09Ut000000phz0IAA', 'a09Ut000000rHNiIAM', 'a09Ut000000sAK9IAM', 'a09Ut000000rNRVIA2', 'a09Ut000000sgQTIAY', 'a09Ut000000seq6IAA', 'a09Ut000000s8BtIAI', 'a09Ut000000sh1aIAA', 'a09Ut000000qR90IAE', 'a09Ut000000qUA5IAM', 'a09Ut000000o1SLIAY', 'a09Ut000000r4AMIAY', 'a09Ut000000pvlqIAA', 'a09Ut000000t97VIAQ', 'a09Ut000000rMP0IAM', 'a096R000034V8WdQAK', 'a09Ut000000ijhNIAQ', 'a09Ut000000shJMIAY', 'a09Ut000000s48HIAQ', 'a09Ut000000s7hFIAQ', 'a09Ut000000UhU9IAK', 'a09Ut000000INcUIAW', 'a09Ut000000sawDIAQ', 'a09Ut000000rCcXIAU', 'a09Ut000000l6A1IAI', 'a09Ut000000s0mEIAQ', 'a09Ut000000UKkUIAW', 'a09Ut000000skDxIAI', 'a09Ut000000rBRyIAM', 'a09Ut000000s7FqIAI', 'a09Ut000000sk17IAA', 'a09Ut000000r9mjIAA', 'a09Ut000000sgdPIAQ', 'a09Ut000000skx9IAA', 'a09Ut000000euxxIAA', 'a09Ut000000sibxIAA', 'a096R000036oYz9QAE', 'a09Ut000000swS2IAI', 'a09Ut000000o1fFIAQ', 'a09Ut000000sDWXIA2', 'a09Ut000000r9JhIAI', 'a09Ut000000s9xZIAQ', 'a0937000009g4nqAAA', 'a09Ut000000f0thIAA', 'a09Ut000000sdlxIAA', 'a09Ut000000sutFIAQ', 'a09Ut000000sklpIAA', 'a09Ut000000nzvCIAQ', 'a09Ut000000mbOfIAI', 'a09Ut000000O3hVIAS', 'a09Ut000000rNmUIAU', 'a096R000036ogQLQAY', 'a09Ut000000s7R8IAI', 'a09Ut000000mbmrIAA', 'a09Ut000000skFZIAY', 'a09Ut000000ox9mIAA', 'a09Ut000000rIDJIA2', 'a09Ut000000sk7YIAQ', 'a091G000009kkoaQAA', 'a0937000009g4ZjAAI', 'a09Ut000000maUDIAY', 'a09Ut000000qwW9IAI', 'a09Ut000000rDrxIAE', 'a09Ut000000sDTJIA2', 'a096R00002Py0p1QAB', 'a09Ut000000t22oIAA', 'a09Ut000000s1ryIAA']
+INFO 2024-02-22 08:02:12,682 Is there a difference between two column sets?set()
+INFO 2024-02-22 08:02:14,791 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-22 08:02:14,791 AMOUNT OF IDS TO UPDATE: 69
+INFO 2024-02-22 08:02:14,792 (69, 68)
+INFO 2024-02-22 08:02:17,999 Updated 77 rows.
+INFO 2024-02-22 08:02:17,999 Done updating existing placements in database
+INFO 2024-02-22 08:02:17,999 Adding new and updated records to DB
+INFO 2024-02-22 08:02:17,999 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-22 08:02:20,275 Done adding new and updated records to database.
+INFO 2024-02-23 08:02:01,929 Starting Script.
+INFO 2024-02-23 08:02:01,929 Dates for SOQL update statement ('02/23/2024', '02/22/2024'),('2024-02-23', '2024-02-22')
+INFO 2024-02-23 08:02:08,592       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0011G00000uy4Hh  ...                   None
+5   0013700000cBblU  ...                   None
+6   0013700000cBblU  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0013700000cBblU  ...                   None
+14  0013700000cBblU  ...                   None
+15  0013700000cBblU  ...                   None
+16  0013700000cBblU  ...                   None
+17  0013700000cBblU  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0013700000cBblU  ...                   None
+25  0013700000cBblU  ...                   None
+26  0013700000cBblU  ...                   None
+27  0013700000cBblU  ...                   None
+28  0013700000cBblU  ...                   None
+29  0013700000cBblU  ...                   None
+30  0013700000cBblU  ...                   None
+31  0013700000cBblU  ...                   None
+32  0013700000cBblU  ...                   None
+33  0013700000cBblU  ...                   None
+34  0013700000cBblU  ...                   None
+35  0013700000cBblU  ...                   None
+36  0013700000cBblU  ...                   None
+
+[37 rows x 65 columns]
+INFO 2024-02-23 08:02:08,677 Starting changing column names...
+INFO 2024-02-23 08:02:08,677 Done with changing column names...
+INFO 2024-02-23 08:02:08,677 Starting date transformations...
+INFO 2024-02-23 08:02:08,696 Starting Effective Date and End Date transformations
+INFO 2024-02-23 08:02:08,697 Done with Eff and End Date transformations
+INFO 2024-02-23 08:02:08,697 Done with date transformations...
+INFO 2024-02-23 08:02:08,697 Starting other transformations...
+INFO 2024-02-23 08:02:08,699 done with other transformations...
+INFO 2024-02-23 08:02:08,699 (37, 68)
+INFO 2024-02-23 08:02:08,712 Starting to grab placements from SQL Server...
+INFO 2024-02-23 08:02:21,312 (21689, 68)
+INFO 2024-02-23 08:02:21,312 Starting Comparison
+INFO 2024-02-23 08:02:21,312 ['a09Ut000000ttLdIAI', 'a09Ut000000tE8oIAE', 'a09Ut000000sAK9IAM', 'a09Ut000000tT30IAE', 'a09Ut000000tjqxIAA', 'a09Ut000000tLIMIA2', 'a09Ut000000tje2IAA', 'a09Ut000000t97VIAQ', 'a09Ut000000tLTfIAM', 'a09Ut000000tI17IAE', 'a09Ut000000tWDmIAM', 'a09Ut000000shJMIAY', 'a09Ut000000tN2QIAU', 'a09Ut000000UKkUIAW', 'a09Ut000000tLdKIAU', 'a09Ut000000tQWXIA2', 'a09Ut000000qArKIAU', 'a09Ut000000tg3SIAQ', 'a09Ut000000tPSPIA2', 'a09Ut000000swS2IAI', 'a09Ut000000sutFIAQ', 'a09Ut000000tc9YIAQ', 'a09Ut000000tWk1IAE', 'a09Ut000000tPk9IAE', 'a09Ut000000s7R8IAI', 'a09Ut000000rnCIIAY', 'a096R000036oWxfQAE', 'a09Ut000000rEw6IAE', 'a09Ut000000tKR7IAM', 'a09Ut000000tP10IAE', 'a09Ut000000tTsbIAE', 'a09Ut000000tbJtIAI', 'a09Ut000000tTCgIAM', 'a09Ut000000tOo5IAE', 'a09Ut000000t22oIAA', 'a091G00000C0estQAB', 'a09Ut000000tGiVIAU']
+INFO 2024-02-23 08:02:21,312 Is there a difference between two column sets?set()
+INFO 2024-02-23 08:02:22,269 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-23 08:02:22,269 AMOUNT OF IDS TO UPDATE: 37
+INFO 2024-02-23 08:02:22,270 (37, 68)
+INFO 2024-02-23 08:02:23,652 Updated 21 rows.
+INFO 2024-02-23 08:02:23,653 Done updating existing placements in database
+INFO 2024-02-23 08:02:23,653 Adding new and updated records to DB
+INFO 2024-02-23 08:02:23,653 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-23 08:02:25,735 Done adding new and updated records to database.
+INFO 2024-02-24 08:02:02,119 Starting Script.
+INFO 2024-02-24 08:02:02,119 Dates for SOQL update statement ('02/24/2024', '02/23/2024'),('2024-02-24', '2024-02-23')
+INFO 2024-02-24 08:02:09,159       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                    None
+1   0013700000cBblU  ...                    None
+2   0013700000cBblU  ...                    None
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+5   0013700000cBblU  ...                    None
+6   0013700000cBblU  ...                    None
+7   0013700000cBblU  ...                    None
+8   0013700000cBblU  ...                    None
+9   0013700000cBblU  ...                    None
+10  0013700000cBblU  ...                    None
+11  0013700000cBblU  ...                    None
+12  0013700000cBblU  ...                    None
+13  0013700000cBblU  ...                    None
+14  0011G00000uy4Hh  ...                    None
+15  0013700000cBblU  ...                    None
+16  0013700000cBblU  ...                    None
+17  0011G00000fZdyS  ...                    None
+18  0013700000cBblU  ...                    None
+19  0011G00000uy4Hh  ...                    None
+20  0013700000cBblU  ...                    None
+21  0013700000cBblU  ...                    None
+22  0013700000cBblU  ...                    None
+23  0013700000cBblU  ...                    None
+24  0013700000cBblU  ...                    None
+25  0013700000cBblU  ...                    None
+26  0013700000cBblU  ...                    None
+27  0013700000cBblU  ...                    None
+
+[28 rows x 65 columns]
+INFO 2024-02-24 08:02:09,231 Starting changing column names...
+INFO 2024-02-24 08:02:09,231 Done with changing column names...
+INFO 2024-02-24 08:02:09,231 Starting date transformations...
+INFO 2024-02-24 08:02:09,250 Starting Effective Date and End Date transformations
+INFO 2024-02-24 08:02:09,250 Done with Eff and End Date transformations
+INFO 2024-02-24 08:02:09,250 Done with date transformations...
+INFO 2024-02-24 08:02:09,250 Starting other transformations...
+INFO 2024-02-24 08:02:09,253 done with other transformations...
+INFO 2024-02-24 08:02:09,253 (28, 68)
+INFO 2024-02-24 08:02:09,266 Starting to grab placements from SQL Server...
+INFO 2024-02-24 08:02:12,914 (21726, 68)
+INFO 2024-02-24 08:02:12,914 Starting Comparison
+INFO 2024-02-24 08:02:12,914 ['a09Ut000000uZsjIAE', 'a09Ut000000uPBpIAM', 'a09Ut000000ttLdIAI', 'a09Ut000000uJ81IAE', 'a09Ut000000u6Z3IAI', 'a09Ut000000tT30IAE', 'a09Ut000000uC4vIAE', 'a09Ut000000uJnxIAE', 'a09Ut000000tje2IAA', 'a09Ut000000uPtOIAU', 'a09Ut000000u9lQIAQ', 'a09Ut000000uGJzIAM', 'a09Ut000000uabtIAA', 'a0937000009g5LTAAY', 'a09Ut000000uZ6LIAU', 'a09Ut000000uaqRIAQ', 'a09Ut000000u5ufIAA', 'a096R00002xUA7JQAW', 'a09Ut000000ubzNIAQ', 'a09Ut000000uZ7xIAE', 'a09Ut000000u5mbIAA', 'a096R000034Vh9LQAS', 'a09Ut000000uTy3IAE', 'a09Ut000000tTsbIAE', 'a09Ut000000uW21IAE', 'a09Ut000000uRjuIAE', 'a09Ut000000uUpqIAE', 'a09Ut000000tGiVIAU']
+INFO 2024-02-24 08:02:12,915 Is there a difference between two column sets?set()
+INFO 2024-02-24 08:02:13,594 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-24 08:02:13,594 AMOUNT OF IDS TO UPDATE: 28
+INFO 2024-02-24 08:02:13,595 (28, 68)
+INFO 2024-02-24 08:02:14,658 Updated 8 rows.
+INFO 2024-02-24 08:02:14,658 Done updating existing placements in database
+INFO 2024-02-24 08:02:14,658 Adding new and updated records to DB
+INFO 2024-02-24 08:02:14,658 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-24 08:02:16,323 Done adding new and updated records to database.
+INFO 2024-02-25 08:02:01,793 Starting Script.
+INFO 2024-02-25 08:02:01,794 Dates for SOQL update statement ('02/25/2024', '02/24/2024'),('2024-02-25', '2024-02-24')
+INFO 2024-02-25 08:02:03,249      Account_ID__c  ... TR1__Timesheet_Type__c
+0  0013700000cBblU  ...                   None
+1  0013700000cBblU  ...                   None
+
+[2 rows x 65 columns]
+INFO 2024-02-25 08:02:03,304 Starting changing column names...
+INFO 2024-02-25 08:02:03,304 Done with changing column names...
+INFO 2024-02-25 08:02:03,304 Starting date transformations...
+INFO 2024-02-25 08:02:03,322 Starting Effective Date and End Date transformations
+INFO 2024-02-25 08:02:03,323 Done with Eff and End Date transformations
+INFO 2024-02-25 08:02:03,323 Done with date transformations...
+INFO 2024-02-25 08:02:03,323 Starting other transformations...
+INFO 2024-02-25 08:02:03,324 done with other transformations...
+INFO 2024-02-25 08:02:03,324 (2, 68)
+INFO 2024-02-25 08:02:03,338 Starting to grab placements from SQL Server...
+INFO 2024-02-25 08:02:06,729 (21754, 68)
+INFO 2024-02-25 08:02:06,729 Starting Comparison
+INFO 2024-02-25 08:02:06,729 ['a09Ut000000uiZRIAY', 'a09Ut000000uk8DIAQ']
+INFO 2024-02-25 08:02:06,730 Is there a difference between two column sets?set()
+INFO 2024-02-25 08:02:06,771 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-25 08:02:06,771 AMOUNT OF IDS TO UPDATE: 2
+INFO 2024-02-25 08:02:06,772 (2, 68)
+INFO 2024-02-25 08:02:06,812 Updated 0 rows.
+INFO 2024-02-25 08:02:06,813 Done updating existing placements in database
+INFO 2024-02-25 08:02:06,813 Adding new and updated records to DB
+INFO 2024-02-25 08:02:06,813 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-25 08:02:06,920 Done adding new and updated records to database.
+INFO 2024-02-26 08:02:01,816 Starting Script.
+INFO 2024-02-26 08:02:01,817 Dates for SOQL update statement ('02/26/2024', '02/25/2024'),('2024-02-26', '2024-02-25')
+INFO 2024-02-26 08:02:08,640       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                    None
+1   0013700000cBbl8  ...                  Online
+2   0013700000cBbl8  ...                  Online
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+5   0013700000cBblU  ...                    None
+6   0013700000cBbl8  ...                  Online
+7   0013700000cBbtV  ...                  Online
+8   0013700000cBbl8  ...                  Online
+9   0013700000cBbrY  ...                  Online
+10  0013700000cBblU  ...                    None
+11  0013700000cBbl8  ...                  Online
+12  0013700000cBblU  ...                    None
+13  0011G00000lRSEk  ...                  Online
+14  0013700000cBblU  ...                    None
+15  0013700000cBblU  ...                    None
+16  0013700000cBblU  ...                    None
+17  0013700000cBbl8  ...                  Online
+18  0011G00000lRSEk  ...                  Online
+19  0013700000cBblU  ...                    None
+20  0013700000cBblU  ...                    None
+21  0013700000cBblU  ...                    None
+22  0013700000cBblU  ...                    None
+23  0013700000cBbl8  ...                  Online
+24  0013700000cBbl8  ...                  Online
+25  0013700000cBblU  ...                    None
+26  0013700000cBblU  ...                    None
+27  0013700000cBblU  ...                    None
+28  0013700000cBblU  ...                    None
+29  0013700000cBbnt  ...                  Online
+30  0011G00000gKudk  ...                  Online
+31  0013700000cBblU  ...                    None
+32  0013700000cBblU  ...                    None
+33  0013700000cBblU  ...                    None
+34  0011G00000lRSEk  ...                  Online
+35  0013700000cBbl8  ...                  Online
+36  0013700000cBblU  ...                    None
+37  0013700000cBbl8  ...                  Online
+38             None  ...                  Online
+39  0013700000cBblU  ...                    None
+40  0013700000cBblU  ...                    None
+41  0013700000cBblU  ...                    None
+42  0013700000cBblU  ...                    None
+43  0013700000cBbl8  ...                  Online
+44             None  ...                  Online
+45  0013700000cBblU  ...                    None
+46  0013700000cBblU  ...                    None
+47  0011G00000lRSEk  ...                  Online
+48  0013700000cBblU  ...                    None
+
+[49 rows x 65 columns]
+INFO 2024-02-26 08:02:08,727 Starting changing column names...
+INFO 2024-02-26 08:02:08,727 Done with changing column names...
+INFO 2024-02-26 08:02:08,727 Starting date transformations...
+INFO 2024-02-26 08:02:08,746 Starting Effective Date and End Date transformations
+INFO 2024-02-26 08:02:08,747 Done with Eff and End Date transformations
+INFO 2024-02-26 08:02:08,747 Done with date transformations...
+INFO 2024-02-26 08:02:08,747 Starting other transformations...
+INFO 2024-02-26 08:02:08,749 done with other transformations...
+INFO 2024-02-26 08:02:08,749 (49, 68)
+INFO 2024-02-26 08:02:08,763 Starting to grab placements from SQL Server...
+INFO 2024-02-26 08:02:12,227 (21756, 68)
+INFO 2024-02-26 08:02:12,227 Starting Comparison
+INFO 2024-02-26 08:02:12,227 ['a091G00000BMPQlQAP', 'a096R000031EQQJQA4', 'a096R00002o9NfmQAE', 'a0937000009gaGuAAI', 'a09Ut000000uqojIAA', 'a09Ut000000uJ81IAE', 'a091G00000C0Xy0QAF', 'a091G00000BOAsIQAX', 'a096R00002o9LtrQAE', 'a091G000009kisRQAQ', 'a09Ut000000usc1IAA', 'a09Ut000000Yjh3IAC', 'a09Ut000000uqGrIAI', 'a091G00000BNF5QQAX', 'a09Ut000000tLIMIA2', 'a09Ut000000uJnxIAE', 'a09Ut000000tLTfIAM', 'a096R000039bvrvQAA', 'a091G00000C0kvXQAR', 'a09Ut000000urEXIAY', 'a09Ut000000u9lQIAQ', 'a09Ut000000uGJzIAM', 'a09Ut000000tN2QIAU', 'a096R00002xU8etQAC', 'a091G000009kfrZQAQ', 'a09Ut000000tg3SIAQ', 'a09Ut000000uqK5IAI', 'a09Ut000000tPSPIA2', 'a09Ut000000sibxIAA', 'a091G00000AhhjwQAB', 'a091G000009l9QRQAY', 'a09Ut000000sdlxIAA', 'a091G00000BNFEmQAP', 'a09Ut000000uqITIAY', 'a091G00000C0RCiQAN', 'a091G00000BMkRRQA1', 'a09Ut000000tc9YIAQ', 'a091G00000BMxufQAD', 'a091G00000BMpQjQAL', 'a09Ut000000utRdIAI', 'a09Ut000000tPk9IAE', 'a09Ut000000utMnIAI', 'a09Ut000000tP10IAE', 'a091G00000C0VCJQA3', 'a091G00000BMlBVQA1', 'a096R000031Dw3qQAC', 'a09Ut000000uUpqIAE', 'a091G00000C0kvSQAR', 'a09Ut000000t22oIAA']
+INFO 2024-02-26 08:02:12,227 Is there a difference between two column sets?set()
+INFO 2024-02-26 08:02:13,698 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-26 08:02:13,699 AMOUNT OF IDS TO UPDATE: 49
+INFO 2024-02-26 08:02:13,700 (49, 68)
+INFO 2024-02-26 08:02:15,599 Updated 70 rows.
+INFO 2024-02-26 08:02:15,599 Done updating existing placements in database
+INFO 2024-02-26 08:02:15,599 Adding new and updated records to DB
+INFO 2024-02-26 08:02:15,599 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-26 08:02:18,342 Done adding new and updated records to database.
+INFO 2024-02-27 08:02:02,290 Starting Script.
+INFO 2024-02-27 08:02:02,291 Dates for SOQL update statement ('02/27/2024', '02/26/2024'),('2024-02-27', '2024-02-26')
+INFO 2024-02-27 08:02:09,167       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0013700000cBblU  ...                   None
+5   0013700000cBblU  ...                   None
+6   0013700000cBblU  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0011G00000uy4Hh  ...                   None
+14  0013700000cBblU  ...                   None
+15  0011G00000uy4Hh  ...                   None
+16  0013700000cBblU  ...                   None
+17  0013700000cBblU  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0011G00000uy4Hh  ...                   None
+25  0013700000cBblU  ...                   None
+26  0011G00000uy4Hh  ...                   None
+27  0013700000cBblU  ...                   None
+28  0013700000cBblU  ...                   None
+29  0013700000cBblU  ...                   None
+30  0011G00000uy4Hh  ...                   None
+31  0011G00000uy4Hh  ...                   None
+32  0013700000cBblU  ...                   None
+33  0013700000cBblU  ...                   None
+34  0013700000cBblU  ...                   None
+35  0013700000cBblU  ...                   None
+36  0013700000cBblU  ...                   None
+37  0013700000cBblU  ...                   None
+38  0011G00000uy4Hh  ...                   None
+39  0013700000cBblU  ...                   None
+40  0013700000cBblU  ...                   None
+41  0013700000cBblU  ...                   None
+42  0013700000cBblU  ...                   None
+43  0013700000cBblU  ...                   None
+44  0013700000cBblU  ...                   None
+45  0013700000cBblU  ...                   None
+46  0013700000cBblU  ...                   None
+47  0013700000cBblU  ...                   None
+48  0013700000cBblU  ...                   None
+49  0013700000cBblU  ...                   None
+50  0013700000cBblU  ...                   None
+51  0013700000cBblU  ...                   None
+52  0013700000cBblU  ...                   None
+53  0013700000cBblU  ...                   None
+54  0013700000cBblU  ...                   None
+
+[55 rows x 65 columns]
+INFO 2024-02-27 08:02:09,259 Starting changing column names...
+INFO 2024-02-27 08:02:09,259 Done with changing column names...
+INFO 2024-02-27 08:02:09,259 Starting date transformations...
+INFO 2024-02-27 08:02:09,279 Starting Effective Date and End Date transformations
+INFO 2024-02-27 08:02:09,279 Done with Eff and End Date transformations
+INFO 2024-02-27 08:02:09,279 Done with date transformations...
+INFO 2024-02-27 08:02:09,279 Starting other transformations...
+INFO 2024-02-27 08:02:09,282 done with other transformations...
+INFO 2024-02-27 08:02:09,282 (55, 68)
+INFO 2024-02-27 08:02:09,295 Starting to grab placements from SQL Server...
+INFO 2024-02-27 08:02:21,486 (21805, 68)
+INFO 2024-02-27 08:02:21,487 Starting Comparison
+INFO 2024-02-27 08:02:21,487 ['a09Ut000000rDWzIAM', 'a09Ut000000uZsjIAE', 'a09Ut000000uPBpIAM', 'a09Ut000000uiZRIAY', 'a09Ut000000uqojIAA', 'a096R00002o9MLbQAM', 'a09Ut000000u6Z3IAI', 'a09Ut000000usc1IAA', 'a09Ut000000aC2hIAE', 'a09Ut000000s8BtIAI', 'a091G00000C0MTHQA3', 'a09Ut000000uqGrIAI', 'a09Ut000000uC4vIAE', 'a09Ut000000tjqxIAA', 'a09Ut000000kEHhIAM', 'a09Ut000000vjA5IAI', 'a09Ut000000vRptIAE', 'a09Ut000000uk8DIAQ', 'a09Ut000000qFcTIAU', 'a09Ut000000uPtOIAU', 'a09Ut000000urEXIAY', 'a09Ut000000vD8bIAE', 'a09Ut000000uabtIAA', 'a09Ut000000vXyYIAU', 'a09Ut000000uZ6LIAU', 'a09Ut000000uaqRIAQ', 'a09Ut000000vJHHIA2', 'a096R000031FWLvQAO', 'a09Ut000000uqK5IAI', 'a09Ut000000lAC2IAM', 'a09Ut000000vAQsIAM', 'a09Ut000000v39HIAQ', 'a096R00002hLtiaQAC', 'a09Ut000000daZvIAI', 'a09Ut000000ubzNIAQ', 'a09Ut000000s9xZIAQ', 'a09Ut000000jlIwIAI', 'a09Ut000000uz5eIAA', 'a09Ut000000uZ7xIAE', 'a09Ut000000i1LNIAY', 'a09Ut000000uqITIAY', 'a09Ut000000vF8nIAE', 'a091G00000C0XkxQAF', 'a09Ut000000utRdIAI', 'a09Ut000000tWk1IAE', 'a09Ut000000vMOnIAM', 'a09Ut000000vGbnIAE', 'a09Ut000000q9wrIAA', 'a09Ut000000utMnIAI', 'a09Ut000000qxooIAA', 'a09Ut000000sk7YIAQ', 'a09Ut000000uTy3IAE', 'a09Ut000000uW21IAE', 'a09Ut000000vOjxIAE', 'a09Ut000000uUpqIAE']
+INFO 2024-02-27 08:02:21,487 Is there a difference between two column sets?set()
+INFO 2024-02-27 08:02:23,145 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-27 08:02:23,146 AMOUNT OF IDS TO UPDATE: 55
+INFO 2024-02-27 08:02:23,147 (55, 68)
+INFO 2024-02-27 08:02:25,496 Updated 49 rows.
+INFO 2024-02-27 08:02:25,496 Done updating existing placements in database
+INFO 2024-02-27 08:02:25,496 Adding new and updated records to DB
+INFO 2024-02-27 08:02:25,496 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-27 08:02:28,671 Done adding new and updated records to database.
+INFO 2024-02-28 08:02:01,748 Starting Script.
+INFO 2024-02-28 08:02:01,748 Dates for SOQL update statement ('02/28/2024', '02/27/2024'),('2024-02-28', '2024-02-27')
+INFO 2024-02-28 08:02:08,473       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0013700000cBblU  ...                   None
+5   0013700000cBblU  ...                   None
+6   0011G00000uy4Hh  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0013700000cBblU  ...                   None
+14  0013700000cBblU  ...                   None
+15  0013700000cBblU  ...                   None
+16  0011G00000uy4Hh  ...                   None
+17  0011G00000uy4Hh  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0013700000cBblU  ...                   None
+25  0013700000cBblU  ...                   None
+
+[26 rows x 65 columns]
+INFO 2024-02-28 08:02:08,543 Starting changing column names...
+INFO 2024-02-28 08:02:08,544 Done with changing column names...
+INFO 2024-02-28 08:02:08,544 Starting date transformations...
+INFO 2024-02-28 08:02:08,562 Starting Effective Date and End Date transformations
+INFO 2024-02-28 08:02:08,563 Done with Eff and End Date transformations
+INFO 2024-02-28 08:02:08,563 Done with date transformations...
+INFO 2024-02-28 08:02:08,563 Starting other transformations...
+INFO 2024-02-28 08:02:08,565 done with other transformations...
+INFO 2024-02-28 08:02:08,565 (26, 68)
+INFO 2024-02-28 08:02:08,578 Starting to grab placements from SQL Server...
+INFO 2024-02-28 08:02:12,224 (21860, 68)
+INFO 2024-02-28 08:02:12,224 Starting Comparison
+INFO 2024-02-28 08:02:12,224 ['a09Ut000000w7NhIAI', 'a096R00002hLxIgQAK', 'a09Ut000000aC2hIAE', 'a09Ut000000w8JoIAI', 'a09Ut000000w8WfIAI', 'a09Ut000000w8bVIAQ', 'a09Ut000000vjA5IAI', 'a09Ut000000vRptIAE', 'a09Ut000000uk8DIAQ', 'a09Ut000000w9UMIAY', 'a09Ut000000w3lWIAQ', 'a09Ut000000wGPNIA2', 'a09Ut000000w5TxIAI', 'a09Ut000000vXyYIAU', 'a09Ut000000wJgbIAE', 'a09Ut000000uaqRIAQ', 'a09Ut000000w2uHIAQ', 'a09Ut000000vJHHIA2', 'a09Ut000000wFhpIAE', 'a09Ut000000w0R7IAI', 'a09Ut000000vMOnIAM', 'a096R00002Py22GQAR', 'a09Ut000000w1WnIAI', 'a09Ut000000w7KXIAY', 'a096R00002PxxmBQAR', 'a091G00000C0NabQAF']
+INFO 2024-02-28 08:02:12,224 Is there a difference between two column sets?set()
+INFO 2024-02-28 08:02:12,879 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-28 08:02:12,879 AMOUNT OF IDS TO UPDATE: 26
+INFO 2024-02-28 08:02:12,880 (26, 68)
+INFO 2024-02-28 08:02:13,889 Updated 16 rows.
+INFO 2024-02-28 08:02:13,889 Done updating existing placements in database
+INFO 2024-02-28 08:02:13,889 Adding new and updated records to DB
+INFO 2024-02-28 08:02:13,889 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-28 08:02:15,380 Done adding new and updated records to database.
+INFO 2024-02-29 08:02:01,743 Starting Script.
+INFO 2024-02-29 08:02:01,743 Dates for SOQL update statement ('02/29/2024', '02/28/2024'),('2024-02-29', '2024-02-28')
+INFO 2024-02-29 08:02:10,344       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0013700000cBblU  ...                   None
+5   0013700000cBblU  ...                   None
+6   0013700000cBblU  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0011G00000uy4Hh  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0013700000cBblU  ...                   None
+14  0013700000cBblU  ...                   None
+15  0013700000cBblU  ...                   None
+16  0013700000cBblU  ...                   None
+17  0013700000cBblU  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0013700000cBblU  ...                   None
+25  0013700000cBblU  ...                   None
+26  0013700000cBblU  ...                   None
+27  0013700000cBblU  ...                   None
+28  0013700000cBblU  ...                   None
+29  0013700000cBblU  ...                   None
+30  0011G00000uy4Hh  ...                   None
+31  0013700000cBblU  ...                   None
+32  0013700000cBblU  ...                   None
+33  0013700000cBblU  ...                   None
+34  0013700000cBblU  ...                   None
+35  0013700000cBblU  ...                   None
+36  0013700000cBblU  ...                   None
+37  0013700000cBblU  ...                   None
+38  0013700000cBblU  ...                   None
+39  0013700000cBblU  ...                   None
+
+[40 rows x 65 columns]
+INFO 2024-02-29 08:02:10,428 Starting changing column names...
+INFO 2024-02-29 08:02:10,428 Done with changing column names...
+INFO 2024-02-29 08:02:10,428 Starting date transformations...
+INFO 2024-02-29 08:02:10,447 Starting Effective Date and End Date transformations
+INFO 2024-02-29 08:02:10,447 Done with Eff and End Date transformations
+INFO 2024-02-29 08:02:10,447 Done with date transformations...
+INFO 2024-02-29 08:02:10,447 Starting other transformations...
+INFO 2024-02-29 08:02:10,450 done with other transformations...
+INFO 2024-02-29 08:02:10,450 (40, 68)
+INFO 2024-02-29 08:02:10,463 Starting to grab placements from SQL Server...
+INFO 2024-02-29 08:02:14,417 (21886, 68)
+INFO 2024-02-29 08:02:14,418 Starting Comparison
+INFO 2024-02-29 08:02:14,418 ['a09Ut000000xFO1IAM', 'a09Ut000000uiZRIAY', 'a09Ut000000uqojIAA', 'a09Ut000000wm4HIAQ', 'a09Ut000000wt5pIAA', 'a09Ut000000sgQTIAY', 'a09Ut000000sh1aIAA', 'a09Ut000000uqGrIAI', 'a09Ut000000uC4vIAE', 'a09Ut000000xHfxIAE', 'a09Ut000000t97VIAQ', 'a09Ut000000tWDmIAM', 'a09Ut000000l4oBIAQ', 'a09Ut000000urEXIAY', 'a091G000009kYWWQA2', 'a09Ut000000x6arIAA', 'a096R000034VNn5QAG', 'a09Ut000000tQWXIA2', 'a09Ut000000wJgbIAE', 'a09Ut000000s7FqIAI', 'a09Ut000000sk17IAA', 'a09Ut000000skx9IAA', 'a09Ut000000swS2IAI', 'a09Ut000000ubzNIAQ', 'a09Ut000000wjb4IAA', 'a09Ut000000sutFIAQ', 'a09Ut000000uz5eIAA', 'a09Ut000000uqITIAY', 'a09Ut000000f3htIAA', 'a09Ut000000wocLIAQ', 'a09Ut000000xHeLIAU', 'a09Ut000000utRdIAI', 'a09Ut000000wvkIIAQ', 'a09Ut000000x89dIAA', 'a09Ut000000wlwEIAQ', 'a09Ut000000utMnIAI', 'a09Ut000000tbJtIAI', 'a09Ut000000xAwDIAU', 'a09Ut000000xEADIA2', 'a09Ut000000wx1JIAQ']
+INFO 2024-02-29 08:02:14,418 Is there a difference between two column sets?set()
+INFO 2024-02-29 08:02:15,563 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-02-29 08:02:15,563 AMOUNT OF IDS TO UPDATE: 40
+INFO 2024-02-29 08:02:15,564 (40, 68)
+INFO 2024-02-29 08:02:16,572 Updated 42 rows.
+INFO 2024-02-29 08:02:16,573 Done updating existing placements in database
+INFO 2024-02-29 08:02:16,573 Adding new and updated records to DB
+INFO 2024-02-29 08:02:16,573 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-02-29 08:02:17,155 Done adding new and updated records to database.
+INFO 2024-03-01 08:02:01,942 Starting Script.
+INFO 2024-03-01 08:02:01,942 Dates for SOQL update statement ('03/01/2024', '02/29/2024'),('2024-03-01', '2024-02-29')
+INFO 2024-03-01 08:02:09,152       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0011G00000uy4Hh  ...                   None
+4   0013700000cBblU  ...                   None
+5   0013700000cBblU  ...                   None
+6   0011G00000uy4Hh  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+
+[12 rows x 65 columns]
+INFO 2024-03-01 08:02:09,221 Starting changing column names...
+INFO 2024-03-01 08:02:09,221 Done with changing column names...
+INFO 2024-03-01 08:02:09,221 Starting date transformations...
+INFO 2024-03-01 08:02:09,240 Starting Effective Date and End Date transformations
+INFO 2024-03-01 08:02:09,240 Done with Eff and End Date transformations
+INFO 2024-03-01 08:02:09,240 Done with date transformations...
+INFO 2024-03-01 08:02:09,240 Starting other transformations...
+INFO 2024-03-01 08:02:09,242 done with other transformations...
+INFO 2024-03-01 08:02:09,242 (12, 68)
+INFO 2024-03-01 08:02:09,256 Starting to grab placements from SQL Server...
+INFO 2024-03-01 08:02:21,562 (21926, 68)
+INFO 2024-03-01 08:02:21,563 Starting Comparison
+INFO 2024-03-01 08:02:21,563 ['a09Ut000000xFO1IAM', 'a09Ut000000xnG3IAI', 'a09Ut000000y0LJIAY', 'a09Ut000000vjA5IAI', 'a09Ut000000y6ybIAA', 'a09Ut000000y8qjIAA', 'a09Ut000000vJHHIA2', 'a096R000036obUlQAI', 'a09Ut000000f3htIAA', 'a09Ut000000x89dIAA', 'a09Ut000000xAwDIAU', 'a09Ut000000xEADIA2']
+INFO 2024-03-01 08:02:21,563 Is there a difference between two column sets?set()
+INFO 2024-03-01 08:02:21,924 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-01 08:02:21,924 AMOUNT OF IDS TO UPDATE: 12
+INFO 2024-03-01 08:02:21,925 (12, 68)
+INFO 2024-03-01 08:02:22,808 Updated 13 rows.
+INFO 2024-03-01 08:02:22,808 Done updating existing placements in database
+INFO 2024-03-01 08:02:22,808 Adding new and updated records to DB
+INFO 2024-03-01 08:02:22,808 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-01 08:02:23,323 Done adding new and updated records to database.
+INFO 2024-03-02 08:02:02,592 Starting Script.
+INFO 2024-03-02 08:02:02,593 Dates for SOQL update statement ('03/02/2024', '03/01/2024'),('2024-03-02', '2024-03-01')
+INFO 2024-03-02 08:02:10,423       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0013700000cBblU  ...                   None
+5   0013700000cBblU  ...                   None
+6   0013700000cBblU  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0013700000cBblU  ...                   None
+14  0013700000cBblU  ...                   None
+15  0013700000cBblU  ...                   None
+16  0013700000cBblU  ...                   None
+17  0013700000cBblU  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0013700000cBblU  ...                   None
+25  0013700000cBblU  ...                   None
+26  0013700000cBblU  ...                   None
+27  0013700000cBblU  ...                   None
+28  0013700000cBblU  ...                   None
+29  0011G00000ctlVz  ...                   None
+30  0013700000cBblU  ...                   None
+31  0013700000cBblU  ...                   None
+32  0013700000cBblU  ...                   None
+
+[33 rows x 65 columns]
+INFO 2024-03-02 08:02:10,510 Starting changing column names...
+INFO 2024-03-02 08:02:10,510 Done with changing column names...
+INFO 2024-03-02 08:02:10,510 Starting date transformations...
+INFO 2024-03-02 08:02:10,529 Starting Effective Date and End Date transformations
+INFO 2024-03-02 08:02:10,529 Done with Eff and End Date transformations
+INFO 2024-03-02 08:02:10,529 Done with date transformations...
+INFO 2024-03-02 08:02:10,529 Starting other transformations...
+INFO 2024-03-02 08:02:10,532 done with other transformations...
+INFO 2024-03-02 08:02:10,532 (33, 68)
+INFO 2024-03-02 08:02:10,545 Starting to grab placements from SQL Server...
+INFO 2024-03-02 08:02:17,651 (21938, 68)
+INFO 2024-03-02 08:02:17,651 Starting Comparison
+INFO 2024-03-02 08:02:17,651 ['a09Ut000000ymxqIAA', 'a09Ut000000ylFNIAY', 'a09Ut000000jHCnIAM', 'a09Ut000000yZVxIAM', 'a09Ut000000yjQUIAY', 'a09Ut000000yNeUIAU', 'a09Ut000000ynInIAI', 'a09Ut000000yTvCIAU', 'a091G00000BMShoQAH', 'a096R000034WWU4QAO', 'a09Ut000000yjFCIAY', 'a09Ut000000dWMbIAM', 'a09Ut000000yRDSIA2', 'a09Ut000000m8mTIAQ', 'a09Ut000000yJUPIA2', 'a09Ut000000w3lWIAQ', 'a09Ut000000yoWbIAI', 'a09Ut000000y6ybIAA', 'a09Ut000000y8qjIAA', 'a09Ut000000yRRxIAM', 'a09Ut000000yliPIAQ', 'a09Ut000000yWxtIAE', 'a09Ut000000ySHZIA2', 'a09Ut000000ymBRIAY', 'a09Ut000000yQJ0IAM', 'a09Ut000000yMSIIA2', 'a09Ut000000yXnVIAU', 'a09Ut000000ySELIA2', 'a09Ut000000ykhYIAQ', 'a09Ut000000l4MjIAI', 'a09Ut000000ym9pIAA', 'a09Ut000000ykmOIAQ', 'a091G00000AHQ4RQAX']
+INFO 2024-03-02 08:02:17,651 Is there a difference between two column sets?set()
+INFO 2024-03-02 08:02:18,425 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-02 08:02:18,425 AMOUNT OF IDS TO UPDATE: 33
+INFO 2024-03-02 08:02:18,427 (33, 68)
+INFO 2024-03-02 08:02:19,812 Updated 10 rows.
+INFO 2024-03-02 08:02:19,812 Done updating existing placements in database
+INFO 2024-03-02 08:02:19,812 Adding new and updated records to DB
+INFO 2024-03-02 08:02:19,812 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-02 08:02:21,751 Done adding new and updated records to database.
+INFO 2024-03-03 08:02:01,923 Starting Script.
+INFO 2024-03-03 08:02:01,923 Dates for SOQL update statement ('03/03/2024', '03/02/2024'),('2024-03-03', '2024-03-02')
+WARNING 2024-03-03 08:02:09,994 Atribute not in API result.
+INFO 2024-03-03 08:02:09,994 Empty DataFrame
+Columns: []
+Index: []
+INFO 2024-03-03 08:02:09,998 Starting changing column names...
+INFO 2024-03-03 08:02:09,998 No updated data in user's file.
+INFO 2024-03-04 08:02:02,302 Starting Script.
+INFO 2024-03-04 08:02:02,302 Dates for SOQL update statement ('03/04/2024', '03/03/2024'),('2024-03-04', '2024-03-03')
+INFO 2024-03-04 08:02:04,774      Account_ID__c  ... TR1__Timesheet_Type__c
+0  0013700000cBblU  ...                   None
+1  0013700000cBblU  ...                   None
+
+[2 rows x 65 columns]
+INFO 2024-03-04 08:02:04,828 Starting changing column names...
+INFO 2024-03-04 08:02:04,828 Done with changing column names...
+INFO 2024-03-04 08:02:04,828 Starting date transformations...
+INFO 2024-03-04 08:02:04,846 Starting Effective Date and End Date transformations
+INFO 2024-03-04 08:02:04,847 Done with Eff and End Date transformations
+INFO 2024-03-04 08:02:04,847 Done with date transformations...
+INFO 2024-03-04 08:02:04,847 Starting other transformations...
+INFO 2024-03-04 08:02:04,848 done with other transformations...
+INFO 2024-03-04 08:02:04,848 (2, 68)
+INFO 2024-03-04 08:02:04,862 Starting to grab placements from SQL Server...
+INFO 2024-03-04 08:02:08,357 (21971, 68)
+INFO 2024-03-04 08:02:08,357 Starting Comparison
+INFO 2024-03-04 08:02:08,357 ['a09Ut000000z8GnIAI', 'a09Ut000000z8BxIAI']
+INFO 2024-03-04 08:02:08,357 Is there a difference between two column sets?set()
+INFO 2024-03-04 08:02:08,400 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-04 08:02:08,400 AMOUNT OF IDS TO UPDATE: 2
+INFO 2024-03-04 08:02:08,401 (2, 68)
+INFO 2024-03-04 08:02:08,438 Updated 0 rows.
+INFO 2024-03-04 08:02:08,438 Done updating existing placements in database
+INFO 2024-03-04 08:02:08,438 Adding new and updated records to DB
+INFO 2024-03-04 08:02:08,439 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-04 08:02:08,475 Done adding new and updated records to database.
+INFO 2024-03-05 08:02:02,625 Starting Script.
+INFO 2024-03-05 08:02:02,626 Dates for SOQL update statement ('03/05/2024', '03/04/2024'),('2024-03-05', '2024-03-04')
+INFO 2024-03-05 08:02:16,129       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0016R00003Pyz6n  ...                    None
+1   0013700000cBblU  ...                    None
+2   0013700000cBblU  ...                    None
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+..              ...  ...                     ...
+61  0013700000cBblU  ...                    None
+62  0013700000cBblU  ...                    None
+63  0013700000cBblU  ...                    None
+64  0011G00000uy4Hh  ...                    None
+65  0013700000cBblU  ...                    None
+
+[66 rows x 65 columns]
+INFO 2024-03-05 08:02:16,194 Starting changing column names...
+INFO 2024-03-05 08:02:16,195 Done with changing column names...
+INFO 2024-03-05 08:02:16,195 Starting date transformations...
+INFO 2024-03-05 08:02:16,215 Starting Effective Date and End Date transformations
+INFO 2024-03-05 08:02:16,215 Done with Eff and End Date transformations
+INFO 2024-03-05 08:02:16,215 Done with date transformations...
+INFO 2024-03-05 08:02:16,215 Starting other transformations...
+INFO 2024-03-05 08:02:16,218 done with other transformations...
+INFO 2024-03-05 08:02:16,218 (66, 68)
+INFO 2024-03-05 08:02:16,232 Starting to grab placements from SQL Server...
+INFO 2024-03-05 08:02:20,195 (21973, 68)
+INFO 2024-03-05 08:02:20,195 Starting Comparison
+INFO 2024-03-05 08:02:20,195 ['a09Ut000000zRwBIAU', 'a09Ut000000zIODIA2', 'a09Ut000000zfnpIAA', 'a09Ut000000zJPAIA2', 'a09Ut000000iSztIAE', 'a09Ut000000tT30IAE', 'a09Ut000000zIT3IAM', 'a09Ut000000seq6IAA', 'a09Ut000000zX8mIAE', 'a09Ut000000zGMPIA2', 'a09Ut000000znQPIAY', 'a09Ut000000zfxVIAQ', 'a09Ut000000xHfxIAE', 'a09Ut000000omHZIAY', 'a09Ut000000zMOcIAM', 'a09Ut000000zKGLIA2', 'a09Ut000000zM21IAE', 'a09Ut000000tjqxIAA', 'a09Ut000000zfHZIAY', 'a09Ut000000zYXpIAM', 'a09Ut000000tje2IAA', 'a091G00000C0W4HQAV', 'a09Ut000000zUcIIAU', 'a09Ut000000zfPdIAI', 'a096R000034WWRjQAO', 'a09Ut000000zHvBIAU', 'a09Ut000000Oz8nIAC', 'a09Ut000000rA1GIAU', 'a09Ut000000zYT3IAM', 'a09Ut000000phe1IAA', 'a09Ut000000zEinIAE', 'a09Ut000000rHkMIAU', 'a09Ut000000zHjtIAE', 'a096R00002tGTedQAG', 'a09Ut000000zSaUIAU', 'a09Ut000000zKMoIAM', 'a09Ut000000mtOnIAI', 'a09Ut000000w2uHIAQ', 'a09Ut000000zHiIIAU', 'a09Ut000000z8GnIAI', 'a09Ut000000hvLbIAI', 'a09Ut000000zVoTIAU', 'a09Ut000000vAQsIAM', 'a09Ut000000v39HIAQ', 'a096R000036ocPxQAI', 'a09Ut000000yXnVIAU', 'a09Ut000000zaplIAA', 'a09Ut000000oiibIAA', 'a09Ut000000zOgYIAU', 'a09Ut000000xHeLIAU', 'a09Ut000000zKQ2IAM', 'a09Ut000000jIVTIA2', 'a09Ut000000mtIMIAY', 'a09Ut000000zhT3IAI', 'a09Ut000000wlwEIAQ', 'a09Ut000000zWCfIAM', 'a09Ut000000s40EIAQ', 'a09Ut000000z8BxIAI', 'a09Ut000000rJ4ZIAU', 'a09Ut000000zh85IAA', 'a09Ut000000zc1xIAA', 'a09Ut000000pJtRIAU', 'a09Ut000000zg7BIAQ', 'a09Ut000000zW7pIAE', 'a09Ut000000zJPBIA2', 'a09Ut000000mtLZIAY']
+INFO 2024-03-05 08:02:20,195 Is there a difference between two column sets?set()
+INFO 2024-03-05 08:02:22,002 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-05 08:02:22,003 AMOUNT OF IDS TO UPDATE: 66
+INFO 2024-03-05 08:02:22,004 (66, 68)
+INFO 2024-03-05 08:02:24,480 Updated 45 rows.
+INFO 2024-03-05 08:02:24,480 Done updating existing placements in database
+INFO 2024-03-05 08:02:24,480 Adding new and updated records to DB
+INFO 2024-03-05 08:02:24,480 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-05 08:02:26,499 Done adding new and updated records to database.
+INFO 2024-03-06 08:02:01,953 Starting Script.
+INFO 2024-03-06 08:02:01,955 Dates for SOQL update statement ('03/06/2024', '03/05/2024'),('2024-03-06', '2024-03-05')
+INFO 2024-03-06 08:02:09,961        Account_ID__c  ...  TR1__Timesheet_Type__c
+0    0013700000cBblU  ...                    None
+1    0013700000cBblU  ...                    None
+2    0013700000cBblU  ...                    None
+3    0013700000cBblU  ...                    None
+4    0013700000cBblU  ...                    None
+..               ...  ...                     ...
+472  0013700000cBblU  ...                    None
+473  0013700000cBblU  ...                    None
+474  0013700000cBblU  ...                    None
+475  0013700000cBblU  ...                    None
+476  0013700000cBblU  ...                    None
+
+[477 rows x 65 columns]
+INFO 2024-03-06 08:02:10,030 Starting changing column names...
+INFO 2024-03-06 08:02:10,031 Done with changing column names...
+INFO 2024-03-06 08:02:10,031 Starting date transformations...
+INFO 2024-03-06 08:02:10,061 Starting Effective Date and End Date transformations
+INFO 2024-03-06 08:02:10,062 Done with Eff and End Date transformations
+INFO 2024-03-06 08:02:10,062 Done with date transformations...
+INFO 2024-03-06 08:02:10,062 Starting other transformations...
+INFO 2024-03-06 08:02:10,066 done with other transformations...
+INFO 2024-03-06 08:02:10,066 (477, 68)
+INFO 2024-03-06 08:02:10,080 Starting to grab placements from SQL Server...
+INFO 2024-03-06 08:02:10,154 (0, 68)
+INFO 2024-03-06 08:02:10,154 Starting Comparison
+INFO 2024-03-06 08:02:10,154 ['a09Ut000000k9d1IAA', 'a09Ut000000pmdiIAA', 'a09Ut000000sTzVIAU', 'a09Ut000000oorGIAQ', 'a09Ut000000rDWzIAM', 'a09Ut000000uZsjIAE', 'a09Ut000000w7NhIAI', 'a09Ut000000g2VFIAY', 'a09Ut000000lPe5IAE', 'a09Ut000000ie8DIAQ', 'a09Ut000000qwsjIAA', 'a09Ut000000lEfRIAU', 'a09Ut000000uPBpIAM', 'a09Ut000000qDu1IAE', 'a09Ut000000mEjpIAE', 'a09Ut000000rHNiIAM', 'a09Ut000000xFO1IAM', 'a09Ut000000l4rPIAQ', 'a09Ut000000nVSTIA2', 'a09Ut000000mBM9IAM', 'a09Ut000000onGrIAI', 'a09Ut000000n45hIAA', 'a09Ut000000uiZRIAY', 'a09Ut000000jPBxIAM', 'a09Ut000000ttLdIAI', 'a09Ut000000nGZuIAM', 'a09Ut0000010X8JIAU', 'a09Ut000000kUr7IAE', 'a09Ut000000jHCnIAM', 'a09Ut000000qEA9IAM', 'a09Ut000000uqojIAA', 'a09Ut000000nP3hIAE', 'a09Ut000000mesoIAA', 'a09Ut000000kVbtIAE', 'a09Ut000000iDPlIAM', 'a09Ut0000010UK6IAM', 'a09Ut000000uJ81IAE', 'a09Ut000000ls1lIAA', 'a09Ut000000tE8oIAE', 'a09Ut000000oFFCIA2', 'a09Ut000000lhcdIAA', 'a09Ut000000fWvCIAU', 'a09Ut0000010G0zIAE', 'a09Ut000000u6Z3IAI', 'a09Ut000000nFSXIA2', 'a09Ut000000mc9RIAQ', 'a09Ut000000sAK9IAM', 'a09Ut000000kR8TIAU', 'a09Ut000000usc1IAA', 'a09Ut000000iSztIAE', 'a09Ut000000rNRVIA2', 'a09Ut000000mrI9IAI', 'a09Ut000000feUYIAY', 'a09Ut000000pLNOIA2', 'a09Ut000000qWS1IAM', 'a09Ut000000sgQTIAY', 'a09Ut000000kLUUIA2', 'a09Ut000000tT30IAE', 'a09Ut000000l2zFIAQ', 'a09Ut000000oGnzIAE', 'a09Ut000000zIT3IAM', 'a09Ut000000pq2zIAA', 'a09Ut000000mpxwIAA', 'a09Ut000000kVdVIAU', 'a09Ut000000l1QVIAY', 'a09Ut0000010dATIAY', 'a09Ut000000seq6IAA', 'a09Ut000000iCa9IAE', 'a09Ut0000010TnpIAE', 'a09Ut000000hJ7SIAU', 'a09Ut000000s8BtIAI', 'a09Ut000000p5nGIAQ', 'a09Ut000000sh1aIAA', 'a09Ut000000ffgjIAA', 'a09Ut000000yNeUIAU', 'a09Ut000000kuQdIAI', 'a09Ut000000lAS9IAM', 'a09Ut000000oyPDIAY', 'a09Ut000000uqGrIAI', 'a09Ut000000zGMPIA2', 'a09Ut000000qR90IAE', 'a09Ut000000rPZlIAM', 'a09Ut000000qUA5IAM', 'a09Ut000000znQPIAY', 'a09Ut000000q8XlIAI', 'a09Ut000000w8WfIAI', 'a09Ut000000qKPFIA2', 'a09Ut000000mgRZIAY', 'a09Ut000000qxAUIAY', 'a09Ut000000qevpIAA', 'a09Ut000000p5GzIAI', 'a09Ut000000o1SLIAY', 'a09Ut000000m1rTIAQ', 'a09Ut000000uC4vIAE', 'a09Ut000000mkjhIAA', 'a09Ut000000fEv3IAE', 'a09Ut000000nS1aIAE', 'a09Ut000000omHZIAY', 'a09Ut000000jYlWIAU', 'a09Ut000000r4AMIAY', 'a09Ut000000iiJtIAI', 'a09Ut000000ps4nIAA', 'a09Ut000000pvlqIAA', 'a09Ut0000010SwcIAE', 'a09Ut000000nYi5IAE', 'a09Ut00000102HNIAY', 'a09Ut000000mF1ZIAU', 'a09Ut000000m2U9IAI', 'a09Ut000000i2ULIAY', 'a09Ut000000tjqxIAA', 'a09Ut000000iXZmIAM', 'a09Ut000000h6AFIAY', 'a09Ut000000tLIMIA2', 'a09Ut00000109ltIAA', 'a09Ut000000rAHPIA2', 'a09Ut000000gWUvIAM', 'a09Ut000000icXqIAI', 'a09Ut000000jYQZIA2', 'a09Ut000000kEHhIAM', 'a09Ut000000jQsnIAE', 'a09Ut000000mE3uIAE', 'a09Ut000000w8bVIAQ', 'a09Ut0000010CgXIAU', 'a09Ut000000rfg9IAA', 'a09Ut000000gIN7IAM', 'a09Ut000000kRtFIAU', 'a09Ut00000103oXIAQ', 'a09Ut000000uJnxIAE', 'a09Ut0000010RvhIAE', 'a09Ut000000hKJdIAM', 'a09Ut000000qJY4IAM', 'a09Ut000000tje2IAA', 'a09Ut000000pA3nIAE', 'a09Ut000000pRCgIAM', 'a09Ut000000t97VIAQ', 'a09Ut000000tLTfIAM', 'a09Ut000000ooOEIAY', 'a09Ut000000jfevIAA', 'a09Ut000000rMP0IAM', 'a09Ut000000ljjHIAQ', 'a09Ut000000nI3pIAE', 'a09Ut000000mil7IAA', 'a09Ut000000nJmHIAU', 'a09Ut000000lQ8jIAE', 'a09Ut000000pmvRIAQ', 'a09Ut000000yRDSIA2', 'a09Ut000000nfDJIAY', 'a09Ut000000mcmAIAQ', 'a09Ut000000m8mTIAQ', 'a09Ut000000lpQTIAY', 'a09Ut000000l1FBIAY', 'a09Ut000000uk8DIAQ', 'a09Ut000000ltCMIAY', 'a096R000039bvrvQAA', 'a09Ut000000fej4IAA', 'a09Ut000000qFcTIAU', 'a09Ut000000tI17IAE', 'a09Ut000000ijhNIAQ', 'a09Ut000000lM1uIAE', 'a09Ut000000nI5RIAU', 'a09Ut000000tWDmIAM', 'a09Ut000000l4oBIAQ', 'a09Ut000000uPtOIAU', 'a09Ut000000nJ1VIAU', 'a09Ut000000lpFBIAY', 'a09Ut000000hK8LIAU', 'a09Ut000000shJMIAY', 'a09Ut000000qvWsIAI', 'a09Ut000000s48HIAQ', 'a09Ut000000qHmNIAU', 'a09Ut000000jkGPIAY', 'a09Ut000000mZ3VIAU', 'a09Ut000000pYPRIA2', 'a09Ut000000s7hFIAQ', 'a09Ut000000l2HhIAI', 'a09Ut000000urEXIAY', 'a09Ut000000fyWUIAY', 'a09Ut000000rA1GIAU', 'a09Ut000000fBCSIA2', 'a09Ut000000vD8bIAE', 'a09Ut000000kEj7IAE', 'a09Ut000000oJcBIAU', 'a09Ut000000h9XuIAI', 'a09Ut000000opvOIAQ', 'a09Ut000000lIRJIA2', 'a09Ut000000u9lQIAQ', 'a09Ut000000l9MRIAY', 'a0937000009g22EAAQ', 'a09Ut000000iXWYIA2', 'a09Ut000000ozOVIAY', 'a09Ut000000kVf7IAE', 'a09Ut000000oCpCIAU', 'a09Ut000000kDNGIA2', 'a09Ut000000i47yIAA', 'a09Ut000000m3rdIAA', 'a09Ut000001055ZIAQ', 'a09Ut000000iiQLIAY', 'a09Ut000000uGJzIAM', 'a09Ut000000p8WcIAI', 'a09Ut000000rCcXIAU', 'a09Ut000000gNmbIAE', 'a09Ut000000qK97IAE', 'a09Ut000000phe1IAA', 'a09Ut000000g2bhIAA', 'a09Ut000000zEinIAE', 'a09Ut000000l6A1IAI', 'a09Ut000000tN2QIAU', 'a09Ut000000jjyhIAA', 'a09Ut000000lSvJIAU', 'a09Ut000000rHkMIAU', 'a09Ut000000x6arIAA', 'a09Ut000000s0mEIAQ', 'a09Ut000000jZ6TIAU', 'a09Ut000000naojIAA', 'a09Ut000000uabtIAA', 'a09Ut000000l0xSIAQ', 'a09Ut000000tLdKIAU', 'a09Ut000000ouF8IAI', 'a09Ut000000vXyYIAU', 'a09Ut000000nysgIAA', 'a09Ut000000osejIAA', 'a09Ut000000iXRjIAM', 'a09Ut000000tQWXIA2', 'a09Ut000000nT5hIAE', 'a09Ut000000jlM9IAI', 'a09Ut000000oPkoIAE', 'a09Ut000000kGg5IAE', 'a09Ut000000khMvIAI', 'a09Ut000000mtOnIAI', 'a09Ut000000loe5IAA', 'a09Ut000000qArKIAU', 'a09Ut000000ztpBIAQ', 'a09Ut000000l0fhIAA', 'a09Ut000000jNJqIAM', 'a09Ut0000010dNNIAY', 'a09Ut000000qf2HIAQ', 'a09Ut000000kFVXIA2', 'a09Ut000000rBRyIAM', 'a09Ut000000qRs9IAE', 'a09Ut000000uZ6LIAU', 'a09Ut000000mi1xIAA', 'a09Ut000000uaqRIAQ', 'a09Ut000000s7FqIAI', 'a09Ut000000sk17IAA', 'a09Ut000000ldynIAA', 'a09Ut000000pmozIAA', 'a09Ut000000fXzJIAU', 'a09Ut000000llebIAA', 'a09Ut000000jhjxIAA', 'a09Ut000000o4TRIAY', 'a09Ut000000kyNlIAI', 'a09Ut000000pgBhIAI', 'a096R00002xSyKMQA0', 'a09Ut000000r9mjIAA', 'a09Ut000000jgMTIAY', 'a09Ut000000gqQQIAY', 'a09Ut000000hvLbIAI', 'a09Ut000000o8tdIAA', 'a09Ut000000k9jSIAQ', 'a09Ut000000tg3SIAQ', 'a09Ut000000p9IzIAI', 'a09Ut000000kII8IAM', 'a09Ut000000g3b0IAA', 'a09Ut000000u5ufIAA', 'a09Ut000000pNnNIAU', 'a09Ut000000loqzIAA', 'a09Ut000000gz3uIAA', 'a09Ut000000skx9IAA', 'a09Ut000000zzZdIAI', 'a09Ut000000qJ3NIAU', 'a09Ut000000plmTIAQ', 'a09Ut000000uqK5IAI', 'a09Ut000000qFuEIAU', 'a09Ut000000l3C9IAI', 'a09Ut000000nudmIAA', 'a09Ut000000lAC2IAM', 'a09Ut000000pSBxIAM', 'a09Ut000000tPSPIA2', 'a09Ut000000jJCzIAM', 'a09Ut000000piewIAA', 'a09Ut000000mEdNIAU', 'a09Ut000000sibxIAA', 'a09Ut000000ls0BIAQ', 'a09Ut000000gFyjIAE', 'a09Ut000000iTeDIAU', 'a09Ut000000swS2IAI', 'a09Ut000000omavIAA', 'a09Ut000000nYADIA2', 'a09Ut000000o1fFIAQ', 'a09Ut000000sDWXIA2', 'a09Ut000000gJpSIAU', 'a09Ut000000lxflIAA', 'a09Ut000000kBlHIAU', 'a09Ut000000o5feIAA', 'a09Ut000000r9JhIAI', 'a09Ut000000ubzNIAQ', 'a09Ut000000wjb4IAA', 'a09Ut000000lpDZIAY', 'a09Ut000000mZZlIAM', 'a09Ut000000hiyhIAA', 'a09Ut000000s9xZIAQ', 'a096R00002lAWuQQAW', 'a09Ut000000yMSIIA2', 'a09Ut000000sdlxIAA', 'a09Ut000000lxnqIAA', 'a09Ut000000fKyrIAE', 'a09Ut000000pEqXIAU', 'a09Ut000000jlIwIAI', 'a09Ut000000oS7bIAE', 'a09Ut000000pUX7IAM', 'a09Ut000000sutFIAQ', 'a09Ut000000nZ34IAE', 'a09Ut000000l24nIAA', 'a09Ut000000uZ7xIAE', 'a09Ut000000igJiIAI', 'a09Ut000000lGu9IAE', 'a09Ut000000pSOrIAM', 'a09Ut000000rkkgIAA', 'a09Ut000000i1LNIAY', 'a09Ut000000ib0fIAA', 'a09Ut0000010BJ3IAM', 'a09Ut000000zu6vIAA', 'a09Ut000000uqITIAY', 'a09Ut000000gJRFIA2', 'a09Ut000000gy7pIAA', 'a09Ut000000nx29IAA', 'a09Ut000000oiibIAA', 'a09Ut000000nzvCIAQ', 'a09Ut000000qQWHIA2', 'a09Ut000000kFAXIA2', 'a09Ut000000u5mbIAA', 'a09Ut000000fyORIAY', 'a09Ut000000oBQ6IAM', 'a09Ut000000pTb3IAE', 'a09Ut000000gXVpIAM', 'a09Ut000000k93WIAQ', 'a09Ut000000oNO1IAM', 'a09Ut000000mbOfIAI', 'a09Ut000000hrp4IAA', 'a09Ut000000tc9YIAQ', 'a09Ut000000pVbFIAU', 'a09Ut000000gLEXIA2', 'a09Ut000000oGETIA2', 'a09Ut000000l55vIAA', 'a09Ut000000lnQHIAY', 'a09Ut000000jZmQIAU', 'a09Ut000000mlCkIAI', 'a09Ut000000nEY5IAM', 'a09Ut000000o7sjIAA', 'a09Ut000000nWl9IAE', 'a09Ut000000T6reIAC', 'a09Ut000000jhQcIAI', 'a09Ut000000nswwIAA', 'a09Ut000000fdK1IAI', 'a09Ut000000nJeDIAU', 'a09Ut000000utRdIAI', 'a09Ut000000lUCMIA2', 'a09Ut000000gDNSIA2', 'a09Ut000000tWk1IAE', 'a09Ut000000q6e1IAA', 'a09Ut000000rNmUIAU', 'a09Ut000000hKLFIA2', 'a09Ut000000jb53IAA', 'a09Ut000000pM1jIAE', 'a09Ut000000jUgJIAU', 'a09Ut000000gcvJIAQ', 'a09Ut000000g39ZIAQ', 'a09Ut000000oyU1IAI', 'a09Ut000000io4MIAQ', 'a09Ut000000tPk9IAE', 'a09Ut000000zKQ2IAM', 'a09Ut000000jIVTIA2', 'a09Ut000000mtIMIAY', 'a09Ut000000lGe2IAE', 'a09Ut000000s7R8IAI', 'a09Ut000000rDf3IAE', 'a09Ut000000mbmrIAA', 'a09Ut000000gqGjIAI', 'a09Ut000000lBBJIA2', 'a09Ut000000q9wrIAA', 'a09Ut000000ou5RIAQ', 'a09Ut000000meKvIAI', 'a09Ut000000nUGHIA2', 'a09Ut000000l1IPIAY', 'a09Ut000000nHMHIA2', 'a09Ut000000utMnIAI', 'a09Ut000000jgHdIAI', 'a09Ut000000m1g9IAA', 'a09Ut000000skFZIAY', 'a09Ut0000010UYbIAM', 'a09Ut000000idfDIAQ', 'a09Ut000000gND8IAM', 'a09Ut000000ox9mIAA', 'a09Ut000000niRKIAY', 'a09Ut000000rIDJIA2', 'a09Ut000000rnCIIAY', 'a09Ut000000qEEzIAM', 'a09Ut000000qxooIAA', 'a09Ut000000i26AIAQ', 'a09Ut000000hqMlIAI', 'a09Ut000000sk7YIAQ', 'a09Ut000000gR5RIAU', 'a09Ut000000iTG1IAM', 'a09Ut000000l8IIIAY', 'a09Ut000000uTy3IAE', 'a09Ut000000s40EIAQ', 'a09Ut000000pV8DIAU', 'a09Ut000000jTCLIA2', 'a09Ut000000iWKSIA2', 'a09Ut000000iSWrIAM', 'a09Ut000000rEw6IAE', 'a09Ut000000jk1uIAA', 'a09Ut000000jZzJIAU', 'a09Ut000000gDvKIAU', 'a09Ut000000qQRRIA2', 'a09Ut000000tKR7IAM', 'a09Ut000000maUDIAY', 'a09Ut000000kPgAIAU', 'a09Ut000000liVRIAY', 'a09Ut000000k6onIAA', 'a09Ut000000jJZZIA2', 'a09Ut000000qwW9IAI', 'a09Ut000000rDrxIAE', 'a09Ut000000tP10IAE', 'a09Ut000000rJ4ZIAU', 'a09Ut000000kQltIAE', 'a09Ut000000tTsbIAE', 'a09Ut000000fz4LIAQ', 'a09Ut000000ljg1IAA', 'a09Ut000000k9xxIAA', 'a09Ut000000kTLZIA2', 'a09Ut000000sDTJIA2', 'a09Ut000000uW21IAE', 'a09Ut000000o6YVIAY', 'a09Ut000000lB1dIAE', 'a09Ut000000gHu5IAE', 'a09Ut000000qwcbIAA', 'a09Ut000000pJtRIAU', 'a09Ut000000nHxNIAU', 'a09Ut000000i9MOIAY', 'a09Ut000000gQqwIAE', 'a09Ut000000mmNKIAY', 'a09Ut000000offtIAA', 'a09Ut000000zW7pIAE', 'a09Ut000000tbJtIAI', 'a09Ut000000nRogIAE', 'a09Ut000000gM49IAE', 'a09Ut000000jPbnIAE', 'a09Ut000000k9I3IAI', 'a09Ut000000kowIIAQ', 'a09Ut000000uRjuIAE', 'a09Ut000000tTCgIAM', 'a09Ut000000kExdIAE', 'a09Ut000000uUpqIAE', 'a09Ut000000jlE5IAI', 'a09Ut000000gthdIAA', 'a09Ut000000jgUYIAY', 'a09Ut000000gTnDIAU', 'a09Ut000000nUxpIAE', 'a09Ut000000t22oIAA', 'a09Ut000000qEDNIA2', 'a09Ut000000s1ryIAA', 'a09Ut000000mtLZIAY', 'a09Ut000000nrcfIAA', 'a09Ut000000mTsXIAU', 'a09Ut000000blxeIAA', 'a09Ut000000xEADIA2', 'a09Ut000000qJ8EIAU', 'a09Ut000000gJ33IAE', 'a09Ut000000l9W5IAI', 'a09Ut000000ifykIAA', 'a09Ut000000gFsHIAU', 'a09Ut000000ok1HIAQ', 'a09Ut000000tGiVIAU', 'a09Ut000000jqthIAA', 'a09Ut000000jZsrIAE', 'a09Ut000000nKC5IAM']
+INFO 2024-03-06 08:02:10,154 Is there a difference between two column sets?set()
+INFO 2024-03-06 08:02:18,471 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-06 08:02:18,471 AMOUNT OF IDS TO UPDATE: 477
+INFO 2024-03-06 08:02:18,473 (477, 68)
+INFO 2024-03-06 08:02:18,531 Updated 0 rows.
+INFO 2024-03-06 08:02:18,531 Done updating existing placements in database
+INFO 2024-03-06 08:02:18,531 Adding new and updated records to DB
+INFO 2024-03-06 08:02:18,531 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-06 08:02:21,431 Done adding new and updated records to database.
+INFO 2024-03-07 08:02:02,112 Starting Script.
+INFO 2024-03-07 08:02:02,113 Dates for SOQL update statement ('03/07/2024', '03/06/2024'),('2024-03-07', '2024-03-06')
+INFO 2024-03-07 08:02:09,607       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0013700000cBblU  ...                   None
+5   0016R00003EHGT7  ...                   None
+6   0013700000cBblU  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0013700000cBblU  ...                   None
+14  0013700000cBblU  ...                   None
+15  0013700000cBblU  ...                   None
+16  0013700000cBblU  ...                   None
+17  0013700000cBblU  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0013700000cBblU  ...                   None
+25  0013700000cBblU  ...                   None
+26  0013700000cBblU  ...                   None
+27  0013700000cBblU  ...                   None
+28  0013700000cBblU  ...                   None
+29  0013700000cBblU  ...                   None
+30  0013700000cBblU  ...                   None
+31  0013700000cBblU  ...                   None
+32  0013700000cBblU  ...                   None
+33  0013700000cBblU  ...                   None
+34  0013700000cBblU  ...                   None
+35  0013700000cBblU  ...                   None
+36  0013700000cBblU  ...                   None
+37  0013700000cBblU  ...                   None
+38  0013700000cBblU  ...                   None
+39  0013700000cBblU  ...                   None
+40  0013700000cBblU  ...                   None
+41  0013700000cBblU  ...                   None
+42  0013700000cBblU  ...                   None
+43  0013700000cBblU  ...                   None
+44  0013700000cBblU  ...                   None
+45  0013700000cBblU  ...                   None
+46  0013700000cBblU  ...                   None
+47  0013700000cBblU  ...                   None
+
+[48 rows x 65 columns]
+INFO 2024-03-07 08:02:09,694 Starting changing column names...
+INFO 2024-03-07 08:02:09,694 Done with changing column names...
+INFO 2024-03-07 08:02:09,694 Starting date transformations...
+INFO 2024-03-07 08:02:09,713 Starting Effective Date and End Date transformations
+INFO 2024-03-07 08:02:09,714 Done with Eff and End Date transformations
+INFO 2024-03-07 08:02:09,714 Done with date transformations...
+INFO 2024-03-07 08:02:09,714 Starting other transformations...
+INFO 2024-03-07 08:02:09,716 done with other transformations...
+INFO 2024-03-07 08:02:09,716 (48, 68)
+INFO 2024-03-07 08:02:09,729 Starting to grab placements from SQL Server...
+INFO 2024-03-07 08:02:09,826 (477, 68)
+INFO 2024-03-07 08:02:09,827 Starting Comparison
+INFO 2024-03-07 08:02:09,827 ['a09Ut000000sTzVIAU', 'a09Ut000000mEjpIAE', 'a09Ut0000010X8JIAU', 'a09Ut000000nP3hIAE', 'a09Ut0000011ZmLIAU', 'a09Ut0000011JjBIAU', 'a09Ut000001173lIAA', 'a09Ut0000011GmvIAE', 'a09Ut000000E7RXIA0', 'a09Ut0000010dATIAY', 'a09Ut0000011VafIAE', 'a09Ut0000011LxuIAE', 'a09Ut000000znQPIAY', 'a09Ut000000q8XlIAI', 'a09Ut000000zfHZIAY', 'a09Ut0000011OXaIAM', 'a09Ut000000tje2IAA', 'a09Ut0000011Dx8IAE', 'a09Ut0000011d1yIAA', 'a09Ut000000zfPdIAI', 'a09Ut00000119WwIAI', 'a09Ut000000s7hFIAQ', 'a09Ut0000011BldIAE', 'a09Ut000000uGJzIAM', 'a09Ut000000y6ybIAA', 'a09Ut0000011JeLIAU', 'a09Ut0000011KLtIAM', 'a09Ut0000010dNNIAY', 'a09Ut000000hmRDIAY', 'a09Ut0000010WYsIAM', 'a091G00000C0QCfQAN', 'a09Ut00000113L3IAI', 'a09Ut000000zVoTIAU', 'a09Ut0000011GyEIAU', 'a096R00002lAZpZQAW', 'a09Ut00000116sPIAQ', 'a096R000034WWWyQAO', 'a09Ut00000118scIAA', 'a09Ut000000zhT3IAI', 'a091G000009kuHIQAY', 'a096R000031DSGeQAO', 'a096R000031D5spQAC', 'a09Ut0000011D5uIAE', 'a09Ut00000115EnIAI', 'a096R00002xU46AQAS', 'a09Ut0000011UOTIA2', 'a09Ut0000011PtRIAU', 'a09Ut000000s1ryIAA']
+INFO 2024-03-07 08:02:09,827 Is there a difference between two column sets?set()
+INFO 2024-03-07 08:02:10,805 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-07 08:02:10,805 AMOUNT OF IDS TO UPDATE: 48
+INFO 2024-03-07 08:02:10,806 (48, 68)
+INFO 2024-03-07 08:02:10,880 Updated 12 rows.
+INFO 2024-03-07 08:02:10,880 Done updating existing placements in database
+INFO 2024-03-07 08:02:10,880 Adding new and updated records to DB
+INFO 2024-03-07 08:02:10,880 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-07 08:02:12,859 Done adding new and updated records to database.
+INFO 2024-03-08 08:02:02,595 Starting Script.
+INFO 2024-03-08 08:02:02,596 Dates for SOQL update statement ('03/08/2024', '03/07/2024'),('2024-03-08', '2024-03-07')
+INFO 2024-03-08 08:02:10,465       Account_ID__c  ... TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                   None
+1   0013700000cBblU  ...                   None
+2   0013700000cBblU  ...                   None
+3   0013700000cBblU  ...                   None
+4   0013700000cBblU  ...                   None
+5   0011G00000uy4Hh  ...                   None
+6   0013700000cBblU  ...                   None
+7   0013700000cBblU  ...                   None
+8   0013700000cBblU  ...                   None
+9   0013700000cBblU  ...                   None
+10  0013700000cBblU  ...                   None
+11  0013700000cBblU  ...                   None
+12  0013700000cBblU  ...                   None
+13  0013700000cBblU  ...                   None
+14  0013700000cBblU  ...                   None
+15  0013700000cBblU  ...                   None
+16  0013700000cBblU  ...                   None
+17  0013700000cBblU  ...                   None
+18  0013700000cBblU  ...                   None
+19  0013700000cBblU  ...                   None
+20  0013700000cBblU  ...                   None
+21  0013700000cBblU  ...                   None
+22  0013700000cBblU  ...                   None
+23  0013700000cBblU  ...                   None
+24  0013700000cBblU  ...                   None
+25  0013700000cBblU  ...                   None
+26  0013700000cBblU  ...                   None
+27  0013700000cBblU  ...                   None
+28  0013700000cBbl8  ...                 Online
+29  0011G00000uy4Hh  ...                   None
+30  0013700000cBblU  ...                   None
+31  0013700000cBblU  ...                   None
+32  0013700000cBblU  ...                   None
+33  0013700000cBblU  ...                   None
+34  0013700000cBblU  ...                   None
+35  0013700000cBblU  ...                   None
+36  0013700000cBblU  ...                   None
+37  0013700000cBblU  ...                   None
+38  0013700000cBblU  ...                   None
+39  0013700000cBblU  ...                   None
+40  0013700000cBblU  ...                   None
+41  0013700000cBblU  ...                   None
+42  0013700000cBblU  ...                   None
+43  0013700000cBblU  ...                   None
+44  0013700000cBblU  ...                   None
+45  0013700000cBblU  ...                   None
+46  0013700000cBblU  ...                   None
+47  0013700000cBblU  ...                   None
+48  0013700000cBblU  ...                   None
+49  0013700000cBblU  ...                   None
+50  0013700000cBblU  ...                   None
+51  0013700000cBblU  ...                   None
+52  0013700000cBblU  ...                   None
+53  0013700000cBblU  ...                   None
+
+[54 rows x 65 columns]
+INFO 2024-03-08 08:02:10,553 Starting changing column names...
+INFO 2024-03-08 08:02:10,553 Done with changing column names...
+INFO 2024-03-08 08:02:10,553 Starting date transformations...
+INFO 2024-03-08 08:02:10,573 Starting Effective Date and End Date transformations
+INFO 2024-03-08 08:02:10,574 Done with Eff and End Date transformations
+INFO 2024-03-08 08:02:10,574 Done with date transformations...
+INFO 2024-03-08 08:02:10,574 Starting other transformations...
+INFO 2024-03-08 08:02:10,576 done with other transformations...
+INFO 2024-03-08 08:02:10,577 (54, 68)
+INFO 2024-03-08 08:02:10,590 Starting to grab placements from SQL Server...
+INFO 2024-03-08 08:02:10,869 (525, 68)
+INFO 2024-03-08 08:02:10,870 Starting Comparison
+INFO 2024-03-08 08:02:10,870 ['a09Ut0000012NKvIAM', 'a09Ut0000012KjdIAE', 'a096R000036oWyLQAU', 'a09Ut000000zfnpIAA', 'a09Ut0000012G50IAE', 'a09Ut0000011lPJIAY', 'a091G00000C0GewQAF', 'a09Ut0000011ZmLIAU', 'a091G000009kbQSQAY', 'a09Ut0000012HCKIA2', 'a09Ut0000011GmvIAE', 'a09Ut0000010dATIAY', 'a09Ut000000zGMPIA2', 'a09Ut0000011LxuIAE', 'a09Ut0000011mV3IAI', 'a091G00000BMJdIQAX', 'a09Ut0000012It7IAE', 'a09Ut0000010SwcIAE', 'a09Ut00000102HNIAY', 'a09Ut00000109ltIAA', 'a09Ut0000010RvhIAE', 'a09Ut0000011Dx8IAE', 'a09Ut0000011d1yIAA', 'a09Ut0000011o3pIAA', 'a09Ut00000119WwIAI', 'a09Ut0000011w7qIAA', 'a09Ut0000012I8LIAU', 'a09Ut0000011KLtIAM', 'a096R00002xU8etQAC', 'a09Ut0000012NZRIA2', 'a09Ut0000011lo0IAA', 'a09Ut0000010dNNIAY', 'a091G00000C0jZvQAJ', 'a091G00000C0HEtQAN', 'a09Ut000000z8GnIAI', 'a091G00000BN2LqQAL', 'a09Ut000000uqK5IAI', 'a09Ut0000011pSxIAI', 'a09Ut000000ySELIA2', 'a09Ut0000011xv7IAA', 'a09Ut0000012CnhIAE', 'a09Ut00000120crIAA', 'a09Ut000000zOgYIAU', 'a096R000034VNecQAG', 'a096R00002Py20FQAR', 'a09Ut0000010UYbIAM', 'a096R000036ocYBQAY', 'a09Ut000000z8BxIAI', 'a096R00002lANahQAG', 'a09Ut0000011rbBIAQ', 'a09Ut00000115EnIAI', 'a09Ut0000012AdrIAE', 'a09Ut0000011sozIAA', 'a09Ut00000129I0IAI']
+INFO 2024-03-08 08:02:10,870 Is there a difference between two column sets?set()
+INFO 2024-03-08 08:02:12,005 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-08 08:02:12,005 AMOUNT OF IDS TO UPDATE: 54
+INFO 2024-03-08 08:02:12,006 (54, 68)
+INFO 2024-03-08 08:02:12,041 Updated 19 rows.
+INFO 2024-03-08 08:02:12,041 Done updating existing placements in database
+INFO 2024-03-08 08:02:12,041 Adding new and updated records to DB
+INFO 2024-03-08 08:02:12,041 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-08 08:02:14,710 Done adding new and updated records to database.
+INFO 2024-03-09 08:02:02,685 Starting Script.
+INFO 2024-03-09 08:02:02,685 Dates for SOQL update statement ('03/09/2024', '03/08/2024'),('2024-03-09', '2024-03-08')
+INFO 2024-03-09 08:02:16,010       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                    None
+1   0013700000cBblU  ...                    None
+2   0013700000cBblU  ...                    None
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+5   0013700000cBblU  ...                    None
+6   0013700000cBblU  ...                    None
+7   0013700000cBblU  ...                    None
+8   0013700000cBblU  ...                    None
+9   0013700000cBblU  ...                    None
+10  0013700000cBblU  ...                    None
+11  0013700000cBblU  ...                    None
+12  0013700000cBblU  ...                    None
+13  0013700000cBblU  ...                    None
+14  0013700000cBblU  ...                    None
+15  0013700000cBblU  ...                    None
+16  0011G00000uy4Hh  ...                    None
+17  0013700000cBblU  ...                    None
+18  0013700000cBblU  ...                    None
+19  0013700000cBblU  ...                    None
+20  0013700000cBblU  ...                    None
+21  0013700000cBblU  ...                    None
+22  0013700000cBblU  ...                    None
+23  0013700000cBblU  ...                    None
+24  0013700000cBblU  ...                    None
+25  0013700000cBblU  ...                    None
+
+[26 rows x 65 columns]
+INFO 2024-03-09 08:02:16,083 Starting changing column names...
+INFO 2024-03-09 08:02:16,084 Done with changing column names...
+INFO 2024-03-09 08:02:16,084 Starting date transformations...
+INFO 2024-03-09 08:02:16,102 Starting Effective Date and End Date transformations
+INFO 2024-03-09 08:02:16,103 Done with Eff and End Date transformations
+INFO 2024-03-09 08:02:16,103 Done with date transformations...
+INFO 2024-03-09 08:02:16,103 Starting other transformations...
+INFO 2024-03-09 08:02:16,106 done with other transformations...
+INFO 2024-03-09 08:02:16,106 (26, 68)
+INFO 2024-03-09 08:02:16,119 Starting to grab placements from SQL Server...
+INFO 2024-03-09 08:02:16,233 (579, 68)
+INFO 2024-03-09 08:02:16,233 Starting Comparison
+INFO 2024-03-09 08:02:16,233 ['a09Ut0000012NKvIAM', 'a09Ut0000012KjdIAE', 'a09Ut0000012gllIAA', 'a09Ut0000012lwkIAA', 'a09Ut0000012G50IAE', 'a09Ut00000138bZIAQ', 'a09Ut0000012r2sIAA', 'a09Ut0000013EkDIAU', 'a09Ut0000012s5OIAQ', 'a09Ut0000012kW1IAI', 'a09Ut000001341hIAA', 'a096R00002Py1GtQAJ', 'a09Ut0000012p7YIAQ', 'a09Ut00000139RBIAY', 'a09Ut0000012oubIAA', 'a0937000009gZyqAAE', 'a09Ut0000012NZRIA2', 'a09Ut0000012quoIAA', 'a09Ut0000012qQ9IAI', 'a09Ut00000131v4IAA', 'a09Ut00000138N3IAI', 'a0937000009g6mzAAA', 'a09Ut00000133X3IAI', 'a09Ut000000jb53IAA', 'a09Ut0000012fUjIAI', 'a091G000009kkh8QAA']
+INFO 2024-03-09 08:02:16,233 Is there a difference between two column sets?set()
+INFO 2024-03-09 08:02:16,750 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-09 08:02:16,750 AMOUNT OF IDS TO UPDATE: 26
+INFO 2024-03-09 08:02:16,751 (26, 68)
+INFO 2024-03-09 08:02:16,780 Updated 5 rows.
+INFO 2024-03-09 08:02:16,780 Done updating existing placements in database
+INFO 2024-03-09 08:02:16,780 Adding new and updated records to DB
+INFO 2024-03-09 08:02:16,780 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-09 08:02:18,287 Done adding new and updated records to database.
+INFO 2024-03-10 08:02:02,532 Starting Script.
+INFO 2024-03-10 08:02:02,533 Dates for SOQL update statement ('03/10/2024', '03/09/2024'),('2024-03-10', '2024-03-09')
+WARNING 2024-03-10 08:02:20,916 Atribute not in API result.
+INFO 2024-03-10 08:02:20,916 Empty DataFrame
+Columns: []
+Index: []
+INFO 2024-03-10 08:02:20,919 Starting changing column names...
+INFO 2024-03-10 08:02:20,920 No updated data in user's file.
+INFO 2024-03-11 08:02:02,323 Starting Script.
+INFO 2024-03-11 08:02:02,324 Dates for SOQL update statement ('03/11/2024', '03/10/2024'),('2024-03-11', '2024-03-10')
+INFO 2024-03-11 08:02:09,983      Account_ID__c  ... TR1__Timesheet_Type__c
+0  0013700000cBblU  ...                   None
+
+[1 rows x 65 columns]
+INFO 2024-03-11 08:02:10,034 Starting changing column names...
+INFO 2024-03-11 08:02:10,035 Done with changing column names...
+INFO 2024-03-11 08:02:10,035 Starting date transformations...
+INFO 2024-03-11 08:02:10,052 Starting Effective Date and End Date transformations
+INFO 2024-03-11 08:02:10,053 Done with Eff and End Date transformations
+INFO 2024-03-11 08:02:10,053 Done with date transformations...
+INFO 2024-03-11 08:02:10,053 Starting other transformations...
+INFO 2024-03-11 08:02:10,054 done with other transformations...
+INFO 2024-03-11 08:02:10,054 (1, 68)
+INFO 2024-03-11 08:02:10,067 Starting to grab placements from SQL Server...
+INFO 2024-03-11 08:02:10,343 (605, 68)
+INFO 2024-03-11 08:02:10,343 Starting Comparison
+INFO 2024-03-11 08:02:10,343 ['a09Ut0000013P7lIAE']
+INFO 2024-03-11 08:02:10,344 Is there a difference between two column sets?set()
+INFO 2024-03-11 08:02:10,360 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-11 08:02:10,360 AMOUNT OF IDS TO UPDATE: 1
+INFO 2024-03-11 08:02:10,361 (1, 68)
+INFO 2024-03-11 08:02:10,393 Updated 0 rows.
+INFO 2024-03-11 08:02:10,393 Done updating existing placements in database
+INFO 2024-03-11 08:02:10,393 Adding new and updated records to DB
+INFO 2024-03-11 08:02:10,393 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-11 08:02:10,476 Done adding new and updated records to database.
+INFO 2024-03-12 08:02:02,155 Starting Script.
+INFO 2024-03-12 08:02:02,155 Dates for SOQL update statement ('03/12/2024', '03/11/2024'),('2024-03-12', '2024-03-11')
+INFO 2024-03-12 08:02:10,187       Account_ID__c  ...  TR1__Timesheet_Type__c
+0   0013700000cBblU  ...                    None
+1   0013700000cBblU  ...                    None
+2   0013700000cBblU  ...                    None
+3   0013700000cBblU  ...                    None
+4   0013700000cBblU  ...                    None
+..              ...  ...                     ...
+76  0013700000cBblU  ...                    None
+77  0011G00000uy4Hh  ...                    None
+78  0013700000cBblU  ...                    None
+79  0013700000cBblU  ...                    None
+80  0013700000cBblU  ...                    None
+
+[81 rows x 65 columns]
+INFO 2024-03-12 08:02:10,260 Starting changing column names...
+INFO 2024-03-12 08:02:10,261 Done with changing column names...
+INFO 2024-03-12 08:02:10,261 Starting date transformations...
+INFO 2024-03-12 08:02:10,282 Starting Effective Date and End Date transformations
+INFO 2024-03-12 08:02:10,283 Done with Eff and End Date transformations
+INFO 2024-03-12 08:02:10,283 Done with date transformations...
+INFO 2024-03-12 08:02:10,283 Starting other transformations...
+INFO 2024-03-12 08:02:10,286 done with other transformations...
+INFO 2024-03-12 08:02:10,286 (81, 68)
+INFO 2024-03-12 08:02:10,303 Starting to grab placements from SQL Server...
+INFO 2024-03-12 08:02:10,413 (606, 68)
+INFO 2024-03-12 08:02:10,413 Starting Comparison
+INFO 2024-03-12 08:02:10,413 ['a091G00000BN1bHQAT', 'a09Ut000000uZsjIAE', 'a09Ut0000012NKvIAM', 'a09Ut0000014HBOIA2', 'a09Ut000000zIODIA2', 'a09Ut0000012KjdIAE', 'a09Ut000000ttLdIAI', 'a09Ut0000012lwkIAA', 'a09Ut0000010G0zIAE', 'a09Ut000000usc1IAA', 'a09Ut0000014CJlIAM', 'a09Ut0000012HCKIA2', 'a09Ut0000013zETIAY', 'a09Ut0000012r2sIAA', 'a096R00002Py25ZQAR', 'a09Ut000000w8JoIAI', 'a09Ut0000013cMjIAI', 'a096R00002Py2DYQAZ', 'a091G00000BMV1bQAH', 'a09Ut0000013EkDIAU', 'a09Ut0000012It7IAE', 'a096R00002l8qRoQAI', 'a09Ut000000zYXpIAM', 'a09Ut0000013epxIAA', 'a09Ut000001341hIAA', 'a09Ut000000vRptIAE', 'a0937000009g39LAAQ', 'a09Ut0000011d1yIAA', 'a09Ut0000012p7YIAQ', 'a09Ut000000w9UMIAY', 'a09Ut000000wGPNIA2', 'a09Ut0000012I8LIAU', 'a09Ut0000013P7lIAE', 'a091G00000C0j13QAB', 'a09Ut00000142yjIAA', 'a0937000009g5AfAAI', 'a09Ut000000tLdKIAU', 'a091G00000AHfTgQAL', 'a09Ut000000zHjtIAE', 'a09Ut000000wJgbIAE', 'a09Ut0000013oRAIAY', 'a09Ut0000013rDiIAI', 'a096R00002Py26wQAB', 'a09Ut0000012quoIAA', 'a09Ut0000012qQ9IAI', 'a09Ut00000131v4IAA', 'a09Ut0000014E3rIAE', 'a09Ut0000013q4jIAA', 'a0937000009g8ulAAA', 'a091G0000099J6IQAU', 'a09Ut00000144fZIAQ', 'a091G00000C0NDQQA3', 'a09Ut000000ySELIA2', 'a09Ut0000011xv7IAA', 'a09Ut0000010BJ3IAM', 'a09Ut000000u5mbIAA', 'a09Ut000000wFhpIAE', 'a09Ut00000144dyIAA', 'a09Ut00000120crIAA', 'a09Ut000000vMOnIAM', 'a09Ut000000vGbnIAE', 'a09Ut0000013vVpIAI', 'a09Ut000000w1WnIAI', 'a09Ut0000013fUHIAY', 'a09Ut0000013e3cIAA', 'a09Ut0000013yK1IAI', 'a09Ut000000bsHeIAI', 'a096R00002o9MuVQAU', 'a09Ut000000zh85IAA', 'a09Ut0000013eDFIAY', 'a09Ut00000115EnIAI', 'a09Ut0000014Q4zIAE', 'a09Ut000000zg7BIAQ', 'a09Ut0000013vkNIAQ', 'a09Ut0000014AgAIAU', 'a09Ut0000012AdrIAE', 'a09Ut0000013iDeIAI', 'a09Ut000000zJPBIA2', 'a09Ut000000tTCgIAM', 'a09Ut0000011PtRIAU', 'a09Ut00000129I0IAI']
+INFO 2024-03-12 08:02:10,413 Is there a difference between two column sets?set()
+INFO 2024-03-12 08:02:12,195 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-12 08:02:12,195 AMOUNT OF IDS TO UPDATE: 81
+INFO 2024-03-12 08:02:12,197 (81, 68)
+INFO 2024-03-12 08:02:12,259 Updated 34 rows.
+INFO 2024-03-12 08:02:12,259 Done updating existing placements in database
+INFO 2024-03-12 08:02:12,259 Adding new and updated records to DB
+INFO 2024-03-12 08:02:12,259 ['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE', 'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE', 'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON', 'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM', 'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT', 'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE', 'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF', 'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT', 'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID', 'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE', 'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE', 'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE', 'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT', 'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT', 'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT', 'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE', 'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED', 'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP', 'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER', 'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE']
+INFO 2024-03-12 08:02:14,993 Done adding new and updated records to database.
