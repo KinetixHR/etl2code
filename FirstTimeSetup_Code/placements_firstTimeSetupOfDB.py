@@ -116,7 +116,7 @@ def transform_data(df):
         'SALARY',
         'SALARY_OFFERED',
         'BILL_RATE',
-        'BOOKING_DATE',
+        'BILLING_DATE',
         'BILLING_NOTES',
         'COMMISSIONABLE_DATE',
         'END_DATE',

@@ -124,3 +124,70 @@ INFO 2024-03-12 14:57:16,898 Index(['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE',
        'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS',
        'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE'],
       dtype='object')
+INFO 2024-03-12 15:28:52,108 Done loading placements
+INFO 2024-03-12 15:28:52,108 Done loading all data into placements table successfully, exiting script.
+INFO 2024-03-13 14:17:30,685 Starting Script.
+INFO 2024-03-13 14:17:32,100 Rollback successful
+INFO 2024-03-13 14:18:09,482 (52260, 65)
+INFO 2024-03-13 14:18:09,482 Index(['Account_ID__c', 'TR1__Fee_Percentage__c',
+       'TR1__Retained_Invoice_Amount__c', 'TR1__Adjusted_Bill_Rate__c',
+       'TR1__Adjusted_Fee_Amount__c', 'TR1__Discount_Amount__c',
+       'TR1__Discount_Reason__c', 'Affiliate_Vendor__c',
+       'Approved_for_Billing__c', 'Billing_Termlu__c',
+       'TR1__Candidate_Credit__c', 'KX_Candidate_Full_Name_u__c',
+       'TR1__Candidate_GP_Amount__c', 'TR1__Retained_Candidate_GP_Amount__c',
+       'TR1__Candidate_Percentage__c', 'Candidate_Points__c',
+       'TR1__Account__c', 'TR1__Contact__c', 'CreatedById', 'CreatedDate',
+       'Falloff__c', 'Fall_Off_Reason__c', 'TR1__Fee_Amount__c', 'Fee_Tier__c',
+       'FLSA__c', 'GP_Item_Description__c', 'Gross_Fee_Percentage__c',
+       'Gross_Invoice_Amount__c', 'Item_Number__c', 'TR1__Job__c',
+       'LastModifiedById', 'LastModifiedDate',
+       'Number_of_Commission_Records__c', 'Offer_Accept_to_Placement__c',
+       'TR1__OT_Bill_Rate_Multiplier_Percentage__c', 'TR1__OT_Pay_Rate__c',
+       'TR1__Pay_Rate__c', 'TR1__Person_Placed__c', 'KX_PersonPlacedID__c',
+       'KX_PersonPlacedSubmitDate__c', 'Name', 'Id', 'RecordTypeId',
+       'TR1__Job_Credit__c', 'TR1__Job_GP_Amount__c',
+       'TR1__Retained_Job_GP_Amount__c', 'TR1__Job_Percentage__c',
+       'Recruiter_Points__c', 'TR1__Retained_Fee_Amount__c', 'TR1__Salary__c',
+       'Offer_Salary__c', 'TR1__Bill_Rate__c', 'TR1__Booking_Date__c',
+       'Billing_Notes__c', 'Commissionable_Date__c', 'TR1__End_Date__c',
+       'TR1__Assignment_Ended__c', 'Calculate_Contractor_Commissions__c',
+       'Estimated_End_Date__c', 'TR1__Markup__c', 'TR1__OT_Bill_Rate__c',
+       'TR1__PO_Number__c', 'Point_Value__c', 'TR1__Timesheet_Approver__c',
+       'TR1__Timesheet_Type__c'],
+      dtype='object')
+INFO 2024-03-13 14:18:09,483 Successfully pulled placements from API: (52260, 65)
+INFO 2024-03-13 14:18:09,483 Starting changing column names...
+INFO 2024-03-13 14:18:09,483 Done with changing column names...
+INFO 2024-03-13 14:18:09,483 Starting date transformations...
+INFO 2024-03-13 14:18:10,882 Starting Effective Date and End Date transformations
+INFO 2024-03-13 14:18:10,883 Done with Eff and End Date transformations
+INFO 2024-03-13 14:18:10,883 Done with date transformations...
+INFO 2024-03-13 14:18:10,883 Starting other transformations...
+INFO 2024-03-13 14:18:11,171 done with other transformations...
+INFO 2024-03-13 14:18:11,172 Loaded in placements from API and transformed columns...: (52260, 68)
+INFO 2024-03-13 14:18:11,172 Index(['ACCOUNT_ID', 'ACTUAL_FEE_PERCENTAGE',
+       'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED', 'ADJUSTED_BILL_RATE',
+       'ADJUSTED_FEE_AMOUNT_DH_CONV', 'ADJUSTMENT_AMOUNT', 'ADJUSTMENT_REASON',
+       'AFFILIATE_VENDOR', 'APPROVED_FOR_BILLING', 'BILLING_TERM',
+       'CANDIDATE_CREDIT', 'CANDIDATE_FULL_NAME', 'CANDIDATE_GP_AMOUNT',
+       'RETAINED_CANDIDATE_GP_AMOUNT', 'CANDIDATE_PERCENTAGE',
+       'CANDIDATE_POINTS', 'COMPANY', 'CONTACT', 'CREATED_BY_ID', 'FALLOFF',
+       'FALLOFF_REASON', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA',
+       'GP_ITEM_DESCRIPTION', 'GROSS_FEE_PERCENTAGE', 'GROSS_INVOICE_AMOUNT',
+       'ITEM_NUMBER', 'JOB', 'LAST_MODIFIED_BY_ID',
+       'NUMBER_OF_COMMISSION_RECORDS', 'OFFER_ACCEPT_TO_BILLING_DATE',
+       'OT_BILL_RATE_MULTIPLIER_PERCENTAGE', 'OT_PAY_RATE', 'PAY_RATE',
+       'PERSON_PLACED', 'PERSON_PLACED_ID', 'PERSON_PLACED_SUBMIT_DATE',
+       'PLACEMENT', 'PLACEMENT_ID', 'RECORD_TYPE', 'RECRUITER_CREDIT',
+       'RECRUITER_GP_AMOUNT', 'RETAINED_RECRUITER_GP_AMOUNT',
+       'RECRUITER_PERCENTAGE', 'RECRUITER_POINTS', 'RPO_PLACEMENT_FEE_AMOUNT',
+       'SALARY', 'SALARY_OFFERED', 'BILL_RATE', 'BILLING_DATE',
+       'BILLING_NOTES', 'COMMISSIONABLE_DATE', 'END_DATE', 'ASSIGNMENT_ENDED',
+       'CALCULATE_CONTRACTOR_COMMISSIONS', 'ESTIMATED_END_DATE', 'MARKUP',
+       'OT_BILL_RATE', 'PO_NUMBER', 'POINT_VALUE', 'TIMESHEET_APPROVER',
+       'TIMESHEET_TYPE', 'CREATED_DATE_DT', 'CREATED_DATE_TS',
+       'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE'],
+      dtype='object')
+INFO 2024-03-13 14:51:05,990 Done loading placements
+INFO 2024-03-13 14:51:05,990 Done loading all data into placements table successfully, exiting script.

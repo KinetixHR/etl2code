@@ -10,6 +10,7 @@ from sqlalchemy import create_engine, MetaData, Table, Column, update, String, t
 from sqlalchemy.orm import sessionmaker
 import time
 
+# Configute Logging
 logging.basicConfig(filename='./etl2code/logs/contacts_update_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
@@ -180,7 +181,7 @@ def remove_ids_from_db(id_list):
 
     logging.info(f"Rows related to the {len(ids_to_remove)} IDs detedcted today deleted successfully.")
 
-
+# Define dates, database details, and finally connect to DB
 date_format = "%m/%d/%Y"
 soql_today = dt.datetime.strptime(gen_date(),date_format).strftime("%Y-%m-%d")
 soql_yesterday = dt.datetime.strptime(gen_date(-1),date_format).strftime("%Y-%m-%d")

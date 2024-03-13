@@ -10,11 +10,12 @@ from sqlalchemy import create_engine, MetaData, Table, Column, update, String, t
 from sqlalchemy.orm import sessionmaker
 import time
 
+# Configure Logging
 logging.basicConfig(filename='./etl2code/logs/contacts_update_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 
-
+#$ Database connection details
 SERVER = "kinetixsql.database.windows.net"
 DATABASE = "KinetixSQL"
 USERNAME = "awhelan"
@@ -135,7 +136,7 @@ def transform_data(df):
     return df
 
 
-
+# Define connection information to Azure DB and connect
 date_format = "%m/%d/%Y"
 SERVER = "kinetixsql.database.windows.net"
 DATABASE = "KinetixSQL"
@@ -149,8 +150,7 @@ conn = engine.connect()
 logging.info("CONNECTED to Azure DB")
 
 try:
-    #year_list = [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021]
-    
+    # Iteratively find contacts from 2021 - 2026   
     year_list = [2021,2022,2023,2024,2025,2026]
     
     logging.info(f"making API calls for {len(year_list)} years")
@@ -209,6 +209,10 @@ try:
         logging.info(f"successfully called api for {el}, df shape: {df_contacts.shape}")
         
         def to_sql_implementation(i):
+            '''
+            This script uses pandas .to_sql() method to add dataframe data into a DB. This is compared against the sqlalchemy method which is used elsewhere in our scripts.
+            Additionally, it uses a flag system (the i argument) to control replacement vs. appending.
+            '''
             if i == 99:
                 try:
                     logging.info(f"Starting to !!!REPLACE!!! {df_contacts.shape[0]} rows for {el} into DB")
@@ -227,7 +231,7 @@ try:
                 except Exception as e:
                     logging.warning("Contacts update to SQL Server did not work")
                     logging.warning(str(e))
-
+        # Run to_sql_implemention to add data to Azure DB
         to_sql_implementation(i)
 
 

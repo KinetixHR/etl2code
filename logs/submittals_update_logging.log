@@ -382,3 +382,19 @@ INFO 2024-03-12 08:04:12,241 Index(['ID', 'NAME', 'CREATED_BY', 'JOB_ID', 'COMPA
       dtype='object')
 INFO 2024-03-12 08:04:12,241 Successfully pulled Submittals from API: (38863, 17)
 INFO 2024-03-12 08:04:44,191 Submittals update completed successfully
+INFO 2024-03-13 07:04:01,826 Starting Script.
+INFO 2024-03-13 07:04:17,258 Starting changing column names...
+INFO 2024-03-13 07:04:17,259 Done with changing column names...
+INFO 2024-03-13 07:04:17,259 Starting date transformations...
+INFO 2024-03-13 07:04:18,170 Done with date transformations...
+INFO 2024-03-13 07:04:18,170 Starting other transformations...
+INFO 2024-03-13 07:04:18,247 done with other transformations...
+INFO 2024-03-13 07:04:18,255 (38945, 17)
+INFO 2024-03-13 07:04:18,256 Index(['ID', 'NAME', 'CREATED_BY', 'JOB_ID', 'COMPANY_NAME', 'REJECTION_NOTES',
+       'REJECTION_REASON', 'ATS_STAGE_STATUS', 'CANDIDATE_OWNER', 'CANDIDATE',
+       'SUBMITTED_BY', 'NUMBER_OF_DAYS_IN_STAGE', 'STAGE',
+       'STAGE_START_DATE_DT', 'STAGE_END_DATE_DT', 'CREATED_DATE_DT',
+       'CREATED_DATE_TS'],
+      dtype='object')
+INFO 2024-03-13 07:04:18,256 Successfully pulled Submittals from API: (38945, 17)
+INFO 2024-03-13 07:05:01,947 Submittals update completed successfully

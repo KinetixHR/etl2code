@@ -299,3 +299,32 @@ Columns: []
 Index: []
 INFO 2024-03-12 08:03:09,912 Starting changing column names...
 INFO 2024-03-12 08:03:09,913 No updated data in user's file.
+INFO 2024-03-13 07:03:02,524 Starting Script.
+INFO 2024-03-13 07:03:02,525 Dates for SOQL update statement ('03/13/2024', '03/12/2024'),('2024-03-13', '2024-03-12')
+INFO 2024-03-13 07:03:04,867    IsActive  Alias  ...  ManagerId          UserRoleId
+0      True  sproc  ...       None  00E1G000000xpDgUAI
+
+[1 rows x 23 columns]
+INFO 2024-03-13 07:03:04,889 Starting changing column names...
+INFO 2024-03-13 07:03:04,890 Done with changing column names...
+INFO 2024-03-13 07:03:04,890 Starting date transformations...
+INFO 2024-03-13 07:03:04,910 Starting Effective Date and End Date transformations
+WARNING 2024-03-13 07:03:04,911 Eff and or End date transformations failed.
+WARNING 2024-03-13 07:03:04,911 Can only use .dt accessor with datetimelike values
+INFO 2024-03-13 07:03:04,911 Done with date transformations...
+INFO 2024-03-13 07:03:04,911 Starting other transformations...
+INFO 2024-03-13 07:03:04,912 done with other transformations...
+INFO 2024-03-13 07:03:04,913 (1, 27)
+INFO 2024-03-13 07:03:04,927 Starting to grab users from SQL Server...
+INFO 2024-03-13 07:03:05,047 (475, 27)
+INFO 2024-03-13 07:03:05,047 Starting Comparison
+INFO 2024-03-13 07:03:05,047 ['0056R00000E2rvQQAR']
+INFO 2024-03-13 07:03:05,048 Is there a difference between two column sets?set()
+INFO 2024-03-13 07:03:05,060 NUMBER OF ROWS WITHOUT CHANGES: 0
+INFO 2024-03-13 07:03:05,060 AMOUNT OF IDS TO UPDATE: 1
+INFO 2024-03-13 07:03:05,061 (1, 27)
+INFO 2024-03-13 07:03:05,083 Updated 4 rows.
+INFO 2024-03-13 07:03:05,083 Done updating existing users in database
+INFO 2024-03-13 07:03:05,083 Adding new and updated records to DB
+INFO 2024-03-13 07:03:05,083 ['ACTIVE', 'ALIAS', 'EMAIL', 'LAST_LOGIN_DATE', 'LAST_PASSWORD_CHANGE_DATE', 'LAST_VIEWED_DATE', 'MOBILE_PHONE_NUMBER', 'MONTHLY_POINT_GOAL', 'NAME', 'PAYROLL_NAME', 'PHONE', 'PHOTO', 'PROFILE', 'TITLE', 'FULL_PHOTO', 'USER_ID', 'USER_TYPE', 'USERNAME', 'COMMISSION_ELIGIBLE', 'MANAGER_ID', 'ROLE', 'CREATED_DATE_DT', 'CREATED_DATE_TS', 'LAST_MODIFIED_DATE_DT', 'LAST_MODIFIED_DATE_TS', 'EFFECTIVE_DATE', 'END_DATE']
+INFO 2024-03-13 07:03:05,110 Done adding new and updated records to database.

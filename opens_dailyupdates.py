@@ -28,6 +28,9 @@ def getDataFromAPI(soql_statement):
     return df_opens
 
 def aggregateData(df):
+    """
+    Functionality to return an aggregated df from extracted data from Salesforce. Returns the date and # of open inventory. Meant to be run daily. 
+    """
     df = df.drop(columns=['attributes'])
     df.columns = ["JOB_ID", "JOB_CREATED_DATE", "JOB_OPEN_DATE"]
     df["EFFECTIVE_DATE"] = today
@@ -39,8 +42,6 @@ def aggregateData(df):
     #df["JOB_CREATED_DATE"] = pd.to_datetime(df["JOB_CREATED_DATE"], unit='ms')
     #df["JOB_CREATED_DATE"] = df["JOB_CREATED_DATE"].dt.strftime('%Y-%m-%d')
     logging.info("Loaded in opens file & transformed data from API...:" + str(df.shape))
-
-
 
     df = df.groupby("EFFECTIVE_DATE")
     todays_values = df.count().values[0][0]
@@ -54,9 +55,9 @@ def aggregateData(df):
 
     return df_to_load
 
-
+# Define flag to exit early if any errors are detected
 opens_success_flag = True
-
+# Define DB connection details and connect
 server = "kinetixsql.database.windows.net" 
 database = "KinetixSQL" 
 username = "awhelan" 
@@ -66,8 +67,9 @@ cnxn = pyodbc.connect("DRIVER={ODBC Driver 18 for SQL Server};SERVER="+server+";
 
 today = date.today()
 today_search_string = date.today().strftime('%m_%d_%Y')
-oj_CONTAINERNAME = "dataloaderexports1/openjobs"   
+ 
 
+# Define Salesforce SQL statement
 soql_statement = """SELECT Id, 
 CreatedDate, 
 TR1__Open_Date__c
@@ -84,7 +86,7 @@ AND TR1__Status__c != 'Hold'
 AND (NOT TR1__Account_Name__c LIKE '%Kinetix%') 
 AND (NOT TR1__Account_Name__c LIKE '%training%')"""
 
-
+# Extract data from Salesforce
 try:     
     df_opens = getDataFromAPI(soql_statement)
 
@@ -92,15 +94,12 @@ try:
     logging.info(df_opens.head(2))
     logging.info(f"Successfully loaded jobs from API: {df_opens.shape}")
 
-
-
-
 except Exception as ex:
     logging.warning("Issue with loading open Jobs from API")
     logging.warning(ex)
     opens_success_flag = False
 
-
+# Transform (Aggregation in this case)
 if opens_success_flag == True:
     try:
         df_opens = aggregateData(df_opens)
@@ -110,7 +109,7 @@ if opens_success_flag == True:
         opens_success_flag = False
 
 
-
+# Load into Azure DB
 if opens_success_flag == True:
     cursor = cnxn.cursor()
     try: 
@@ -126,6 +125,7 @@ if opens_success_flag == True:
         opens_success_flag = False
         cursor.close()
 
+# Report on status
 if opens_success_flag == True:
     logging.info("Done loading all data into opens table successfully, exiting script.")
 else:

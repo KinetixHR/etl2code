@@ -16,6 +16,7 @@ from sqlalchemy import create_engine, MetaData, Table, Column, update, String
 from sqlalchemy.orm import sessionmaker
 import numpy
 
+# Configure Logging
 import logging
 logging.basicConfig(filename='./etl2code/logs/alljobs2_dailyupdates_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')

@@ -5,6 +5,7 @@ import requests
 import sqlalchemy
 import urllib
 
+# Configure Logging
 logging.basicConfig(filename='./etl2code/logs/companies_update_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
@@ -30,10 +31,10 @@ def run_api_call(statement):
     result_df = result_df.drop(columns=['attributes'])
     return result_df
 
-
+# Define SOQL statement
 SOQL_STATEMENT = """SELECT TR1_AccountId__c, Account_Manager__c, Id, Name, Do_Not_Generate_HRPO_Initial__c, Industry, LastModifiedDate, LastViewedDate, Website, CreatedDate FROM Account"""
 
-
+# Define DB connection details and connect
 SERVER = "kinetixsql.database.windows.net"
 DATABASE = "KinetixSQL"
 USERNAME = "awhelan"
@@ -43,9 +44,11 @@ constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("D
 
 engine = sqlalchemy.create_engine(constring,echo=False)
 conn = engine.connect()
+logging.info('Connected to DB!')
 
 
 try:
+    # Extract data from Salesforce
     df_companies= run_api_call(SOQL_STATEMENT)
 
     logging.info(df_companies.shape)
@@ -55,6 +58,7 @@ except:
     logging.warn("Companies SOQL API call did not work.")
 
 try:
+    # Load Data to Azure DB
     df_companies.to_sql('dw2_companies',con = engine, index = False, if_exists='replace')
     logging.info("Companies update completed successfully")
 except Exception as e:

@@ -456,3 +456,24 @@ INFO 2024-03-12 09:30:05,037 Successfully loaded jobs from API: (1065, 4)
 INFO 2024-03-12 09:30:05,039 Loaded in opens file & transformed data from API...:(1065, 4)
 INFO 2024-03-12 09:30:05,080 Done loading opens
 INFO 2024-03-12 09:30:05,081 Done loading all data into opens table successfully, exiting script.
+INFO 2024-03-13 08:30:01,358 Starting Script.
+DEBUG 2024-03-13 08:30:01,915 Starting new HTTPS connection (1): login.salesforce.com:443
+DEBUG 2024-03-13 08:30:02,375 https://login.salesforce.com:443 "POST /services/Soap/u/52.0 HTTP/1.1" 200 816
+DEBUG 2024-03-13 08:30:02,379 Starting new HTTPS connection (1): kinetix.my.salesforce.com:443
+DEBUG 2024-03-13 08:30:02,755 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job HTTP/1.1" 201 None
+DEBUG 2024-03-13 08:30:03,316 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002rimXIAQ/batch HTTP/1.1" 201 None
+DEBUG 2024-03-13 08:30:03,623 https://kinetix.my.salesforce.com:443 "POST /services/async/52.0/job/750Ut000002rimXIAQ HTTP/1.1" 200 None
+DEBUG 2024-03-13 08:30:03,922 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002rimXIAQ/batch/751Ut000002wMVPIA2 HTTP/1.1" 200 None
+DEBUG 2024-03-13 08:30:09,241 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002rimXIAQ/batch/751Ut000002wMVPIA2 HTTP/1.1" 200 None
+DEBUG 2024-03-13 08:30:09,522 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002rimXIAQ/batch/751Ut000002wMVPIA2/result HTTP/1.1" 200 None
+DEBUG 2024-03-13 08:30:09,666 https://kinetix.my.salesforce.com:443 "GET /services/async/52.0/job/750Ut000002rimXIAQ/batch/751Ut000002wMVPIA2/result/752Ut000002kHO5 HTTP/1.1" 200 None
+INFO 2024-03-13 08:30:09,674 Index(['attributes', 'Id', 'CreatedDate', 'TR1__Open_Date__c'], dtype='object')
+INFO 2024-03-13 08:30:09,674                                           attributes  ... TR1__Open_Date__c
+0  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-07
+1  {'type': 'TR1__Job__c', 'url': '/services/data...  ...        2024-02-20
+
+[2 rows x 4 columns]
+INFO 2024-03-13 08:30:09,682 Successfully loaded jobs from API: (1051, 4)
+INFO 2024-03-13 08:30:09,684 Loaded in opens file & transformed data from API...:(1051, 4)
+INFO 2024-03-13 08:30:09,764 Done loading opens
+INFO 2024-03-13 08:30:09,764 Done loading all data into opens table successfully, exiting script.
