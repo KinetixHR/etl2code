@@ -80,7 +80,6 @@ def compare_and_find_updated_reqs(req_list_,new_dataframe,existing_dataframe):
     Once we have our two strings, we compare their lengths. If the lengths are
     SIGNIFICANTLY different, then we count that as a legit change and send that new row
     into a resultuing dataframe for insertion and updating operations in the Azure DB
-
     """
 
     # first define some variables
