@@ -13,7 +13,7 @@ import pandas as pd
 import sqlalchemy
 import urllib
 import logging
-logging.basicConfig(filename='alljobs_logging.log', level=logging.INFO,
+logging.basicConfig(filename='./etl2code/logs/alljobs_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 
@@ -126,7 +126,6 @@ def transform_data(df):
     df["INTAKE_COMPLETED_DATE"] = pd.to_datetime(df['INTAKE_COMPLETED_DATE'], unit='ms')
     df['INTAKE_COMPLETED_DATE'] = df["INTAKE_COMPLETED_DATE"].dt.tz_localize('US/Eastern')
     df["INTAKE_COMPLETED_DATE"] = df["INTAKE_COMPLETED_DATE"].dt.strftime('%Y-%m-%d')
-    
 
     df["INVOICE_PAID_DATE"] = df["INVOICE_PAID_DATE"].dt.strftime('%Y-%m-%d')
     df["LAST_ACTIVITY_DATE"] = df["LAST_ACTIVITY_DATE"].dt.strftime('%Y-%m-%d')
@@ -141,28 +140,31 @@ def transform_data(df):
     logging.info("done with other transformations...")
     logging.info(df["LAST_MODIFIED_DATE_TS"].dtype)
 
-    df["EFFECTIVE_DATE"] = gen_date()
-
     df["BUDGETED_START_DATE"] = pd.to_datetime(df['BUDGETED_START_DATE'],errors='coerce')
-    df["CLOSED_DATE"] = pd.to_datetime(df["CLOSED_DATE"],errors = 'coerce')
-    #df["LAST_MODIFIED_DATE"] = pd.to_datetime(df['LAST_MODIFIED_DATE'], unit='ms',errors = 'coerce')
-    #df["CREATED_DATE"] = pd.to_datetime(df['CREATED_DATE'], unit='ms',errors = 'coerce')
+    df["ESTIMATED_START_DATE"] = pd.to_datetime(df['ESTIMATED_START_DATE'],errors='coerce')
+    df["INTAKE_COMPLETED_DATE"] = pd.to_datetime(df['INTAKE_COMPLETED_DATE'],errors='coerce')
     df["LAST_ACTIVITY_DATE"] = pd.to_datetime(df["LAST_ACTIVITY_DATE"],errors = 'coerce')
+    df["CLOSED_DATE"] = pd.to_datetime(df["CLOSED_DATE"],errors = 'coerce')
     df["OPEN_DATE"] = pd.to_datetime(df["OPEN_DATE"],errors = 'coerce')
     df["EFFECTIVE_DATE"] = pd.to_datetime(df["EFFECTIVE_DATE"],errors = 'coerce')
 
     df["BUDGETED_START_DATE"] = df["BUDGETED_START_DATE"].dt.strftime('%Y-%m-%d')
+    df["ESTIMATED_START_DATE"] = df["ESTIMATED_START_DATE"].dt.strftime('%Y-%m-%d')
     df["CLOSED_DATE"] = df["CLOSED_DATE"].dt.strftime('%Y-%m-%d')
-    #df["LAST_MODIFIED_DATE"] = df["LAST_MODIFIED_DATE"].dt.strftime('%Y-%m-%d')
-    #df["CREATED_DATE"] = df["CREATED_DATE"].dt.strftime('%Y-%m-%d')
+
     df['LAST_ACTIVITY_DATE'] = df["LAST_ACTIVITY_DATE"].dt.strftime('%Y-%m-%d')
-    df['OPEN_DATE'] = df["OPEN_DATE"].dt.strftime('%Y-%m-%d')
+    df["INTAKE_COMPLETED_DATE"] = df['INTAKE_COMPLETED_DATE'].dt.strftime('%Y-%m-%d')
+    df['OPEN_DATE'] = df["OPEN_DATE"]
+    
 
 
 
     df["END_DATE"] = '12/31/9999'
-    df["END_DATE"] = pd.to_datetime(df["END_DATE"],errors = 'coerce')
-    df["END_DATE"] = df["END_DATE"].dt.strftime('%Y-%m-%d')
+    #df["END_DATE"] = pd.to_datetime(df["END_DATE"],errors = 'coerce')
+    #df["END_DATE"] = df["END_DATE"].dt.strftime('%Y-%m-%d')
+    df["EFFECTIVE_DATE"] = gen_date()
+    df["EFFECTIVE_DATE"] = pd.to_datetime(df["EFFECTIVE_DATE"],errors = 'coerce')
+    df["EFFECTIVE_DATE"] = df["EFFECTIVE_DATE"].dt.strftime('%Y-%m-%d')
 
     for el in df.columns:
         if df[el].dtype == 'int64':
@@ -171,8 +173,6 @@ def transform_data(df):
             df[el] = df[el].astype(float)
     
     return df
-
-
 
 # Initiate connection to Azure SQL Database
 SERVER = "kinetixsql.database.windows.net"

@@ -10,7 +10,48 @@ logging.basicConfig(filename='./etl2code/logs/companies_update_logging.log', lev
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 
+def transform_data(df):
+    
+    df.columns = [
+        'ACCOUNT_ID', 
+        'ACCOUNT_MANAGER', 
+        'COMPANY_ID', 
+        'NAME', 
+        'DO_NOT_GENERATE_HRPO_INITIAL', 
+        'INDUSTRY', 
+        'LAST_MODIFIED_DATE', 
+        'LAST_VIEWED_DATE', 
+        'WEBSITE', 
+        'CREATED_DATE'
+    ]
+    
+    df["LAST_VIEWED_DATE"] = pd.to_datetime(df["LAST_VIEWED_DATE"])
 
+    df["LAST_MODIFIED_DATE"] = pd.to_datetime(
+        df["LAST_MODIFIED_DATE"], unit='ms')
+    df["LAST_MODIFIED_DATE_CONVERTED"] = df["LAST_MODIFIED_DATE"].dt.tz_localize(
+        'UTC').dt.tz_convert('US/Eastern')
+    df["LAST_MODIFIED_DATE_DT"] = df["LAST_MODIFIED_DATE_CONVERTED"].dt.strftime(
+        '%Y-%m-%d')
+    df["LAST_MODIFIED_DATE_TS"] = df["LAST_MODIFIED_DATE_CONVERTED"].dt.strftime(
+        '%Y-%m-%d %H:%M:%S')
+    df.drop(columns=["LAST_MODIFIED_DATE_CONVERTED",
+            "LAST_MODIFIED_DATE"], inplace=True)
+    
+    df["CREATED_DATE"] = pd.to_datetime(df['CREATED_DATE'], unit='ms')
+    df['CREATED_DATE_CONVERTED'] = df["CREATED_DATE"].dt.tz_localize(
+        'UTC').dt.tz_convert('US/Eastern')
+    df["CREATED_DATE_DT"] = df["CREATED_DATE_CONVERTED"].dt.strftime(
+        '%Y-%m-%d')
+    df["CREATED_DATE_TS"] = df["CREATED_DATE_CONVERTED"].dt.strftime(
+        '%Y-%m-%d %H:%M:%S')
+    df.drop(columns=['CREATED_DATE_CONVERTED', 'CREATED_DATE'], inplace=True)
+
+    logging.info(df['CREATED_DATE_DT'].value_counts())
+    logging.info(df["LAST_MODIFIED_DATE_DT"].value_counts())
+    logging.info(df.columns)
+
+    return df
 
 def run_api_call(statement):
     """
@@ -50,7 +91,7 @@ logging.info('Connected to DB!')
 try:
     # Extract data from Salesforce
     df_companies= run_api_call(SOQL_STATEMENT)
-
+    df_companies = transform_data(df_companies)
     logging.info(df_companies.shape)
     logging.info(df_companies.columns)
     logging.info("Successfully pulled Companies from API: %s",str(df_companies.shape))
