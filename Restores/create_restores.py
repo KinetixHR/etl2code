@@ -13,11 +13,17 @@ DRIVER="ODBC Driver 18 for SQL Server"
 constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("DRIVER=ODBC Driver 18 for SQL Server;SERVER={0};PORT=1433;DATABASE={1};UID={2};PWD={3};TDS_Version=8.0;".format(SERVER, DATABASE, USERNAME, PASSWORD)))
 engine = sqlalchemy.create_engine(constring,echo=False)
 
+print("Starting JOBS TABLE backup")
 df = pd.read_sql("SELECT * FROM dw2_jobs",con = engine)
 df.to_csv(f"jobs_table_extract for {today}.csv")
+print("JOBS TABLE extract created successfully")
 
+print("Starting USERS TABLE backup")
 df = pd.read_sql("SELECT * FROM dw2_users",con = engine)
 df.to_csv(f"users_table_extract for {today}.csv")
+print("USERS TABLE extract created successfully")
 
+print("Starting PLACEMENTS TABLE backup")
 df = pd.read_sql("SELECT * FROM dw2_placements",con = engine)
 df.to_csv(f"placements_table_extract for {today}.csv")
+print("PLACEMENTS TABLE extract created successfully")
