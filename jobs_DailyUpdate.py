@@ -386,7 +386,7 @@ logging.info(updated_req_df.shape)
 updated_req_df["END_DATE"] = '9999-12-31'
 updated_req_df["EFFECTIVE_DATE"] = gen_date()
 updated_req_df["EFFECTIVE_DATE"] = pd.to_datetime(updated_req_df["EFFECTIVE_DATE"],errors = 'coerce')
-updated_req_df.to_csv(f"Jobs daily file for {gen_date().replace('/','_')}.csv")
+updated_req_df.to_csv(f"~/etl2code/Daily Extracts/Jobs daily file for {gen_date().replace('/','_')}.csv")
 
 # END_DATE in Azure needs to be backdated, this code handles that
 date_to_update = dt.datetime.now()-dt.timedelta(1)

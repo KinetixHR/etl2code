@@ -238,17 +238,17 @@ def transform_data(df):
 
     
     #df["LAST_LOGIN_DATE"] = pd.to_datetime(df["LAST_LOGIN_DATE"])
-    
     #df["LAST_LOGIN_DATE"] = df["LAST_LOGIN_DATE"].dt.strftime('%Y-%m-%d')
     
 
     logging.info("Starting Effective Date and End Date transformations")
     try:
-        df["EFFECTIVE_DATE"] = gen_date()
-        df["END_DATE"] = df["END_DATE"].dt.strftime('%m-%d-%Y')
-        df["END_DATE"] = '12/31/9999'
-
-        #df["END_DATE"] = pd.to_datetime(df["END_DATE"])
+        df["EFFECTIVE_DATE"] = pd.Timestamp.today()
+        df["EFFECTIVE_DATE"] = df["EFFECTIVE_DATE"].dt.strftime('%m-%d-%Y')
+        updated_req_df["END_DATE"] = '9999-12-31'
+        #df["END_DATE"] = '12/31/9999'
+        #df["END_DATE"] = pd.to_datetime(df["END_DATE"], errors = "ignore")
+        #df["END_DATE"] = df["END_DATE"].dt.strftime('%m-%d-%Y')
         #df["END_DATE"] = df["END_DATE"].dt.strftime('%Y-%m-%d')
         logging.info("Done with Eff and End Date transformations")
     
@@ -275,7 +275,7 @@ soql_today = dt.datetime.strptime(gen_date(),date_format).strftime("%Y-%m-%d")
 soql_yesterday = dt.datetime.strptime(gen_date(-1),date_format).strftime("%Y-%m-%d")
 logging.info(f"Dates for SOQL update statement {(today,yesterday)},{(soql_today,soql_yesterday)}")
 
-SOQL_STATEMENT = SOQL_STATEMENT = fSOQL_STATEMENT = f"""SELECT Account_ID__c,
+SOQL_STATEMENT = f"""SELECT Account_ID__c,
         TR1__Fee_Percentage__c,
         TR1__Retained_Invoice_Amount__c,
         TR1__Adjusted_Bill_Rate__c,
@@ -375,10 +375,9 @@ logging.info(updated_req_df.shape)
 
 # making further modifications to the resulting dataframe
 # (this dataframe includes JUST the reqs that need to be inserted)
-updated_req_df["END_DATE"] = '9999-12-31'
 #updated_req_df["EFFECTIVE_DATE"] = gen_date()
 #updated_req_df["EFFECTIVE_DATE"] = pd.to_datetime(updated_req_df["EFFECTIVE_DATE"],errors = 'coerce')
-updated_req_df.to_csv(f"~/Placements daily file for {gen_date().replace('/','_')}.csv")
+updated_req_df.to_csv(f"~/etl2code/Daily Extracts/Placements daily file for {gen_date().replace('/','_')}.csv")
 # END_DATE in Azure needs to be backdated, this code handles that
 date_to_update = dt.datetime.now()-dt.timedelta(1)
 date_to_update = str(date_to_update.strftime("%Y-%m-%d"))
