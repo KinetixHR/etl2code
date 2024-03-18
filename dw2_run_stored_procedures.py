@@ -19,9 +19,9 @@ conn_str = f'DRIVER={DRIVER};SERVER=tcp:{server};PORT=1433;DATABASE={database};U
 cnxn = pyodbc.connect(conn_str)
 cursor = cnxn.cursor()
 try:
-    stored_procedure_call = "EXEC EnforceDates"
+    stored_procedure_call = "EXEC EnforceDates2"
     cursor.execute(stored_procedure_call)
     next_num = cursor.fetchone()[0]
-    logging.info("Stored Procedure 'EXEC EnforceDates' ran successfully.")
+    logging.info("Stored Procedure 'EXEC EnforceDates2' ran successfully.")
 except:
-    logging.warning("Stored Procedure 'EXEC EnforceDates' did not complete correctly...")
+    logging.warning("Stored Procedure 'EXEC EnforceDates2' did not complete correctly...")

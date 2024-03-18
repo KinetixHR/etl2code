@@ -2,6 +2,9 @@
 *.log
 # ignore ALL files in ANY directory named logs
 ./logs
+# ifnore all .csv or .xlsx files
+*.csv
+*.xlsx
 
 # for other stuff:
 # and other testing

@@ -163,7 +163,7 @@ def transform_data(df):
     logging.info("Starting Effective Date and End Date transformations")
     try:
         df["EFFECTIVE_DATE"] = gen_date()
-        df["END_DATE"] = '12/31/9999'
+        df["END_DATE"] = '9999-12-31'
         #df["END_DATE"] = pd.to_datetime(df["END_DATE"])
         #df["END_DATE"] = df["END_DATE"].dt.strftime('%Y-%m-%d')
         logging.info("Done with Eff and End Date transformations")

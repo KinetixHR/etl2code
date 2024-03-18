@@ -39,7 +39,7 @@ try:
     
 
     # SQL query to get the total job count from DW2_Jobs excluding end date and is deleted filters
-    count_query = "SELECT COUNT(*) AS TotalJobs FROM DW2_Jobs where end_date = '9999-12-31' And is_deleted = 'False'"
+    count_query = "SELECT COUNT(*) AS TotalJobs FROM DW2_Jobs where end_date = '9999-12-31 00:00:00.000' And is_deleted = 'False'"
     cursor.execute(count_query)
     total_jobs_result = cursor.fetchone()
     DW_Jobs_count = total_jobs_result[0] if total_jobs_result else 0
@@ -53,7 +53,7 @@ try:
     cnxn.commit()
     
     
-    print(f"Successfully inserted daily Salesforce job count of {DW_Jobs_count} and Dw2 job count of {TR_Job_count} into DW2_Jobs_Log with effective date {effective_date}.")
+    print(f"Successfully inserted daily DW2 job count of {DW_Jobs_count} and Salesforce job count of {TR_Job_count} into DW2_Jobs_Log with effective date {effective_date}.")
 except Exception as e:
     print(f"An error occurred: {e}")
 finally:

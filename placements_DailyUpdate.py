@@ -245,7 +245,9 @@ def transform_data(df):
     logging.info("Starting Effective Date and End Date transformations")
     try:
         df["EFFECTIVE_DATE"] = gen_date()
+        df["END_DATE"] = df["END_DATE"].dt.strftime('%m-%d-%Y')
         df["END_DATE"] = '12/31/9999'
+
         #df["END_DATE"] = pd.to_datetime(df["END_DATE"])
         #df["END_DATE"] = df["END_DATE"].dt.strftime('%Y-%m-%d')
         logging.info("Done with Eff and End Date transformations")
@@ -374,8 +376,8 @@ logging.info(updated_req_df.shape)
 # making further modifications to the resulting dataframe
 # (this dataframe includes JUST the reqs that need to be inserted)
 updated_req_df["END_DATE"] = '9999-12-31'
-updated_req_df["EFFECTIVE_DATE"] = gen_date()
-updated_req_df["EFFECTIVE_DATE"] = pd.to_datetime(updated_req_df["EFFECTIVE_DATE"],errors = 'coerce')
+#updated_req_df["EFFECTIVE_DATE"] = gen_date()
+#updated_req_df["EFFECTIVE_DATE"] = pd.to_datetime(updated_req_df["EFFECTIVE_DATE"],errors = 'coerce')
 updated_req_df.to_csv(f"~/Placements daily file for {gen_date().replace('/','_')}.csv")
 # END_DATE in Azure needs to be backdated, this code handles that
 date_to_update = dt.datetime.now()-dt.timedelta(1)
