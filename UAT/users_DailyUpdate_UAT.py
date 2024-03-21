@@ -17,7 +17,7 @@ from sqlalchemy.orm import sessionmaker
 import numpy
 
 import logging
-logging.basicConfig(filename='./etl2code/logs/placements_dailyupdates_logging.log', level=logging.INFO,
+logging.basicConfig(filename='./etl2code/logs/users_dailyupdates_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 
@@ -50,8 +50,8 @@ def query_jobs_object(query_statement):
     # Setting up salesforce functionality
     session = requests.Session()
     sf = Salesforce(password='Kinetix3', username='awhelan@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
-    
-    fetch_results = sf.bulk.TR1__Closing_Report__c.query_all(query_statement, lazy_operation=True)
+
+    fetch_results = sf.bulk.User.query_all(query_statement, lazy_operation=True)
 
     # Read results into DataFrame
     all_results = []
@@ -80,7 +80,6 @@ def compare_and_find_updated_reqs(req_list_,new_dataframe,existing_dataframe):
     Once we have our two strings, we compare their lengths. If the lengths are
     SIGNIFICANTLY different, then we count that as a legit change and send that new row
     into a resultuing dataframe for insertion and updating operations in the Azure DB
-
     """
 
     # first define some variables
@@ -102,15 +101,14 @@ def compare_and_find_updated_reqs(req_list_,new_dataframe,existing_dataframe):
     # Loop over reqs
     for el in req_list_:
         
-        df_new_data = new_dataframe[new_dataframe["PLACEMENT_ID"] == el]
-        df_old_data = existing_dataframe[existing_dataframe["PLACEMENT_ID"] == el]
+        df_new_data = new_dataframe[new_dataframe["USER_ID"] == el]
+        df_old_data = existing_dataframe[existing_dataframe["USER_ID"] == el]
 
 
         #df_new_data = new_dataframe[new_dataframe["JOB_ID"] == el]
         df_new_data = df_new_data.fillna(value = numpy.nan)
         #df_old_data = existing_dataframe[existing_dataframe["JOB_ID"] == el]
         df_old_data = df_old_data.fillna(value = numpy.nan)
-
 
         df_new_string = df_new_data.to_string(header = False,index = False, index_names = False)
         df_old_string = df_old_data.to_string(header = False,index = False, index_names = False)
@@ -124,14 +122,13 @@ def compare_and_find_updated_reqs(req_list_,new_dataframe,existing_dataframe):
     logging.info(f"NUMBER OF ROWS WITHOUT CHANGES: {len(req_list_) - len(Ids_to_update)}")
     logging.info(f"AMOUNT OF IDS TO UPDATE: {len(Ids_to_update)}")
     
-    return new_dataframe[new_dataframe["PLACEMENT_ID"].isin(Ids_to_update)]
+    return new_dataframe[new_dataframe["USER_ID"].isin(Ids_to_update)]
 
 def req_list_generator(dframe_):
     """
     This may not be necessary....
     """
-    #print(dframe_.columns)
-    req_list__ = dframe_["PLACEMENT_ID"].tolist()
+    req_list__ = dframe_["USER_ID"].tolist()
     logging.info(req_list__)
     return req_list__
     
@@ -146,71 +143,29 @@ def transform_data(df):
     """
     logging.info("Starting changing column names...")
 
-    df.columns = ['ACCOUNT_ID',
-        'ACTUAL_FEE_PERCENTAGE',
-        'ACTUAL_INVOICE_AMOUNT_RPO_RETAINED',
-        'ADJUSTED_BILL_RATE',
-        'ADJUSTED_FEE_AMOUNT_DH_CONV',
-        'ADJUSTMENT_AMOUNT',
-        'ADJUSTMENT_REASON',
-        'AFFILIATE_VENDOR',
-        "APPROVED_FOR_BILLING",
-        'BILLING_TERM',
-        'CANDIDATE_CREDIT',
-        'CANDIDATE_FULL_NAME',
-        'CANDIDATE_GP_AMOUNT',
-        'RETAINED_CANDIDATE_GP_AMOUNT',
-        'CANDIDATE_PERCENTAGE',
-        'CANDIDATE_POINTS',
-        'COMPANY',
-        'CONTACT',
-        'CREATED_BY_ID',
-        'CREATED_DATE',
-        'FALLOFF',
-        'FALLOFF_REASON',
-        'FEE_AMOUNT',
-        'FEE_TIER',
-        'FLSA',
-        'GP_ITEM_DESCRIPTION',
-        'GROSS_FEE_PERCENTAGE',
-        'GROSS_INVOICE_AMOUNT',
-        'ITEM_NUMBER',
-        'JOB',
-        'LAST_MODIFIED_BY_ID',
-        'LAST_MODIFIED_DATE',
-        'NUMBER_OF_COMMISSION_RECORDS',
-        'OFFER_ACCEPT_TO_BILLING_DATE',
-        'OT_BILL_RATE_MULTIPLIER_PERCENTAGE',
-        'OT_PAY_RATE',
-        'PAY_RATE',
-        'PERSON_PLACED',
-        'PERSON_PLACED_ID',
-        'PERSON_PLACED_SUBMIT_DATE',
-        'PLACEMENT',
-        'PLACEMENT_ID',
-        'RECORD_TYPE',
-        'RECRUITER_CREDIT',
-        'RECRUITER_GP_AMOUNT',
-        'RETAINED_RECRUITER_GP_AMOUNT',
-        'RECRUITER_PERCENTAGE',
-        'RECRUITER_POINTS',
-        'RPO_PLACEMENT_FEE_AMOUNT',
-        'SALARY',
-        'SALARY_OFFERED',
-        'BILL_RATE',
-        'BILLING_DATE',
-        'BILLING_NOTES',
-        'COMMISSIONABLE_DATE',
-        'END_DATE',
-        'ASSIGNMENT_ENDED',
-        'CALCULATE_CONTRACTOR_COMMISSIONS',
-        'ESTIMATED_END_DATE',
-        'MARKUP',
-        'OT_BILL_RATE',
-        'PO_NUMBER',
-        'POINT_VALUE',
-        'TIMESHEET_APPROVER',
-        'TIMESHEET_TYPE']
+    df.columns = ["ACTIVE", 
+    "ALIAS", 
+    "CREATED_DATE", 
+    "EMAIL", 
+    "LAST_LOGIN_DATE", 
+    "LAST_MODIFIED_DATE", 
+    "LAST_PASSWORD_CHANGE_DATE", 
+    "LAST_VIEWED_DATE", 
+    "MOBILE_PHONE_NUMBER", 
+    "MONTHLY_POINT_GOAL", 
+    "NAME", 
+    "PAYROLL_NAME", 
+    "PHONE", 
+    "PHOTO", 
+    "PROFILE", 
+    "TITLE", 
+    "FULL_PHOTO", 
+    "USER_ID", 
+    "USER_TYPE", 
+    "USERNAME", 
+    "COMMISSION_ELIGIBLE", 
+    "MANAGER_ID",  
+    "ROLE"]
     logging.info("Done with changing column names...")
 
     logging.info("Starting date transformations...")
@@ -237,23 +192,27 @@ def transform_data(df):
             "LAST_MODIFIED_DATE"], inplace=True)
 
     
-    #df["LAST_LOGIN_DATE"] = pd.to_datetime(df["LAST_LOGIN_DATE"])
-    #df["LAST_LOGIN_DATE"] = df["LAST_LOGIN_DATE"].dt.strftime('%Y-%m-%d')
+    df["LAST_LOGIN_DATE"] = pd.to_datetime(df["LAST_LOGIN_DATE"])
+    df["LAST_PASSWORD_CHANGE_DATE"] = pd.to_datetime(df["LAST_PASSWORD_CHANGE_DATE"])
+    df["LAST_VIEWED_DATE"] = pd.to_datetime(df["LAST_VIEWED_DATE"])
     
+    df["LAST_LOGIN_DATE"] = df["LAST_LOGIN_DATE"].dt.strftime('%Y-%m-%d')
+    df["LAST_PASSWORD_CHANGE_DATE"] = df["LAST_PASSWORD_CHANGE_DATE"].dt.strftime('%Y-%m-%d')
+    df["LAST_VIEWED_DATE"] = df["LAST_VIEWED_DATE"].dt.strftime('%Y-%m-%d')
 
     logging.info("Starting Effective Date and End Date transformations")
     try:
-        df["EFFECTIVE_DATE"] = pd.Timestamp.today()
-        df["EFFECTIVE_DATE"] = df["EFFECTIVE_DATE"].dt.strftime('%m-%d-%Y')
+        df["EFFECTIVE_DATE"] = gen_date()
+        df["EFFECTIVE_DATE"] = pd.to_datetime(df["EFFECTIVE_DATE"])
+        df["EFFECTIVE_DATE"] = df["EFFECTIVE_DATE"].dt.strftime('%Y-%m-%d')
+
         df["END_DATE"] = '9999-12-31'
-        #df["END_DATE"] = '12/31/9999'
-        #df["END_DATE"] = pd.to_datetime(df["END_DATE"], errors = "ignore")
-        #df["END_DATE"] = df["END_DATE"].dt.strftime('%m-%d-%Y')
+        df["END_DATE"] = pd.to_datetime(df["END_DATE"], errors = 'ignore')
         #df["END_DATE"] = df["END_DATE"].dt.strftime('%Y-%m-%d')
         logging.info("Done with Eff and End Date transformations")
     
     except Exception as e:
-        logging.warning("Eff and or End date transformations failed.")
+        logging.warning("Eff and/or End date transformations failed.")
         logging.warning(e)
 
     logging.info("Done with date transformations...")
@@ -262,6 +221,13 @@ def transform_data(df):
     df = df.fillna("")
     logging.info("done with other transformations...")
 
+
+
+    for el in df.columns:
+        if df[el].dtype == 'int64':
+            df[el] = df[el].astype(float)
+        if df[el].dtype == 'float64':
+            df[el] = df[el].astype(float)
     
     return df
 
@@ -275,74 +241,33 @@ soql_today = dt.datetime.strptime(gen_date(),date_format).strftime("%Y-%m-%d")
 soql_yesterday = dt.datetime.strptime(gen_date(-1),date_format).strftime("%Y-%m-%d")
 logging.info(f"Dates for SOQL update statement {(today,yesterday)},{(soql_today,soql_yesterday)}")
 
-SOQL_STATEMENT = f"""SELECT Account_ID__c,
-        TR1__Fee_Percentage__c,
-        TR1__Retained_Invoice_Amount__c,
-        TR1__Adjusted_Bill_Rate__c,
-        TR1__Adjusted_Fee_Amount__c,
-        TR1__Discount_Amount__c,
-        TR1__Discount_Reason__c,
-        Affiliate_Vendor__c,
-        Approved_for_Billing__c,
-        Billing_Termlu__c,
-        TR1__Candidate_Credit__c,
-        KX_Candidate_Full_Name_u__c,
-        TR1__Candidate_GP_Amount__c,
-        TR1__Retained_Candidate_GP_Amount__c,
-        TR1__Candidate_Percentage__c,
-        Candidate_Points__c,
-        TR1__Account__c,
-        TR1__Contact__c,
-        CreatedById,
-        CreatedDate,
-        Falloff__c,
-        Fall_Off_Reason__c,
-        TR1__Fee_Amount__c,
-        Fee_Tier__c,
-        FLSA__c,
-        GP_Item_Description__c,
-        Gross_Fee_Percentage__c,
-        Gross_Invoice_Amount__c,
-        Item_Number__c,
-        TR1__Job__c,
-        LastModifiedById,
-        LastModifiedDate,
-        Number_of_Commission_Records__c,
-        Offer_Accept_to_Placement__c,
-        TR1__OT_Bill_Rate_Multiplier_Percentage__c,
-        TR1__OT_Pay_Rate__c,
-        TR1__Pay_Rate__c,
-        TR1__Person_Placed__c,
-        KX_PersonPlacedID__c,
-        KX_PersonPlacedSubmitDate__c,
-        Name,
-        Id,
-        RecordTypeId,
-        TR1__Job_Credit__c,
-        TR1__Job_GP_Amount__c,
-        TR1__Retained_Job_GP_Amount__c,
-        TR1__Job_Percentage__c,
-        Recruiter_Points__c,
-        TR1__Retained_Fee_Amount__c,
-        TR1__Salary__c,
-        Offer_Salary__c,
-        TR1__Bill_Rate__c,
-        TR1__Booking_Date__c,
-        Billing_Notes__c,
-        Commissionable_Date__c,
-        TR1__End_Date__c,
-        TR1__Assignment_Ended__c,
-        Calculate_Contractor_Commissions__c,
-        Estimated_End_Date__c,
-        TR1__Markup__c,
-        TR1__OT_Bill_Rate__c,
-        TR1__PO_Number__c,
-        Point_Value__c,
-        TR1__Timesheet_Approver__c,
-        TR1__Timesheet_Type__c
-        
-        FROM TR1__Closing_Report__c 
-        WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
+SOQL_STATEMENT = SOQL_STATEMENT = f"""SELECT IsActive, 
+    Alias, 
+    CreatedDate, 
+    Email, 
+    LastLoginDate, 
+    LastModifiedDate, 
+    LastPasswordChangeDate, 
+    LastViewedDate, 
+    MobilePhone, 
+    Monthly_Goal__c, 
+    Name, 
+    Payroll_Name__c, 
+    Phone, 
+    SmallPhotoUrl, 
+    ProfileId, 
+    Title, 
+    FullPhotoUrl, 
+    Id, 
+    UserType, 
+    Username, 
+    Commission_Eligible__c, 
+    ManagerId, 
+    UserRoleId
+    
+    FROM User
+    WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
+
 
 
 # Grab updated req information from salesforce
@@ -363,8 +288,8 @@ PASSWORD = "5uj7*ZpE8Y$D"
 constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("DRIVER=ODBC Driver 18 for SQL Server;SERVER={0};PORT=1433;DATABASE={1};UID={2};PWD={3};TDS_Version=8.0;".format(SERVER, DATABASE, USERNAME, PASSWORD)))
 engine = sqlalchemy.create_engine(constring,echo=False)
 
-logging.info("Starting to grab placements from SQL Server...")
-df_existing = pd.read_sql("SELECT * FROM dbo.dw2_placements",con = engine)
+logging.info("Starting to grab users from SQL Server...")
+df_existing = pd.read_sql("SELECT * FROM dbo.dw2_users",con = engine)
 logging.info(df_existing.shape)
 
 # Now that we have both dataframes, we can compare them using compare_and_find_updated_reqs()
@@ -375,9 +300,10 @@ logging.info(updated_req_df.shape)
 
 # making further modifications to the resulting dataframe
 # (this dataframe includes JUST the reqs that need to be inserted)
+#updated_req_df["END_DATE"] = '9999-12-31'
 #updated_req_df["EFFECTIVE_DATE"] = gen_date()
 #updated_req_df["EFFECTIVE_DATE"] = pd.to_datetime(updated_req_df["EFFECTIVE_DATE"],errors = 'coerce')
-updated_req_df.to_csv(f"~/etl2code/Daily Extracts/Placements daily file for {gen_date().replace('/','_')}.csv")
+
 # END_DATE in Azure needs to be backdated, this code handles that
 date_to_update = dt.datetime.now()-dt.timedelta(1)
 date_to_update = str(date_to_update.strftime("%Y-%m-%d"))
@@ -387,8 +313,8 @@ date_to_update = str(date_to_update.strftime("%Y-%m-%d"))
 # Here is the big chunk of code to interact with the Azure SQL Server DB
 # Define the table and its columns
 metadata = MetaData()
-your_table = Table('dw2_placements', metadata,
-                Column('PLACEMENT_ID', String(60), primary_key=True),
+your_table = Table('dw2_users', metadata,
+                Column('USER_ID', String(60), primary_key=True),
                 Column('END_DATE', String(60)))
 
 # Create a session
@@ -396,13 +322,13 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # List of IDs to update
-ids_to_update = updated_req_df["PLACEMENT_ID"].to_list()
+ids_to_update = updated_req_df["USER_ID"].to_list()
 
 # New value to set for the 'column_to_update'
 new_value = date_to_update
 
 # Construct an update statement
-update_statement = update(your_table).where(your_table.c.PLACEMENT_ID.in_(ids_to_update)).values(END_DATE=new_value)
+update_statement = update(your_table).where(your_table.c.USER_ID.in_(ids_to_update)).values(END_DATE=new_value)
 
 # Execute the update statement
 try:
@@ -419,20 +345,20 @@ except Exception as e:
     logging.warning(f"Error updating the rows: {str(e)}")
 finally:
     session.close()
-    logging.info("Done updating existing placements in database")
+    logging.info("Done updating existing users in database")
 
 
-# Now that we've updated the rows
-# we are going to append the new information now. 
+# Now that we've updated the rows that will be effected
+# We are going to append the new information now. 
 logging.info("Adding new and updated records to DB")
 try:
     logging.info(list(updated_req_df.columns))
     if 'index' in updated_req_df.columns:
         updated_req_df = updated_req_df.drop(columns = ["index"])
     
-    updated_req_df.to_sql('dw2_placements',con = engine, if_exists = 'append', index= False)
+    updated_req_df.to_sql('dw2_users',con = engine, if_exists = 'append', index= False)
     logging.info("Done adding new and updated records to database.")
 
 except Exception as e:
-    logging.warning(f"Adding new and updated placements into DB !FAILED! {str(e)}")
+    logging.warning(f"Adding new and updated users into DB !FAILED! {str(e)}")
 

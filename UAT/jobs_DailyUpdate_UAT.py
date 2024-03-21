@@ -18,7 +18,7 @@ import numpy
 
 # Configure Logging
 import logging
-logging.basicConfig(filename='./etl2code/logs/alljobs2_dailyupdates_logging.log', level=logging.INFO,
+logging.basicConfig(filename='./etl2code/logs/UAT_Logs/UAT_Jobs_Loading_Log.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 
@@ -59,7 +59,10 @@ def query_jobs_object(query_statement):
      for list_results in fetch_results:
         all_results.extend(list_results)
      df = pd.DataFrame(all_results)
-     df = df.drop(columns=['attributes'])
+     try:
+        df = df.drop(columns=['attributes'])
+     except:
+        print("")
 
      return df
 
@@ -275,6 +278,7 @@ yesterday = gen_date(-1)
 date_format = "%m/%d/%Y"
 soql_today =dt.datetime.strptime(gen_date(),date_format).strftime("%Y-%m-%d")
 soql_yesterday = dt.datetime.strptime(gen_date(-1),date_format).strftime("%Y-%m-%d")
+soql_tomorrow = dt.datetime.strptime(gen_date(1),date_format).strftime("%Y-%m-%d")
 
 logging.info(f"Dates for SOQL update statement {(today,yesterday)},{(soql_today,soql_yesterday)}")
 
@@ -355,8 +359,9 @@ SOQL_STATEMENT = f"""SELECT Id, Account_Manager__c,
     
     FROM TR1__Job__c
 
-    
-    WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
+    WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z)) AND Id = 'a0WUt000000dWwiMAE'"""
+
+
 
 # Grab updated req information from salesforce
 df_updates = query_jobs_object(SOQL_STATEMENT)
@@ -372,7 +377,7 @@ constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("D
 engine = sqlalchemy.create_engine(constring,echo=False)
 
 logging.info("Starting to grab all jobs from SQL Server...")
-df_existing = pd.read_sql("SELECT * FROM dbo.dw2_jobs WHERE END_DATE LIKE '%9999%'",con = engine)
+df_existing = pd.read_sql("SELECT * FROM dbo.dw2_jobs_uat WHERE END_DATE LIKE '%9999%'",con = engine)
 logging.info(df_existing.shape)
 
 # Now that we have both dataframes, we can compare them using compare_and_find_updated_reqs()
@@ -397,7 +402,7 @@ date_to_update = str(date_to_update.strftime("%Y-%m-%d"))
 # Here is the big chunk of code to interact with the Azure SQL Server DB
 # Define the table and its columns
 metadata = MetaData()
-your_table = Table('dw2_jobs', metadata,
+your_table = Table('dw2_jobs_uat', metadata,
                 Column('JOB_ID', String(60), primary_key=True),
                 Column('END_DATE', String(60)))
 
@@ -443,7 +448,7 @@ try:
     if 'index' in updated_req_df.columns:
         updated_req_df = updated_req_df.drop(columns = ["index"])
     
-    updated_req_df.to_sql('dw2_jobs',con = engine, if_exists = 'append', index= False)
+    updated_req_df.to_sql('dw2_jobs_uat',con = engine, if_exists = 'append', index= False)
     logging.info("Done adding new and updated records to database.")
 
 except Exception as e:
