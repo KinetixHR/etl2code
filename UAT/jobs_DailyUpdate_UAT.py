@@ -443,6 +443,7 @@ finally:
 # We are going to append the new information now. 
 logging.info("Adding new and updated records to DB")
 logging.info(f"Adding {updated_req_df.shape[0]} new and updated reqs...")
+updated_req_df.to_csv("UAT_data.csv")
 try:
     logging.info(list(updated_req_df.columns))
     if 'index' in updated_req_df.columns:

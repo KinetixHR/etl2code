@@ -136,6 +136,33 @@ def transform_data(df):
     return df
 
 
+def to_sql_implementation(i,truncate_table = 0):
+    '''
+    This script uses pandas .to_sql() method to add dataframe data into a DB. This is compared against the sqlalchemy method which is used elsewhere in our scripts.
+    Additionally, it uses a flag system (the i argument) to control replacement vs. appending.
+    '''
+    if truncate_table == 1:
+        try:
+            logging.info(f"Starting to Truncate Table")
+            SQL_STATEMENT = text("""TRUNCATE TABLE dw2_contacts""")
+            conn.execute(SQL_STATEMENT)
+            conn.commit()
+            logging.info(f"Truncated Table and ready for new data to come in")
+            truncate_table = 1
+        
+        except Exception as e:
+            logging.warning("Contacts update to SQL Server did not work")
+            logging.warning(str(e))
+
+    try:
+        logging.info(f"Starting to append {df_contacts.shape[0]} rows for {el} into DB")
+        df_contacts.to_sql('dw2_contacts',con = engine, index = False, if_exists='append', chunksize = 10000)
+        logging.info(f"appended {df_contacts.shape[0]} rows for {el} into DB")
+    
+    except Exception as e:
+        logging.warning("Contacts update to SQL Server did not work")
+        logging.warning(str(e))
+
 # Define connection information to Azure DB and connect
 date_format = "%m/%d/%Y"
 SERVER = "kinetixsql.database.windows.net"
@@ -154,7 +181,7 @@ try:
     year_list = [2021,2022,2023,2024,2025,2026]
     
     logging.info(f"making API calls for {len(year_list)} years")
-    
+    tt = 1
     for i,el in enumerate(year_list):
         soql_thisyear = dt.datetime.strptime(f"1/1/{el}",date_format).strftime("%Y-%m-%d")
         soql_nextyear = dt.datetime.strptime(f"1/1/{year_list[i+1]}",date_format).strftime("%Y-%m-%d")
@@ -208,31 +235,10 @@ try:
         df_contacts = transform_data(df_contacts)
         logging.info(f"successfully called api for {el}, df shape: {df_contacts.shape}")
         
-        def to_sql_implementation(i):
-            '''
-            This script uses pandas .to_sql() method to add dataframe data into a DB. This is compared against the sqlalchemy method which is used elsewhere in our scripts.
-            Additionally, it uses a flag system (the i argument) to control replacement vs. appending.
-            '''
-            if i == 99:
-                try:
-                    logging.info(f"Starting to !!!REPLACE!!! {df_contacts.shape[0]} rows for {el} into DB")
-                    df_contacts.to_sql('dw2_contacts',con = engine, index = False, if_exists='replace', chunksize = 10000)
-                    logging.info(f"!!!REPLACED!!! data and added {df_contacts.shape[0]} rows for {el} into DB")
-                
-                except Exception as e:
-                    logging.warning("Contacts update to SQL Server did not work")
-                    logging.warning(str(e))
-            else:
-                try:
-                    logging.info(f"Starting to append {df_contacts.shape[0]} rows for {el} into DB")
-                    df_contacts.to_sql('dw2_contacts',con = engine, index = False, if_exists='append', chunksize = 10000)
-                    logging.info(f"appended {df_contacts.shape[0]} rows for {el} into DB")
-                
-                except Exception as e:
-                    logging.warning("Contacts update to SQL Server did not work")
-                    logging.warning(str(e))
         # Run to_sql_implemention to add data to Azure DB
-        to_sql_implementation(i)
+        
+        to_sql_implementation(i,tt)
+        tt +=1
 
 
 except Exception as e:

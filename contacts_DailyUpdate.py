@@ -246,7 +246,7 @@ try:
         
         FROM Contact
         
-        WHERE (CreatedDate > {soql_yesterday}T05:00:00Z) AND (CreatedDate < {soql_today}T05:00:00Z)"""
+        WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
     
     df_contacts= run_api_call(SOQL_STATEMENT)
     df_contacts = transform_data(df_contacts)

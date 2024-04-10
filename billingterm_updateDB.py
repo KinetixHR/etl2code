@@ -6,7 +6,7 @@ import sqlalchemy
 import urllib
 
 # Configure logging
-logging.basicConfig(filename='./etl2code/logs/feetier_update_logging.log', level=logging.INFO,
+logging.basicConfig(filename='./etl2code/logs/billingterm_update_logging.log', level=logging.INFO,
                     format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 
@@ -21,7 +21,7 @@ def run_api_call(statement):
     sf = Salesforce(password='Kinetix3', username='awhelan@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
 
     # generator on the results page
-    fetch_results = sf.bulk.Fee_Tiers__c.query_all(
+    fetch_results = sf.bulk.Billing_Terms__c.query_all(
         statement, lazy_operation=True)
 
     all_results = []
@@ -32,7 +32,7 @@ def run_api_call(statement):
     return result_df
 
 # Define the SOQL query statement
-SOQL_STATEMENT = """SELECT Id, Name, Tier__c, Quick_Name__c, KX_Active__c,Fee_Basis__c,Fee_Amount__c FROM Fee_Tiers__c"""
+SOQL_STATEMENT = """SELECT Id, Name, CreatedDate, Active__c FROM Billing_Terms__c"""
 
 
 SERVER = "kinetixsql.database.windows.net"
@@ -51,17 +51,19 @@ conn = engine.connect()
 try:
     # Fetch data from Salesforce API
     df_feetier = run_api_call(SOQL_STATEMENT)
-    df_feetier.columns = ["FEETIER_ID","FEETIER_NAME","FEETIER_TIER","FEETIER_QUICKNAME","FEETIER_ACTIVE","FEETIER_FEE_BASIS","FEETIER_FEE_AMOUNT"]
+    df_feetier.columns = ["BILLING_TERM_ID","BILLING_TERM_NAME","BILLING_TERM_CREATED_DATE","BILLING_TERM_ACTIVE"]
+    df_feetier["BILLING_TERM_CREATED_DATE"] = pd.to_datetime(df_feetier["BILLING_TERM_CREATED_DATE"],unit='ms')
+    
     logging.info(df_feetier.shape)
     logging.info(df_feetier.columns)
-    logging.info("Successfully pulled Fee tiers from API: %s",str(df_feetier.shape))
+    logging.info("Successfully pulled billing terms from API: %s",str(df_feetier.shape))
 except:
-    logging.warn("Fee Tier SOQL API call did not work.")
+    logging.warning("billing term SOQL API call did not work.")
 
 try:
     # Write the data to a SQL table named 'dw2_feetier'
-    df_feetier.to_sql('dw2_feetier',con = engine, index = False, if_exists='replace')
-    logging.info("Fee Tier update completed successfully")
+    df_feetier.to_sql('dw2_billingterm',con = engine, index = False, if_exists='replace')
+    logging.info("billing term update completed successfully")
 except Exception as e:
-    logging.warning("Fee Tier update to SQL Server did not work")
+    logging.warning("billing term update to SQL Server did not work")
     logging.warning(str(e))
