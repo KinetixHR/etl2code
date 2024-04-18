@@ -13,7 +13,7 @@ def scan_logs_for_warnings(log_folder,today):
                 for line in file:
                     if 'WARNING' in line:                               # look for warning messages only
                         if today in line:                               # get data from today only
-                            if "Atribute" not in line:                  #This removes false positives
+                            if "Atribute" not in line:                  # This removes false positives
                                 warning_messages.append(f"{filename}: {line}")
     return warning_messages
 
