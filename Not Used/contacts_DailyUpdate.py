@@ -203,7 +203,7 @@ logging.info("CONNECTED to Azure DB")
 # Extract / Transform
 try:
     logging.info(f"Calling api and transforming data")
-    SOQL_STATEMENT = f"""SELECT Active__c,
+    SOQL_STATEMENT_MODIFIED = f"""SELECT Active__c,
         TR1__Call_List_Count__c, 
         Candidate_Source__c, 
         TR1__Candidate_Status__c, 
@@ -246,10 +246,62 @@ try:
         
         FROM Contact
         
-        WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
+        WHERE (LastModifiedDate > {soql_yesterday}T05:00:00Z) AND (LastModifiedDate < {soql_today}T05:00:00Z)"""
     
-    df_contacts= run_api_call(SOQL_STATEMENT)
-    df_contacts = transform_data(df_contacts)
+    SOQL_STATEMENT_CREATED = f"""SELECT Active__c,
+        TR1__Call_List_Count__c, 
+        Candidate_Source__c, 
+        TR1__Candidate_Status__c, 
+        Community_Contact_Type__c, 
+        Id, 
+        OwnerId, 
+        RecordTypeId, 
+        Contact_Source__c, 
+        CreatedById, 
+        CreatedDate, 
+        Current_Income__c, 
+        KX_Default_Phone__c, 
+        Desired_Income__c, 
+        DoNotCall, 
+        Email, 
+        EmailBouncedReason, 
+        HasOptedOutOfEmail, 
+        KX_Full_Name_c__c, 
+        TR1__Function__c, 
+        Home_address_2__c, 
+        HomePhone, 
+        TR1__Industry_Experience__c, 
+        Internal_External__c, 
+        Last_Email__c, 
+        LastModifiedById, 
+        LastModifiedDate, 
+        TR1__Last_Placement_Date__c, 
+        MobilePhone, 
+        Name, 
+        TR1__Owner_Name__c, 
+        Phone, 
+        TR1__Primary_Background__c, 
+        TR1__Recent_Resume_Version__c, 
+        TR1__Regional_Area__c, 
+        TR1__Source__c, 
+        TR1__State_Area__c, 
+        TR1__Subjects_Job_Titles__c, 
+        Title, 
+        AccountId 
+        
+        FROM Contact
+        
+        WHERE ((CreatedDate > {soql_yesterday}T05:00:00Z) AND (CreatedDate < {soql_today}T05:00:00Z))"""
+ 
+ 
+ 
+    df_contacts_modified = run_api_call(SOQL_STATEMENT_MODIFIED)
+    df_contacts_modified = transform_data(df_contacts_modified)
+    df_contacts_created = run_api_call(SOQL_STATEMENT_CREATED)
+    df_contacts_created = transform_data(df_contacts_created)
+
+    df_contacts = pd.concat([df_contacts_modified,df_contacts_created])
+
     logging.info(f"successfully called api and transformed data")
 
 except Exception as e:
@@ -259,8 +311,8 @@ except Exception as e:
 # Remove old info and Load
 try:
     logging.info(f"Making updates to dw2contacts table for today's contacts")
-    logging.info(f"Planning to remove rows related to {len(df_contacts['CONTACT_ID'].to_list())} ID's")
-    remove_ids_from_db(df_contacts["CONTACT_ID"].to_list())
+    logging.info(f"Planning to remove rows related to {len(df_contacts_modified['CONTACT_ID'].to_list())} ID's")
+    remove_ids_from_db(df_contacts_modified["CONTACT_ID"].to_list())
     logging.info("old data removed from DB, next up: adding in today's info")
     to_sql_implementation()
     logging.info("Script completed successfully")

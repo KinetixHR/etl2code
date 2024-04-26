@@ -35,14 +35,19 @@ cursor = cnxn.cursor()
 
 # Get today's date
 effective_date = datetime.now().strftime('%Y-%m-%d')
+# Contacts update date
 start_date = "1/1/2021"
 date_format = "%m/%d/%Y"
 update_date = dt.datetime.strptime(start_date,date_format).strftime("%Y-%m-%d")
+# submittals starts on or after 1-1-2023
+start_date1 = "1/1/2023"
+date_format = "%m/%d/%Y"
+update_date1 = dt.datetime.strptime(start_date,date_format).strftime("%Y-%m-%d")
 
 # SOQL query to get job count from Salesforce
 soql_job_query = "SELECT COUNT() FROM TR1__Job__c"  
 soql_Placement_query = "SELECT COUNT() FROM TR1__Closing_Report__c" 
-soql_Submittal_query = "SELECT COUNT() FROM TR1__Submittal__c  WHERE CreatedDate__c > 2022-12-31 "  
+soql_Submittal_query = "SELECT COUNT() FROM TR1__Submittal__c  WHERE CreatedDate__c >= 2023-01-01 "
 soql_contacts_Query = f"""SELECT COUNT() FROM Contact WHERE CreatedDate > {update_date}T00:00:00Z """
 
     #------------------------------------------------------------------------
@@ -77,7 +82,7 @@ try:
     #------------------------------------------------------------------------
     
     # SQL query to get the total Submittal count from DW2 
-    count_Sub_query = "select COUNt(*) from dw2_submittals"
+    count_Sub_query = "select COUNT(*) from dw2_submittals"
     cursor.execute(count_Sub_query)
     total_sub_result = cursor.fetchone()
     DW_Sub_count = total_sub_result[0] if total_sub_result else 0
@@ -97,7 +102,7 @@ try:
         Job_check = "Equal"
     else:
         print("The DW2_Job values are not equal.")
-        logging.warning("WARNING!! Dw2_Jobs count mismatch")
+        logging.warning("WARNING!! Dw2_Jobs count mismatch Today")
         Job_check = "Un-Equal"  
     #---------------    
     if TR_Place_count == DW_Place_count:
@@ -105,7 +110,7 @@ try:
         Placement_check = "Equal"
     else:
         print("The DW2_Placement values are not equal.")
-        logging.warning("WARNING!! Dw2_Placements count mismatch")
+        logging.warning("WARNING!! Dw2_Placements count mismatch Today")
         Placement_check = "Un-Equal" 
     #---------------   
     if TR_Sub_count == DW_Sub_count:
@@ -113,7 +118,7 @@ try:
         Sub_check = "Equal"
     else:
         print("The DW2_Submittals values are not equal.")
-        logging.warning("WARNING!! Dw2_submittals count mismatch")
+        logging.warning("WARNING!! Dw2_submittals count mismatch Today")
         Sub_check = "Un-Equal"   
     #--------------- 
     if TR_Cont_count == DW_Cont_count:
@@ -121,7 +126,7 @@ try:
         Cont_check = "Equal"
     else:
         print("The DW2_Contacts values are not equal.")
-        logging.warning("WARNING!! Dw2_Contacts count mismatch")
+        logging.warning("WARNING!! Dw2_Contacts count mismatch Today")
         Cont_check = "Un-Equal"    
 
     #------------------------------------------------------------------------

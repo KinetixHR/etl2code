@@ -22,6 +22,10 @@ USERNAME = "awhelan"
 PASSWORD = "5uj7*ZpE8Y$D"
 constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("DRIVER=ODBC Driver 18 for SQL Server;SERVER={0};PORT=1433;DATABASE={1};UID={2};PWD={3};TDS_Version=8.0;".format(SERVER, DATABASE, USERNAME, PASSWORD)))
 engine = sqlalchemy.create_engine(constring,echo=False)
+date_format = "%m/%d/%Y"
+logging.info("Connecting to Azure DB")
+conn = engine.connect()
+logging.info("CONNECTED to Azure DB")
 
 def run_api_call(statement):
     """
@@ -43,7 +47,10 @@ def run_api_call(statement):
     try:
         result_df = result_df.drop(columns=['attributes'])
     except:
-        logging.warning("No ATTRIBUTES column in results")
+        if result_df.shape[0] < 10: 
+            logging.info("Empty DataFrame")
+        else:
+            logging.warning("No ATTRIBUTES column in results")
     
     return result_df
 
@@ -149,7 +156,14 @@ def to_sql_implementation(i,truncate_table = 0):
             conn.commit()
             logging.info(f"Truncated Table and ready for new data to come in")
             truncate_table = 1
-        
+
+            SQL_STATEMENT_2 = """SELECT * FROM dw2_contacts"""
+            df_hopefully_empty  = pd.read_sql(SQL_STATEMENT_2,con = engine)
+            logging.info("Data from truncated table: ")
+            logging.info(df_hopefully_empty.shape)
+
+
+
         except Exception as e:
             logging.warning("Contacts update to SQL Server did not work")
             logging.warning(str(e))
@@ -164,17 +178,7 @@ def to_sql_implementation(i,truncate_table = 0):
         logging.warning(str(e))
 
 # Define connection information to Azure DB and connect
-date_format = "%m/%d/%Y"
-SERVER = "kinetixsql.database.windows.net"
-DATABASE = "KinetixSQL"
-USERNAME = "awhelan"
-PASSWORD = "5uj7*ZpE8Y$D"
 
-constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("DRIVER=ODBC Driver 18 for SQL Server;SERVER={0};PORT=1433;DATABASE={1};UID={2};PWD={3};TDS_Version=8.0;".format(SERVER, DATABASE, USERNAME, PASSWORD)))
-logging.info("Connecting to Azure DB")
-engine = sqlalchemy.create_engine(constring,echo=False)
-conn = engine.connect()
-logging.info("CONNECTED to Azure DB")
 
 try:
     # Iteratively find contacts from 2021 - 2026   
@@ -183,6 +187,7 @@ try:
     logging.info(f"making API calls for {len(year_list)} years")
     tt = 1
     for i,el in enumerate(year_list):
+
         soql_thisyear = dt.datetime.strptime(f"1/1/{el}",date_format).strftime("%Y-%m-%d")
         soql_nextyear = dt.datetime.strptime(f"1/1/{year_list[i+1]}",date_format).strftime("%Y-%m-%d")
         
@@ -232,18 +237,27 @@ try:
             WHERE (CreatedDate > {soql_thisyear}T00:00:00Z) AND (CreatedDate < {soql_nextyear}T00:00:00Z)"""
         
         df_contacts= run_api_call(SOQL_STATEMENT)
-        df_contacts = transform_data(df_contacts)
-        logging.info(f"successfully called api for {el}, df shape: {df_contacts.shape}")
         
-        # Run to_sql_implemention to add data to Azure DB
-        
-        to_sql_implementation(i,tt)
+        if df_contacts.shape[0] < 10:
+            pass
+        else:
+            df_contacts = transform_data(df_contacts)
+            logging.info(f"successfully called api for {el}, df shape: {df_contacts.shape}")
+            
+            # Run to_sql_implemention to add data to Azure DB
+            to_sql_implementation(i,tt)
         tt +=1
 
 
+
+
+
 except Exception as e:
-    logging.warning("Exception occured in main loop:")
-    logging.warning(e)
+    if df_contacts.shape[0] < 10:
+        logging.info("Empty Dataframe, exiting script")
+    else:
+        logging.warning("Exception occured in main loop:")
+        logging.warning(e)
 
 
 

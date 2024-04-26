@@ -37,7 +37,7 @@ def transform_data(df):
     Function to transform data in DF along pre-determined lines.
     """
     logging.info("Starting changing column names...")
-
+    logging.info(f"Working with {df.shape[0]} rows")
     df.columns = ["ID",
 'NAME',
 'CREATED_BY',
@@ -58,28 +58,24 @@ def transform_data(df):
 
     logging.info("Starting date transformations...")
 
-    df['STAGE_START_DATE'] = pd.to_datetime(df['STAGE_START_DATE'])
-    df["STAGE_START_DATE_CONVERTED"] = df["STAGE_START_DATE"].dt.tz_localize(
-        'UTC').dt.tz_convert('US/Eastern')
-    df['STAGE_START_DATE_DT'] = df['STAGE_START_DATE_CONVERTED'].dt.strftime(
-        '%Y-%m-%d')
-    df.drop(columns=['STAGE_START_DATE_CONVERTED', 'STAGE_START_DATE'], inplace=True)
+    #df['STAGE_START_DATE'] = pd.to_datetime(df['STAGE_START_DATE'])
+    #df["STAGE_START_DATE_CONVERTED"] = df["STAGE_START_DATE"].dt.tz_localize(
+    #    'UTC').dt.tz_convert('US/Eastern')
+    #df['STAGE_START_DATE_DT'] = df['STAGE_START_DATE'].dt.strftime('%Y-%m-%d')
+    #df.drop(columns=[ 'STAGE_START_DATE'], inplace=True)
 
-    df['STAGE_END_DATE'] = pd.to_datetime(df['STAGE_END_DATE'])
-    df["STAGE_END_DATE_CONVERTED"] = df['STAGE_END_DATE'].dt.tz_localize(
-        'UTC').dt.tz_convert('US/Eastern')
-    df['STAGE_END_DATE_DT'] = df['STAGE_END_DATE_CONVERTED'].dt.strftime(
-        '%Y-%m-%d')
-    df.drop(columns=['STAGE_END_DATE_CONVERTED', 'STAGE_END_DATE'], inplace=True)
+    #df['STAGE_END_DATE'] = pd.to_datetime(df['STAGE_END_DATE'])
+    #df["STAGE_END_DATE_CONVERTED"] = df['STAGE_END_DATE'].dt.tz_localize(
+    #    'UTC').dt.tz_convert('US/Eastern')
+    #df['STAGE_END_DATE_DT'] = df['STAGE_END_DATE'].dt.strftime('%Y-%m-%d')
+    # df.drop(columns=['STAGE_END_DATE'], inplace=True)
     
-    df["CREATED_DATE"] = pd.to_datetime(df['CREATED_DATE'])
-    df['CREATED_DATE_CONVERTED'] = df["CREATED_DATE"].dt.tz_localize(
-        'UTC').dt.tz_convert('US/Eastern')
-    df["CREATED_DATE_DT"] = df["CREATED_DATE_CONVERTED"].dt.strftime(
-        '%Y-%m-%d')
-    df["CREATED_DATE_TS"] = df["CREATED_DATE_CONVERTED"].dt.strftime(
-        '%Y-%m-%d %H:%M:%S')
-    df.drop(columns=['CREATED_DATE_CONVERTED', 'CREATED_DATE'], inplace=True)
+    #df["CREATED_DATE"] = pd.to_datetime(df['CREATED_DATE'])
+    #df['CREATED_DATE_CONVERTED'] = df["CREATED_DATE"].dt.tz_localize(
+    #    'UTC').dt.tz_convert('US/Eastern')
+    #df["CREATED_DATE_DT"] = df["CREATED_DATE"].dt.strftime('%Y-%m-%d')
+    #df["CREATED_DATE_TS"] = df["CREATED_DATE"].dt.strftime('%Y-%m-%d %H:%M:%S')
+    #df.drop(columns=['CREATED_DATE'], inplace=True)
 
     logging.info("Done with date transformations...")
 
@@ -87,17 +83,21 @@ def transform_data(df):
     df = df.fillna("")
     logging.info("done with other transformations...")
 
-    for el in df.columns:
-        if df[el].dtype == 'int64':
-            df[el] = df[el].astype(float)
-        if df[el].dtype == 'float64':
-            df[el] = df[el].astype(float)
+    #for el in df.columns:
+    #   if df[el].dtype == 'int64':
+    #       df[el] = df[el].astype(float)
+    #    if df[el].dtype == 'float64':
+    #        df[el] = df[el].astype(float)
     
+   # df =df[df["CREATED_DATE_DT"] >= "01/01/2023"]
+    
+
     return df
 
-update_date = "12/31/2022"
+update_date = "1/1/2023"
 date_format = "%m/%d/%Y"
 update_date = dt.datetime.strptime(update_date,date_format).strftime("%Y-%m-%d")
+logging.info(update_date)
 
 SOQL_STATEMENT = f"""SELECT Id,
 Name,
@@ -116,8 +116,8 @@ TR1__Stage_Start_Date__c,
 TR1__Stage__c,
 CreatedDate__c
 
-FROM TR1__Submittal__c WHERE CreatedDate__c > {update_date} """
-
+FROM TR1__Submittal__c WHERE CreatedDate__c >= 2023-01-01"""
+logging.info(SOQL_STATEMENT)
 
 SERVER = "kinetixsql.database.windows.net"
 DATABASE = "KinetixSQL"
