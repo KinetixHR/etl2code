@@ -98,5 +98,6 @@ df = run_api_call(SOQL_STATEMENT)
 df.to_sql(table_name, con=engine, if_exists='replace', index=False)
 
 logging.info('success')
-
+logging.info(df.shape)
+logging.info(df.columns)
 logging.info("Data transferred successfully!")
