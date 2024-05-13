@@ -39,8 +39,9 @@ def run_api_call(statement):
 
     if 'attributes' in df.columns:
      df.drop(columns=['attributes'], inplace=True)
- 
-
+    return df
+def transform_data(df):
+    logging.info("Starting changing column names...")
     #records = sf_data.get('records')
     #df = pd.DataFrame(records)
     df.columns = ["ID",'NAME','CREATED_BY','JOB_ID','COMPANY_NAME','REJECTION_NOTES','REJECTION_REASON','ATS_STAGE_STATUS','CANDIDATE_OWNER','CANDIDATE','SUBMITTED_BY','NUMBER_OF_DAYS_IN_STAGE','STAGE','STAGE_START_DATE','STAGE_END_DATE','CREATED_DATE']  
@@ -92,7 +93,7 @@ conn = engine.connect()
 #sql table name
 table_name = 'dw2_submittals'
 df = run_api_call(SOQL_STATEMENT)
-
+df = transform_data(df)
 
 # Using SQLAlchemy to insert data
 df.to_sql(table_name, con=engine, if_exists='replace', index=False)

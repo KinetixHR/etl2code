@@ -144,6 +144,7 @@ def transform_data(df):
     """
     Function to transform data in DF along pre-determined lines.
     """
+
     logging.info("Starting changing column names...")
 
     df.columns = ['ACCOUNT_ID',
@@ -210,7 +211,8 @@ def transform_data(df):
         'PO_NUMBER',
         'POINT_VALUE',
         'TIMESHEET_APPROVER',
-        'TIMESHEET_TYPE']
+        'TIMESHEET_TYPE',
+        "IS_DELETED"]
     logging.info("Done with changing column names...")
 
     logging.info("Starting date transformations...")
@@ -339,7 +341,8 @@ SOQL_STATEMENT = f"""SELECT Account_ID__c,
         TR1__PO_Number__c,
         Point_Value__c,
         TR1__Timesheet_Approver__c,
-        TR1__Timesheet_Type__c
+        TR1__Timesheet_Type__c,
+        IsDeleted
         
         FROM TR1__Closing_Report__c 
         WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""

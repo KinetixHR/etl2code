@@ -46,7 +46,7 @@ update_date1 = dt.datetime.strptime(start_date,date_format).strftime("%Y-%m-%d")
 
 # SOQL query to get job count from Salesforce
 soql_job_query = "SELECT COUNT() FROM TR1__Job__c"  
-soql_Placement_query = "SELECT COUNT() FROM TR1__Closing_Report__c" 
+soql_Placement_query = "SELECT COUNT() FROM TR1__Closing_Report__c " 
 soql_Submittal_query = "SELECT COUNT() FROM TR1__Submittal__c  WHERE CreatedDate__c >= 2023-01-01 "
 soql_contacts_Query = f"""SELECT COUNT() FROM Contact WHERE CreatedDate > {update_date}T00:00:00Z """
 
@@ -74,7 +74,7 @@ try:
        
     #------------------------------------------------------------------------
     # SQL query to get the total Placement  count from DW2 excluding end date 
-    count_Place_query = " select COUNt(*) from dw2_placements where END_DATE = '9999-12-31'"
+    count_Place_query = " select COUNt(*) from dw2_placements where END_DATE = '9999-12-31' AND IS_DELETED = '0'"
     cursor.execute(count_Place_query)
     total_place_result = cursor.fetchone()
     DW_Place_count = total_place_result[0] if total_place_result else 0
@@ -89,46 +89,77 @@ try:
     
     #------------------------------------------------------------------------
     # SQL query to get the total Contact  count from DW2 excluding end date and is deleted filters
-    count_Cont_query = "select count(*) from dw2_contacts"
+    count_Cont_query = "select count(*) from dw2_contacts where IS_DELETED = '0'"
     cursor.execute(count_Cont_query)
     total_Cont_result = cursor.fetchone()
     DW_Cont_count = total_Cont_result[0] if total_Cont_result else 0
 
     #------------------------------------------------------------------------
-    # Checking the counts
-    #------------------------------------------------------------------------  
+    # Checking the JOB counts
+    #------------------------------------------------------------------------ 
     if TR_Job_count == DW_Jobs_count:
-        print("The DW2_Job values are equal.")
+        print(f"The DW2_Job values are equal.")
         Job_check = "Equal"
-    else:
-        print("The DW2_Job values are not equal.")
-        logging.warning("WARNING!! Dw2_Jobs count mismatch Today")
+    elif TR_Job_count > DW_Jobs_count:
+        job = TR_Job_count - DW_Jobs_count
+        print(f"The DW2_Job values are not equal- TR has {job} more data ")
+        logging.warning(f"WARNING!! Dw2_Jobs count mismatch Today - TR has {job} more data ")
         Job_check = "Un-Equal"  
-    #---------------    
+    elif TR_Job_count < DW_Jobs_count:
+        job = DW_Jobs_count-TR_Job_count 
+        print(f"The DW2_Job values are not equal- DW has {job} more data ")
+        logging.warning(f"WARNING!! Dw2_Jobs count mismatch Today - DW has {job} more data ")
+        Job_check = "Un-Equal" 
+    #------------------------------------------------------------------------
+    # Checking the PLACEMENT counts
+    #------------------------------------------------------------------------ 
     if TR_Place_count == DW_Place_count:
-        print("The DW2_Placement values are equal.")
+        print(f"The DW2_Placement values are equal.")
         Placement_check = "Equal"
-    else:
-        print("The DW2_Placement values are not equal.")
-        logging.warning("WARNING!! Dw2_Placements count mismatch Today")
+    elif TR_Place_count > DW_Place_count:
+        Place = TR_Place_count - DW_Place_count
+        print(f"The DW2_Placements values are not equal- TR has {Place} more data ")
+        logging.warning(f"WARNING!! Dw2_Placements count mismatch Today - TR has {Place} more data ")
+        Placement_check = "Un-Equal"  
+    elif TR_Place_count < DW_Place_count:
+        Place =  DW_Place_count -TR_Place_count
+        print(f"The DW2_Placement values are not equal- DW has {Place} more data ")
+        logging.warning(f"WARNING!! Dw2_Placement count mismatch Today - DW has {Place} more data ")
         Placement_check = "Un-Equal" 
-    #---------------   
+
+    #------------------------------------------------------------------------
+    # Checking the SUBMITTAL counts
+    #------------------------------------------------------------------------ 
     if TR_Sub_count == DW_Sub_count:
         print("The DW2_Submittals values are equal.")
         Sub_check = "Equal"
-    else:
-        print("The DW2_Submittals values are not equal.")
-        logging.warning("WARNING!! Dw2_submittals count mismatch Today")
-        Sub_check = "Un-Equal"   
-    #--------------- 
+    elif TR_Sub_count > DW_Sub_count:
+        Subm = TR_Sub_count - DW_Sub_count
+        print(f"The DW2_Submittals values are not equal- TR has {Subm} more data ")
+        logging.warning(f"WARNING!! Dw2_Submittals count mismatch Today - TR has {Place} more data ")
+        Sub_check = "Un-Equal"  
+    elif TR_Sub_count < DW_Sub_count:
+        Subm =  DW_Sub_count -TR_Sub_count
+        print(f"The DW2_Submittals values are not equal- DW has {Subm} more data ")
+        logging.warning(f"WARNING!! Dw2_Submittals count mismatch Today - DW has {Subm} more data ")
+        Sub_check = "Un-Equal" 
+    #------------------------------------------------------------------------
+    # Checking the CONTACTS counts
+    #------------------------------------------------------------------------ 
     if TR_Cont_count == DW_Cont_count:
         print("The DW2_Contacts values are equal.")
         Cont_check = "Equal"
-    else:
-        print("The DW2_Contacts values are not equal.")
-        logging.warning("WARNING!! Dw2_Contacts count mismatch Today")
-        Cont_check = "Un-Equal"    
-
+    elif TR_Cont_count > DW_Cont_count:
+        cont = TR_Cont_count - DW_Cont_count
+        print(f"The DW2_Contacts values are not equal- TR has {cont} more data ")
+        logging.warning(f"WARNING!! DW2_Contacts count mismatch Today - TR has {cont} more data ")
+        Cont_check = "Un-Equal"  
+    elif TR_Cont_count < DW_Cont_count:
+        cont =   DW_Cont_count-TR_Cont_count 
+        print(f"The DW2_Contacts values are not equal- DW has {cont} more data ")
+        logging.warning(f"WARNING!! DW2_Contacts count mismatch Today - DW has {cont} more data ")
+        Cont_check = "Un-Equal"   
+    
     #------------------------------------------------------------------------
     # Inserting into DW
     #------------------------------------------------------------------------   

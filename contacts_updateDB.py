@@ -60,6 +60,10 @@ def transform_data(df):
     Function to transform data in DF along pre-determined lines.
     """
     logging.info("Starting changing column names...")
+    
+
+    
+
 
     df.columns = ['ACTIVE',
             'CALL_LIST_COUNT', 
@@ -100,7 +104,8 @@ def transform_data(df):
             'STATE_AREA', 
             'SUBJECTS_JOB_TITLE', 
             'TITLE', 
-            'COMPANY_ID']
+            'COMPANY_ID',
+            "IS_DELETED"]
     logging.info("Done with changing column names...")
 
     logging.info("Starting date transformations...")
@@ -230,7 +235,8 @@ try:
             TR1__State_Area__c, 
             TR1__Subjects_Job_Titles__c, 
             Title, 
-            AccountId 
+            AccountId,
+            IsDeleted
             
             FROM Contact
             
