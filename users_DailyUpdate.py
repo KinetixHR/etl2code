@@ -165,7 +165,9 @@ def transform_data(df):
     "USERNAME", 
     "COMMISSION_ELIGIBLE", 
     "MANAGER_ID",  
-    "ROLE"]
+    "ROLE",
+    'COACH_NAME'
+    ]
     logging.info("Done with changing column names...")
 
     logging.info("Starting date transformations...")
@@ -263,7 +265,8 @@ SOQL_STATEMENT = SOQL_STATEMENT = f"""SELECT IsActive,
     Username, 
     Commission_Eligible__c, 
     ManagerId, 
-    UserRoleId
+    UserRoleId,
+    Coach__c
     
     FROM User
     WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""

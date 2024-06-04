@@ -86,7 +86,8 @@ def transform_data(df):
     "USERNAME", 
     "COMMISSION_ELIGIBLE", 
     "MANAGER_ID",  
-    "ROLE"]
+    "ROLE",
+    "COACH_NAME"]
     logging.info("Done with changing column names...")
 
     logging.info("Starting date transformations...")
@@ -200,7 +201,8 @@ try:
     Username, 
     Commission_Eligible__c, 
     ManagerId, 
-    UserRoleId
+    UserRoleId,
+    Coach__c
     
     FROM User """
 

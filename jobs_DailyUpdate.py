@@ -408,7 +408,7 @@ session = Session()
 # List of IDs to update
 ids_to_update = updated_req_df["JOB_ID"].to_list()
 
-# New value to set for the 'column_to_update'
+# New value to set for the 'column_to_update' (yesterday's date)
 new_value = date_to_update
 
 # Construct an update statement
@@ -424,7 +424,7 @@ try:
     conn.close()
 
     session.commit()
-    logging.info(f"Updated {result.rowcount} rows.")
+    logging.info(f"Updated {result.rowcount} rows END_DATE to {date_to_update}.")
     
 except Exception as e:
     session.rollback()

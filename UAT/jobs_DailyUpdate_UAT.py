@@ -429,7 +429,7 @@ try:
     conn.close()
 
     session.commit()
-    logging.info(f"Updated {result.rowcount} rows.")
+    logging.info(f"Updated {result.rowcount} rows END_DATE to {date_to_update}.")
     
 except Exception as e:
     session.rollback()
