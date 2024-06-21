@@ -43,13 +43,14 @@ update_date = dt.datetime.strptime(start_date,date_format).strftime("%Y-%m-%d")
 start_date1 = "1/1/2023"
 date_format = "%m/%d/%Y"
 update_date1 = dt.datetime.strptime(start_date,date_format).strftime("%Y-%m-%d")
-
-# SOQL query to get job count from Salesforce
-soql_job_query = f"""SELECT COUNT() FROM TR1__Job__c where TR1__Closed_Date__c > 2019-12-31 """
-soql_Placement_query = f"""SELECT count() FROM TR1__Closing_Report__c WHERE TR1__Job__r.TR1__Closed_Date__c >2019-12-31 """
-soql_Submittal_query = f"""SELECT COUNT() FROM TR1__Submittal__c  WHERE CreatedDate__c >= 2023-01-01 """
-soql_contacts_Query = f"""SELECT COUNT() FROM Contact WHERE CreatedDate > {update_date}T00:00:00Z """
-
+try: 
+    # SOQL query to get job count from Salesforce
+    soql_job_query = f"""SELECT COUNT() FROM TR1__Job__c where TR1__Closed_Date__c > 2019-12-31 Or TR1__Closed_Date__c = null"""
+    soql_Placement_query = f"""SELECT count() FROM TR1__Closing_Report__c WHERE TR1__Job__r.TR1__Closed_Date__c >2019-12-31 Or TR1__Job__r.TR1__Closed_Date__c = null"""
+    soql_Submittal_query = f"""SELECT COUNT() FROM TR1__Submittal__c  WHERE CreatedDate__c >= 2023-01-01 """
+    soql_contacts_Query = f"""SELECT COUNT() FROM Contact WHERE CreatedDate > {update_date}T00:00:00Z """
+except Exception as e:
+    print(f"An error occurred: {e}")
     #------------------------------------------------------------------------
 
 try:
@@ -67,14 +68,14 @@ try:
     #------------------------------------------------------------------------
 
     # SQL query to get the total Jobs count from DW2 excluding end date and is deleted filters
-    count_Job_query = "SELECT COUNT(distinct JOB_ID) AS TotalJobs FROM DW2_Jobs where (end_date = '9999-12-31 00:00:00.000' And is_deleted = 'False') And CLOSED_DATE > '2020-1-1'"
+    count_Job_query = "SELECT COUNT(JOB_ID) AS TotalJobs FROM DW2_Jobs where (end_date = '9999-12-31 00:00:00.000' And is_deleted = 'False') And (CLOSED_DATE > '2020-1-1' OR CLOSED_DATE is NULL) ;"
     cursor.execute(count_Job_query)
     total_jobs_result = cursor.fetchone()
     DW_Jobs_count = total_jobs_result[0] if total_jobs_result else 0
        
     #------------------------------------------------------------------------
     # SQL query to get the total Placement  count from DW2 excluding end date 
-    count_Place_query = " select  count(distinct PLACEMENT_ID) FROM dw2_placements a INNER JOIN dw2_jobs b on a.job = b.JOB_ID where b.CLOSED_DATE >  '2020-1-1' and  (b.end_date = '9999-12-31' And b.is_deleted = 'False') and (a.END_DATE = '9999-12-31' AND a.IS_DELETED = '0' ) "
+    count_Place_query = "select  count( PLACEMENT_ID) FROM dw2_placements a INNER JOIN dw2_jobs b on a.job = b.JOB_ID where (b.CLOSED_DATE >  '2020-1-1'  OR b.CLOSED_DATE is NULL) and (b.END_DATE = '9999-12-31' AND b.IS_DELETED = 'False') AND a.END_DATE = '9999-12-31';"
     cursor.execute(count_Place_query)
     total_place_result = cursor.fetchone()
     DW_Place_count = total_place_result[0] if total_place_result else 0
@@ -89,7 +90,7 @@ try:
     
     #------------------------------------------------------------------------
     # SQL query to get the total Contact  count from DW2 excluding end date and is deleted filters
-    count_Cont_query = "select count(*) from dw2_contacts where IS_DELETED = '0'"
+    count_Cont_query = f"select count(*) from dw2_contacts where IS_DELETED = '0' AND CREATED_DATE_DT >= '2021-01-01'"
     cursor.execute(count_Cont_query)
     total_Cont_result = cursor.fetchone()
     DW_Cont_count = total_Cont_result[0] if total_Cont_result else 0

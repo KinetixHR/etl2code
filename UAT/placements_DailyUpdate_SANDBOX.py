@@ -461,8 +461,8 @@ SOQL_STATEMENT = f"""SELECT Account_ID__c,
         IsDeleted
         
         FROM TR1__Closing_Report__c 
-        
-        WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
+        """
+        #WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))"""
 
 
 # Grab updated req information from salesforce
@@ -484,7 +484,7 @@ constring = "mssql+pyodbc:///?odbc_connect={}".format(urllib.parse.quote_plus("D
 engine = sqlalchemy.create_engine(constring,echo=False)
 
 logging.info("Starting to grab placements from SQL Server...")
-df_existing = pd.read_sql("SELECT * FROM dbo.dw2_placements WHERE END_DATE = '9999-12-31'",con = engine)
+df_existing = pd.read_sql("SELECT * FROM dbo.dw2_placements_sandbox WHERE END_DATE = '9999-12-31'",con = engine)
 df_existing = transform_data_dw2(df_existing)
 logging.info(df_existing.shape)
 
@@ -513,7 +513,7 @@ date_to_update = str(date_to_update.strftime("%Y-%m-%d"))
 # Here is the big chunk of code to interact with the Azure SQL Server DB
 # Define the table and its columns
 metadata = MetaData()
-your_table = Table('dw2_placements', metadata,
+your_table = Table('dw2_placements_sandbox', metadata,
                 Column('PLACEMENT_ID', String(60), primary_key=True),
                 Column('END_DATE', String(60)))
 
@@ -556,7 +556,7 @@ try:
     if 'index' in updated_req_df.columns:
         updated_req_df = updated_req_df.drop(columns = ["index"])
     
-    updated_req_df.to_sql('dw2_placements',con = engine, if_exists = 'append', index= False)
+    updated_req_df.to_sql('dw2_placements_sandbox',con = engine, if_exists = 'append', index= False)
     logging.info("Done adding new and updated records to database.")
 
 except Exception as e:
