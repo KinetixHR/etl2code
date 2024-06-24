@@ -176,15 +176,15 @@ try:
     #------------------------------------------------------------------------
     # Printing the results
     #------------------------------------------------------------------------ 
-    print(f"Successfully inserted daily DW2_job count of {DW_Jobs_count} and Salesforce Jobs count of {TR_Job_count} into DW2_Total_Count with effective date {effective_date}.")
+    logging.info(f"Successfully inserted daily DW2_job count of {DW_Jobs_count} and Salesforce Jobs count of {TR_Job_count} into DW2_Total_Count with effective date {effective_date}.")
     
-    print(f"Successfully inserted daily DW2_Placements count of {DW_Place_count} and Salesforce Placemets count of {TR_Place_count} into DW2_Total_Count with effective date {effective_date}.")
+    logging.info(f"Successfully inserted daily DW2_Placements count of {DW_Place_count} and Salesforce Placemets count of {TR_Place_count} into DW2_Total_Count with effective date {effective_date}.")
     
-    print(f"Successfully inserted daily DW2_submittals count of {DW_Sub_count} and Salesforce Submittals count of {TR_Sub_count} into DW2_Total_Count with effective date {effective_date}.")
+    logging.info(f"Successfully inserted daily DW2_submittals count of {DW_Sub_count} and Salesforce Submittals count of {TR_Sub_count} into DW2_Total_Count with effective date {effective_date}.")
     
-    print(f"Successfully inserted daily DW2_Contacts count of {DW_Cont_count} and Salesforce Contacts count of {TR_Cont_count} into DW2_Total_Count with effective date {effective_date}.")
+    logging.info(f"Successfully inserted daily DW2_Contacts count of {DW_Cont_count} and Salesforce Contacts count of {TR_Cont_count} into DW2_Total_Count with effective date {effective_date}.")
 except Exception as e:
-    print(f"An error occurred: {e}")
+    logging.info(f"An error occurred: {e}")
 finally:
     cursor.close()
     cnxn.close()
