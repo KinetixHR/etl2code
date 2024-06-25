@@ -14,7 +14,7 @@ sf_password = 'Kinetix2Password '
 sf_security_token = 'your_security_token'
 sf_instance = 'USA638'
 
-logging.basicConfig(filename='./etl2code/logs/DW2_submittals_Build.log', level=logging.INFO,
+logging.basicConfig(filename='./etl2code/logs/submittals_daily_update.log', level=logging.INFO,
                         format='%(levelname)s %(asctime)s %(message)s')
 logging.info("Starting Script.")
 

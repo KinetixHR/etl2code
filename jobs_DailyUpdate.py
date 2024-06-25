@@ -523,8 +523,7 @@ SOQL_STATEMENT = f"""SELECT Id, Account_Manager__c,
     
     FROM TR1__Job__c
     
-    """
-    #WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))""" 
+    WHERE ((LastModifiedDate > {soql_yesterday}T05:00:00Z AND LastModifiedDate < {soql_today}T05:00:00Z) OR (CreatedDate > {soql_yesterday}T05:00:00Z AND CreatedDate < {soql_today}T05:00:00Z))""" 
     
     
 
