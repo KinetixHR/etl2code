@@ -18,7 +18,7 @@ def run_api_call(statement):
     """
     session = requests.Session()
     # Setting up salesforce functionality
-    sf = Salesforce(password='Kinetix3', username='awhelan@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
+    sf = Salesforce(password='Kinetix2Password', username='salesforceapps@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
 
     # generator on the results page
     fetch_results = sf.bulk.Billing_Terms__c.query_all(

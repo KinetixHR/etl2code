@@ -556,7 +556,7 @@ try:
     if 'index' in updated_req_df.columns:
         updated_req_df = updated_req_df.drop(columns = ["index"])
     
-    updated_req_df.to_sql('dw2_placements_sandbox',con = engine, if_exists = 'append', index= False)
+    updated_req_df.to_sql('dw2_placements_dev',con = engine, if_exists = 'append', index= False)
     logging.info("Done adding new and updated records to database.")
 
 except Exception as e:

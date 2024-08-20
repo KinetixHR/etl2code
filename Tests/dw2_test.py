@@ -17,7 +17,7 @@ sf_password = 'Kinetix2Password '
 sf_security_token = 'your_security_token'
 sf_instance = 'USA638'
 session = requests.Session()
-sf = Salesforce(password='Kinetix3', username='awhelan@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session) 
+sf = Salesforce(password='Kinetix2Password', username='salesforceapps@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session) 
 #sf = Salesforce(username=sf_username, password=sf_password, security_token=sf_security_token)
 
 

@@ -49,7 +49,7 @@ def gen_date(offset = 0):
 def query_jobs_object(query_statement):
     # Setting up salesforce functionality
     session = requests.Session()
-    sf = Salesforce(password='Kinetix3', username='awhelan@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
+    sf = Salesforce(password='Kinetix2Password', username='salesforceapps@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
 
     fetch_results = sf.bulk.User.query_all(query_statement, lazy_operation=True)
 

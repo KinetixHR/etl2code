@@ -52,7 +52,7 @@ def gen_date(offset = 0):
 def query_jobs_object(query_statement):
      # Setting up salesforce functionality
      session = requests.Session()
-     sf = Salesforce(password='Kinetix3', username='awhelan@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
+     sf = Salesforce(password='Kinetix2Password', username='salesforceapps@kinetixhr.com', organizationId='00D37000000HXaI',client_id='My App',session = session)
 
      fetch_results = sf.bulk.TR1__Job__c.query_all(query_statement, lazy_operation=True)
 
@@ -178,7 +178,7 @@ def compare_and_find_updated_reqs(req_list_,new_dataframe,existing_dataframe):
        'CERTIFICATION', 'EXTERNAL_CHALLENGES', 'INTERNAL_CHALLENGES', 'CITY',
        'INDUSTRY', 'CLIENT_REQ_NUMBER', 'CLOSED_DATE', 'CLOSED_REASON',
        'COACH', 'COMPANY', 'COMPANY_NAME', 'COMPENSATION_COMMENTS', 'CONTACT',
-       'COUNT_1ST_INTERVIEWS', 'CREATED_BY_ID', 'COUNT_ALLTIME_LONG_LIST',
+        'CREATED_BY_ID', 'COUNT_ALLTIME_LONG_LIST',
        'CUSTOMER_AGREEMENT', 'IS_DELETED', 'DEPARTMENT_NAME',
        'DEPARTMENT_NUMBER', 'EDUCATION', 'ESTIMATED_END_DATE',
        'ESTIMATED_START_DATE', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'FTE',
@@ -210,7 +210,7 @@ def req_list_generator(dframe_):
 
 def transform_data(df):
     """
-    Function to transform data in DF along pre-determined lines.
+    Function to transform talentrover data in DF along pre-determined lines.
     MAKE ANY FUTURE TRANSFORMATIONS HERE!
     """
     logging.info("Starting changing column names...")
@@ -222,7 +222,7 @@ def transform_data(df):
                'CITY', 'INDUSTRY', 'CLIENT_REQ_NUMBER',
                'CLOSED_DATE', 'CLOSED_REASON', 'COACH',
                'COMPANY', 'COMPANY_NAME', 'COMPENSATION_COMMENTS',
-               'CONTACT', 'COUNT_1ST_INTERVIEWS',
+               'CONTACT',
                'CREATED_BY_ID',
                'CREATED_DATE', 'COUNT_ALLTIME_LONG_LIST', 'CUSTOMER_AGREEMENT',
                'DAYS_OPEN', 'IS_DELETED', 'DEPARTMENT_NAME',
@@ -335,7 +335,7 @@ def transform_dw2_data(df):
        'CERTIFICATION', 'EXTERNAL_CHALLENGES', 'INTERNAL_CHALLENGES', 'CITY',
        'INDUSTRY', 'CLIENT_REQ_NUMBER', 'CLOSED_DATE', 'CLOSED_REASON',
        'COACH', 'COMPANY', 'COMPANY_NAME', 'COMPENSATION_COMMENTS', 'CONTACT',
-       'COUNT_1ST_INTERVIEWS', 'CREATED_BY_ID', 'COUNT_ALLTIME_LONG_LIST',
+    'CREATED_BY_ID', 'COUNT_ALLTIME_LONG_LIST',
        'CUSTOMER_AGREEMENT', 'DAYS_OPEN', 'IS_DELETED', 'DEPARTMENT_NAME',
        'DEPARTMENT_NUMBER', 'EDUCATION', 'ESTIMATED_END_DATE',
        'ESTIMATED_START_DATE', 'FEE_AMOUNT', 'FEE_TIER', 'FLSA', 'FTE',
@@ -443,7 +443,8 @@ date_format = "%m/%d/%Y"
 soql_today =dt.datetime.strptime(gen_date(),date_format).strftime("%Y-%m-%d")
 soql_yesterday = dt.datetime.strptime(gen_date(-1),date_format).strftime("%Y-%m-%d")
 soql_tomorrow = dt.datetime.strptime(gen_date(1),date_format).strftime("%Y-%m-%d")
-
+soql_yesterday  = '12/31/2000'
+soql_today      = '1/1/2001'
 logging.info(f"Dates for SOQL update statement {(today,yesterday)},{(soql_today,soql_yesterday)}")
 
 SOQL_STATEMENT = f"""SELECT Id, Account_Manager__c, 
@@ -465,7 +466,6 @@ SOQL_STATEMENT = f"""SELECT Id, Account_Manager__c,
     TR1__Account_Name__c, 
     Compensation_Comments__c, 
     TR1__Contact__c, 
-    KX_Count_1st_Interviews__c, 
     CreatedById, 
     CreatedDate, 
     KX_Current_Long_List__c, 
@@ -531,7 +531,6 @@ SOQL_STATEMENT = f"""SELECT Id, Account_Manager__c,
 
 # Grab updated req information from salesforce
 df_updates = query_jobs_object(SOQL_STATEMENT)
-#logging.info(df_updates)
 df_updates = transform_data(df_updates)
 logging.info(f"shape of data from salesforce: {df_updates.shape}")
 logging.info(f"IDs of jobs from salesforce that had changes: {set(df_updates['JOB_ID'].values)}")
